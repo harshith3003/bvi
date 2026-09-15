@@ -1,0 +1,112 @@
+{
+  "n_sessions": 1000,
+  "H": 5,
+  "k": 2,
+  "rows": [
+    {
+      "p": 0.0,
+      "H": 5,
+      "k": 2,
+      "n_sessions": 1000,
+      "bvi": {
+        "verified": 0.0,
+        "unknown": 1.0,
+        "failed": 0.0
+      },
+      "bbca": {
+        "verified": 0.0,
+        "unknown": 1.0,
+        "failed": 0.0
+      },
+      "bvi_usable_evidence": 1.0,
+      "bbca_usable_evidence": 0.0,
+      "bvi_tamper_caught": 0.0,
+      "bbca_tamper_caught": 0.0,
+      "n_tampered": 328
+    },
+    {
+      "p": 0.25,
+      "H": 5,
+      "k": 2,
+      "n_sessions": 1000,
+      "bvi": {
+        "verified": 0.321,
+        "unknown": 0.622,
+        "failed": 0.057
+      },
+      "bbca": {
+        "verified": 0.004,
+        "unknown": 0.996,
+        "failed": 0.0
+      },
+      "bvi_usable_evidence": 1.0,
+      "bbca_usable_evidence": 0.004,
+      "bvi_tamper_caught": 0.20727272727272728,
+      "bbca_tamper_caught": 0.0,
+      "n_tampered": 275
+    },
+    {
+      "p": 0.5,
+      "H": 5,
+      "k": 2,
+      "n_sessions": 1000,
+      "bvi": {
+        "verified": 0.674,
+        "unknown": 0.159,
+        "failed": 0.167
+      },
+      "bbca": {
+        "verified": 0.038,
+        "unknown": 0.951,
+        "failed": 0.011
+      },
+      "bvi_usable_evidence": 1.0,
+      "bbca_usable_evidence": 0.049,
+      "bvi_tamper_caught": 0.5818815331010453,
+      "bbca_tamper_caught": 0.03832752613240418,
+      "n_tampered": 287
+    },
+    {
+      "p": 0.75,
+      "H": 5,
+      "k": 2,
+      "n_sessions": 1000,
+      "bvi": {
+        "verified": 0.729,
+        "unknown": 0.008,
+        "failed": 0.263
+      },
+      "bbca": {
+        "verified": 0.172,
+        "unknown": 0.754,
+        "failed": 0.074
+      },
+      "bvi_usable_evidence": 1.0,
+      "bbca_usable_evidence": 0.246,
+      "bvi_tamper_caught": 0.8456591639871383,
+      "bbca_tamper_caught": 0.2379421221864952,
+      "n_tampered": 311
+    },
+    {
+      "p": 1.0,
+      "H": 5,
+      "k": 2,
+      "n_sessions": 1000,
+      "bvi": {
+        "verified": 0.692,
+        "unknown": 0.0,
+        "failed": 0.308
+      },
+      "bbca": {
+        "verified": 0.692,
+        "unknown": 0.0,
+        "failed": 0.308
+      },
+      "bvi_usable_evidence": 1.0,
+      "bbca_usable_evidence": 1.0,
+      "bvi_tamper_caught": 1.0,
+      "bbca_tamper_caught": 1.0,
+      "n_tampered": 308
+    }
+  ]
+}

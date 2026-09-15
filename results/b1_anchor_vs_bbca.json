@@ -1,0 +1,99 @@
+{
+  "primary_metric": "writes per session",
+  "bvi_anchor_gas": 91535,
+  "model": "BBCA writes = 2H + (H-1) + events, from their Figure 4",
+  "gas_caveat": "BBCA runs modified PBFT on a permissioned database and has no Ethereum gas cost. The gas column charges its writes at BVI's measured per-write cost and is illustrative only, not a measured comparison.",
+  "hop_sweep": [
+    {
+      "hops": 1,
+      "bvi_writes": 1,
+      "bbca_writes": 2,
+      "write_ratio": 2.0,
+      "bvi_gas": 91535,
+      "bbca_gas_illustrative": 183070
+    },
+    {
+      "hops": 2,
+      "bvi_writes": 1,
+      "bbca_writes": 5,
+      "write_ratio": 5.0,
+      "bvi_gas": 91535,
+      "bbca_gas_illustrative": 457675
+    },
+    {
+      "hops": 3,
+      "bvi_writes": 1,
+      "bbca_writes": 8,
+      "write_ratio": 8.0,
+      "bvi_gas": 91535,
+      "bbca_gas_illustrative": 732280
+    },
+    {
+      "hops": 4,
+      "bvi_writes": 1,
+      "bbca_writes": 11,
+      "write_ratio": 11.0,
+      "bvi_gas": 91535,
+      "bbca_gas_illustrative": 1006885
+    },
+    {
+      "hops": 5,
+      "bvi_writes": 1,
+      "bbca_writes": 14,
+      "write_ratio": 14.0,
+      "bvi_gas": 91535,
+      "bbca_gas_illustrative": 1281490
+    },
+    {
+      "hops": 6,
+      "bvi_writes": 1,
+      "bbca_writes": 17,
+      "write_ratio": 17.0,
+      "bvi_gas": 91535,
+      "bbca_gas_illustrative": 1556095
+    },
+    {
+      "hops": 7,
+      "bvi_writes": 1,
+      "bbca_writes": 20,
+      "write_ratio": 20.0,
+      "bvi_gas": 91535,
+      "bbca_gas_illustrative": 1830700
+    },
+    {
+      "hops": 8,
+      "bvi_writes": 1,
+      "bbca_writes": 23,
+      "write_ratio": 23.0,
+      "bvi_gas": 91535,
+      "bbca_gas_illustrative": 2105305
+    }
+  ],
+  "duration_sweep": [
+    {
+      "duration_s": 30,
+      "bvi_writes": 1,
+      "bvi_gas": 91535
+    },
+    {
+      "duration_s": 60,
+      "bvi_writes": 1,
+      "bvi_gas": 91535
+    },
+    {
+      "duration_s": 300,
+      "bvi_writes": 1,
+      "bvi_gas": 91535
+    },
+    {
+      "duration_s": 900,
+      "bvi_writes": 1,
+      "bvi_gas": 91535
+    },
+    {
+      "duration_s": 1800,
+      "bvi_writes": 1,
+      "bvi_gas": 91535
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+% =====================================================================
+% SECTION 5 INSERTS - BBCA comparison and platform justification
+%
+% Three blocks below, each marked with where it goes.
+% Assumes \cite{bbca} = Tas & Baktir, IEEE Access vol. 12, 2024.
+% =====================================================================
+
+
+% ---------------------------------------------------------------------
+% BLOCK 1 -> Section 5, immediately before Table~\ref{tab:anchorcost}
+% Answers T5 (platform choice) and frames the cost comparison.
+% ---------------------------------------------------------------------
+
+\subsection{Comparison with BBCA}
+
+The closest prior work is BBCA~\cite{bbca}, which places caller-ID and ANI
+information on a blockchain and verifies it at each hop of a call. Three
+differences determine the comparison, and each is structural rather than a
+matter of tuning.
+
+\paragraph{Key directory versus evidence log.}
+BBCA maintains a Registration Table mapping ISPs to the numbers they may
+present, and a Call Flow Control Table updated as a call progresses. Both are
+consulted during the call and neither is retained as a settled record
+afterwards: the Call Flow Control Table exists ``until the call is
+terminated''~\cite[Sec.~III.A]{bbca}. BVI writes one fixed-size anchor at
+teardown that commits jointly to the audio digest root and the path transcript
+hash, together with a consensus-supplied timestamp. The distinction matters
+because the obligation the Scams Prevention Framework Act imposes is
+retrospective: an entity must be able to evidence, months later, what a given
+call was. A table that is consulted during a call and then discarded does not
+discharge that obligation; an anchor does.
+
+\paragraph{Cost grows with the call, or does not.}
+Because BBCA records one row per call event --- initiation, SBC involvement,
+forwarding, roaming, termination, and each hop transition~\cite[Fig.~4]{bbca}
+--- its on-chain cost is a function of path length and of what happens during
+the call. BVI's anchor takes two fixed-width arguments, so a Merkle root over
+$150{,}000$ digest frames is the same thirty-two bytes as a root over five
+hundred, and a hash over twelve attestations is the same size as a hash over
+two. Table~\ref{tab:anchorcost} makes the comparison in writes per session,
+counted from BBCA's own published table structure, since BBCA reports no gas
+figures. Converting at BVI's measured per-write cost --- an assumption
+generous to BBCA, whose rows carry more fields than our anchor --- gives an
+overhead of $5\times$ at two hops rising to $23\times$ at eight.
+
+\paragraph{Participation is required, or it is not.}
+BBCA permits only registered ISPs to write to the
+blockchain~\cite[Sec.~III.A]{bbca} and defines no behaviour for a hop that is
+not registered. A path containing one unregistered carrier therefore yields no
+complete record. BVI treats an unattested hop as $\bot$, which satisfies the
+verification conjunct rather than failing it, so a path nobody observed is
+unobserved rather than suspect. Table~\ref{tab:participation} quantifies the
+consequence: at fifty percent carrier participation BVI resolves a verdict on
+$84.1$ percent of sessions and yields usable evidence on all of them, while
+BBCA yields a complete record on $4.9$ percent. At zero participation BVI still
+yields usable evidence on every session, because Layers~1 and~3 do not depend
+on the path at all.
+
+We note that BBCA reports no evaluation. Its limitations section defers
+performance and scalability testing to future work~\cite[Sec.~IV]{bbca}, so no
+measured baseline exists in this line of work and the figures reported here are,
+to our knowledge, the first for a system of this class.
+
+
+% ---------------------------------------------------------------------
+% BLOCK 2 -> Section 5, platform selection paragraph.
+% This is the T5 sentence, expanded to a short paragraph.
+% ---------------------------------------------------------------------
+
+\paragraph{Consensus and platform.}
+BBCA employs a modified PBFT in which a subset of nodes, selected by reputation
+and past performance, act as verifiers~\cite[Sec.~III.A]{bbca}. That design
+buys low latency, which their real-time per-hop verification requires, at the
+cost of a permissioned verifier set. BVI takes the opposite trade. Our anchor
+is written at teardown and is therefore off the call's critical path, so
+consensus latency costs us nothing; and requirement~R2 obliges us to let any
+recipient, including a regulator or a court with no prior relationship to any
+carrier, read a session record without an account. A reputation-selected
+verifier set cannot offer that. We therefore deploy to public Ethereum, and
+split the deployment: per-session writes go to an L2 rollup, where the cost of
+$91{,}535$~gas per anchor is amortised across a batch, and status changes go
+directly to L1, where no single sequencer controls inclusion. The latter is
+required by the revocation property of Section~4.2 --- an operator able to
+delay a revocation transaction is an operator able to suppress it.
+
+
+% ---------------------------------------------------------------------
+% BLOCK 3 -> Section 5 or 6, throughput discussion.
+% States the ceiling honestly, including where it does not clear.
+% ---------------------------------------------------------------------
+
+\paragraph{Throughput.}
+At the measured anchor cost, an OP~Stack rollup at a $60$~million gas block
+limit and two-second blocks sustains approximately $328$~anchors per second, or
+$28.3$~million per day. That is the ceiling for a chain carrying only BVI
+traffic; a shared chain yields a proportional fraction. Australian daily call
+volume is of the same order, so a single rollup at present parameters does not
+clear national volume with margin. Batching does not close the gap: amortising
+the $21{,}000$~gas intrinsic transaction cost across a batch reduces per-anchor
+cost to an asymptotic floor of $70{,}535$~gas, because the three cold storage
+writes per anchor must occur regardless, giving a throughput gain bounded at
+$1.30\times$. The available levers are a higher block limit, which a
+raised-limit configuration at $100$~million gas takes to $47.2$~million anchors
+per day, or horizontal partitioning across rollups by originating carrier.
+We state this as a deployment constraint rather than resolving it here, since
+the appropriate partitioning depends on carrier structure rather than on the
+protocol.

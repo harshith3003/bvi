@@ -1,0 +1,223 @@
+% =====================================================================
+% PAPER TEXT CORRECTIONS
+%
+% Addresses the review points that are wording rather than measurement.
+% Each block is labelled with where it goes.
+% =====================================================================
+
+
+% ---------------------------------------------------------------------
+% BLOCK 1 -> Section 5, BBCA comparison. REPLACES the participation
+% paragraph. The previous wording overstated their position.
+%
+% THE POINT: BBCA never states a universal-participation requirement.
+% Saying they "require" it is our inference, and a reviewer who reads the
+% paper will find no such sentence. What their paper actually says is that
+% only registered ISPs may write, and it then says nothing at all about an
+% unregistered hop. The absence is the finding, and it is stronger stated
+% as an absence, because it is verifiable.
+% ---------------------------------------------------------------------
+
+\paragraph{Participation.}
+BBCA permits only registered ISPs to write to the blockchain
+database~\cite[Sec.~III.A]{bbca}, and its Call Flow Control Table is updated at
+each hop as the call is forwarded~\cite[Fig.~6]{bbca}. The paper does not
+specify what occurs when a hop is not registered: no fallback, no partial
+verdict, and no degraded mode is defined. We therefore make the narrower and
+verifiable claim that \emph{BBCA defines no behaviour for an unregistered hop},
+rather than the stronger claim that it requires universal participation, which
+their text does not assert. The practical consequence is the same for a
+deployment --- a path containing an unregistered carrier leaves no complete
+record --- but the claim as stated can be checked against their Section~III.A
+directly.
+
+BVI assigns such a hop the value $\bot$, which satisfies the verification
+conjunct rather than failing it. This is a design commitment rather than an
+omission: a hop nobody attested is unobserved, and treating unobserved as
+suspect is what makes a scheme unusable below full participation.
+
+
+% ---------------------------------------------------------------------
+% BLOCK 2 -> Section 6, threats to validity. NEW.
+%
+% Metadata leakage on a public ledger. Contents are hashed; timing and
+% volume are not.
+% ---------------------------------------------------------------------
+
+\paragraph{Metadata exposure on a public ledger.}
+Anchoring one record per session to a public chain hides content but not
+incidence. The digest root and path transcript hash reveal nothing about the
+audio or the route, and the anchor carries no identifier of the called party.
+What remains visible to any observer is that a session occurred, when it was
+anchored, and which address submitted it. Aggregated over time this exposes
+call volume per submitting organisation and its diurnal pattern, and a
+submitting address that maps to a single organisation makes that organisation's
+traffic profile public.
+
+Three mitigations are available and we have not evaluated them. Submitting
+through a rotating set of addresses breaks the linkage between an organisation
+and its volume at the cost of complicating the accountability the anchor
+provides. Batching multiple sessions into one transaction coarsens timing
+resolution, though Section~\ref{sec:evaluation} shows batching yields little on
+cost grounds. Anchoring to a permissioned chain would remove the exposure
+entirely, but forfeits the permissionless read access that R2 requires and that
+motivates the public deployment in the first place. We record the exposure as a
+cost of that choice rather than as a solved problem.
+
+
+% ---------------------------------------------------------------------
+% BLOCK 3 -> Section 6 or Discussion. NEW.
+%
+% Who pays. A reviewer will ask, and "the L2 is cheap" is not an answer
+% to "cheap for whom".
+% ---------------------------------------------------------------------
+
+\paragraph{Cost incidence.}
+The recurring cost falls on whoever submits the anchor, which in the
+architecture above is the originating organisation's gateway rather than the
+recipient. This is deliberate: requirement~R2 obliges the recipient to verify
+without an account, so the recipient can pay nothing by construction. The
+organisation asserting an identity bears the cost of making that assertion
+checkable, which aligns the cost with the party that benefits from being
+believed and with the party the Scams Prevention Framework Act places the
+obligation on.
+
+At the figures in Section~\ref{sec:evaluation} this is a small unit cost borne
+per call by the calling organisation, and it scales with that organisation's own
+call volume rather than with the size of the network. A bank placing ten
+thousand outbound calls a day pays for ten thousand anchors; it does not
+subsidise anyone else's. Carrier attestation is separate and optional, and its
+cost falls on the attesting carrier, which is why the scheme cannot assume
+carriers will pay it --- and why the path layer is designed to degrade rather
+than fail when they do not.
+
+We note the coordination problem this leaves open. No party pays for the
+registry contract's deployment or for the accreditation function of the
+registrar, and neither is a per-call cost that a single organisation would
+naturally fund. This is a governance question rather than a protocol one and we
+do not resolve it here.
+
+
+% ---------------------------------------------------------------------
+% BLOCK 4 -> Section 6, RQ3. REPLACES the false-demotion sentence.
+%
+% CORRECTION. The earlier text said the false demotion rate is flat in
+% carrier participation. It is not. It rises with participation, for the
+% same reason detection does.
+% ---------------------------------------------------------------------
+
+\paragraph{False demotion.}
+Legitimate identifier rewrites performed by an unregistered session border
+controller are indistinguishable from malicious ones, and are scored inconsistent.
+The rate is not independent of carrier participation: it rises with $p$, from
+zero at $p=0$ to approximately six percent of benign sessions at full
+participation, because observing a rewrite at all requires attesting hops on
+either side of it. The mechanism that produces true detection produces the
+false demotions as well, so carrier participation trades one against the other.
+
+The asymptote is set by SBC registration coverage rather than by carrier
+participation. At the registration rate assumed in Table~\ref{tab:pathevidence},
+false demotion converges to
+$(1-q)\cdot r_{\text{legit}}/(1-r_{\text{tamper}})$ of benign sessions. The
+operational reading is that recruiting carriers raises both detection and false
+demotion, while registering session border controllers lowers only the latter;
+the two interventions are not substitutes.
+
+
+% ---------------------------------------------------------------------
+% BLOCK 5 -> Section 6, RQ3. REPLACES the path-length claim.
+%
+% CORRECTION. The inversion is average-case only. Under an adversary who
+% chooses the tamper point it disappears entirely.
+% ---------------------------------------------------------------------
+
+\paragraph{Path length.}
+Under a uniformly located tamper, detection improves as the path lengthens:
+reaching fifty percent detection requires sixty percent carrier participation at
+three hops but twenty-five percent at twelve, because a longer path offers more
+opportunities for an attesting hop to fall on either side of the tamper point.
+BBCA moves the other way, requiring an unbroken record and therefore more
+participation as the path grows.
+
+This advantage is average-case and does not survive a strategic adversary. An
+adversary who observes which hops are attesting and chooses the tamper point
+accordingly evades detection unless both the first and last hops attest, so
+worst-case detection is $p^2$ \emph{independent of $H$}. Table~\ref{tab:pathdetect}
+reports both models. The participation required for fifty percent detection is
+then flat at approximately $p=0.75$ for every path length, and the path-length
+inversion is absent.
+
+We therefore claim the inversion only as an average-case property and state its
+assumption explicitly. What survives both models is the margin over BBCA: at
+$p=0.5$ and $H=12$, worst-case BVI detection is $24.6$ percent against BBCA's
+$0.02$ percent, and at $H=5$ it is $24.8$ percent against $3.1$ percent. The
+comparison that carries the paper's first claim does not depend on the
+adversary's choice of tamper location.
+
+
+% ---------------------------------------------------------------------
+% BLOCK 6 -> Section 6, RQ2. REPLACES the splice-detection paragraph.
+%
+% CORRECTION. The 53-to-8-percent step was a threshold artefact, not a
+% property of the digest. With thresholds held at fixed false positive
+% rates the curve is monotone and the mechanism is window length.
+% ---------------------------------------------------------------------
+
+\paragraph{Splice length and detector resolution.}
+Detection of partial substitution is reported at fixed false positive rates
+rather than at a threshold defined as a percentile of the benign distribution.
+The latter makes the false positive rate a consequence of the threshold's
+definition rather than an operating point, and quoting a detection rate beside
+it is uninformative.
+
+At a one percent false positive rate, detection rises monotonically with the
+substituted fraction: $13.9$ percent at a two percent splice, $25.0$ percent at
+five percent, $36.1$ percent at ten percent, $63.9$ percent at fifteen percent,
+and $100$ percent for full substitution. An earlier draft reported a step from
+$53$ to $8$ percent between the ten and five percent conditions; that step was
+an artefact of an inconsistently derived threshold and does not appear once the
+operating point is fixed.
+
+The limiting factor is window length, not the digest. Bit error rate measured on
+the substituted frames alone is near chance ($0.47$--$0.50$) at every splice
+length, so the substitution is always visible in principle; the windowed maximum
+the detector actually computes is lower, because any window containing a short
+splice also contains matching frames that dilute it. The resolution floor is
+therefore the shortest analysis window, approximately $240$\,ms at these
+settings. Table~\ref{tab:windowablation} shows this is tunable: shortening the
+minimum window to four frames raises five-percent-splice detection from $25.0$
+to $41.7$ percent, at the cost of a noisier benign distribution and a higher
+threshold. We report the tradeoff rather than a single operating point.
+
+% NOTE FOR THE REAL-CORPUS RUN: only 12--17 percent of spliced frames were
+% voiced in the synthetic corpus, and the gated comparison ignores unvoiced
+% frames by design. Recorded speech carries a substantially higher voiced
+% fraction, so these detection figures are expected to IMPROVE rather than
+% degrade on a real corpus. State the voiced fraction alongside the result.
+
+
+% ---------------------------------------------------------------------
+% BLOCK 7 -> nowhere in the paper. A note for the team.
+%
+% Why the status spread appeared not to divide into the detection rate.
+% ---------------------------------------------------------------------
+
+% The apparent inconsistency between the status spread and the detection
+% rate was arithmetic, not data. Dividing the FAILED column by the tamper
+% rate overstates detection, because FAILED contains two populations:
+%
+%     FAILED = malicious rewrites detected
+%            + legitimate rewrites by an unregistered SBC
+%
+% The second group is the false-demotion population and lands in FAILED by
+% construction, since it is indistinguishable from tampering. The identity
+% that holds is
+%
+%     detection = (FAILED - false demotions) / tampered
+%
+% At H=5, p=0.50: 3887 failed, 528 false demotions, 5933 tampered, giving
+% (3887 - 528) / 5933 = 56.6 percent, which is the reported figure exactly.
+% Dividing straight through gives 65.5 percent. At H=8, p=0.75 the naive
+% form gives 103.8 percent, which is impossible and confirms the formula
+% rather than the data was at fault. This check now runs on every cell and
+% fails the experiment if any cell disagrees.

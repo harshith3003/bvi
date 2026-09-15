@@ -1,0 +1,122 @@
+{
+  "synthetic": true,
+  "params": {
+    "fs": 8000,
+    "frame_ms": 32.0,
+    "hop_ms": 20.0,
+    "n_bands": 17,
+    "f_lo": 300.0,
+    "f_hi": 3400.0,
+    "pre_emphasis": 0.97,
+    "frame_samples": 256,
+    "hop_samples": 160,
+    "bits_per_frame": 16,
+    "frames_per_second": 50.0,
+    "bit_rate_bps": 800.0,
+    "bytes_per_second": 100.0
+  },
+  "conditions": [
+    {
+      "kind": "adversarial",
+      "condition": "A4 full substitution",
+      "n": 30,
+      "mean": 0.5958333333333334,
+      "max": 0.6458333333333334,
+      "p95": 0.6278645833333334
+    },
+    {
+      "kind": "adversarial",
+      "condition": "A4 splice 10%",
+      "n": 30,
+      "mean": 0.5189236111111112,
+      "max": 0.59375,
+      "p95": 0.5677083333333334
+    },
+    {
+      "kind": "adversarial",
+      "condition": "A4 splice 25%",
+      "n": 30,
+      "mean": 0.5630208333333333,
+      "max": 0.6041666666666666,
+      "p95": 0.5994791666666666
+    },
+    {
+      "kind": "adversarial",
+      "condition": "A4 splice 5%",
+      "n": 30,
+      "mean": 0.49409722222222213,
+      "max": 0.609375,
+      "p95": 0.5513020833333333
+    },
+    {
+      "kind": "adversarial",
+      "condition": "A4 splice 50%",
+      "n": 30,
+      "mean": 0.5802083333333333,
+      "max": 0.6197916666666666,
+      "p95": 0.609375
+    },
+    {
+      "kind": "adversarial",
+      "condition": "replay offset 1.0 s",
+      "n": 30,
+      "mean": 0.5975694444444445,
+      "max": 0.6458333333333334,
+      "p95": 0.625
+    },
+    {
+      "kind": "adversarial",
+      "condition": "time reversed",
+      "n": 30,
+      "mean": 0.5901041666666667,
+      "max": 0.640625,
+      "p95": 0.6278645833333334
+    },
+    {
+      "kind": "benign",
+      "condition": "G.711 mu-law",
+      "n": 30,
+      "mean": 0.013269015659955257,
+      "max": 0.026006711409395974,
+      "p95": 0.021633808724832206
+    },
+    {
+      "kind": "benign",
+      "condition": "noise 15 dB SNR",
+      "n": 30,
+      "mean": 0.20759228187919462,
+      "max": 0.22504194630872484,
+      "p95": 0.22273489932885904
+    },
+    {
+      "kind": "benign",
+      "condition": "noise 20 dB SNR",
+      "n": 30,
+      "mean": 0.1257899888143177,
+      "max": 0.1417785234899329,
+      "p95": 0.13949244966442953
+    },
+    {
+      "kind": "benign",
+      "condition": "packet loss 3%",
+      "n": 30,
+      "mean": 0.034347035794183446,
+      "max": 0.052642617449664426,
+      "p95": 0.050199244966442944
+    },
+    {
+      "kind": "benign",
+      "condition": "transcode chain x2",
+      "n": 30,
+      "mean": 0.016491890380313196,
+      "max": 0.03418624161073826,
+      "p95": 0.027254614093959725
+    }
+  ],
+  "aggregate": {
+    "benign_mean": 0.07949804250559282,
+    "adversarial_mean": 0.5628224206349205,
+    "threshold": 0.22256711409395968,
+    "detection_rate": 1.0
+  }
+}

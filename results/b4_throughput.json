@@ -1,0 +1,86 @@
+{
+  "anchor_gas": 91535,
+  "chains": [
+    {
+      "chain": "Ethereum L1",
+      "block_gas_limit": 36000000,
+      "block_time_s": 12.0,
+      "note": "for reference only; cost rules it out",
+      "anchors_per_block": 393.29218331785654,
+      "anchors_per_second": 32.77434860982138,
+      "anchors_per_day": 2831703.7198885675,
+      "headroom_vs_au": 0.0858092036329869,
+      "clears_au": false
+    },
+    {
+      "chain": "OP Stack L2",
+      "block_gas_limit": 60000000,
+      "block_time_s": 2.0,
+      "note": "Optimism-style rollup, 2 s blocks",
+      "anchors_per_block": 655.4869721964276,
+      "anchors_per_second": 327.7434860982138,
+      "anchors_per_day": 28317037.19888567,
+      "headroom_vs_au": 0.8580920363298689,
+      "clears_au": false
+    },
+    {
+      "chain": "OP Stack L2 (high gas)",
+      "block_gas_limit": 100000000,
+      "block_time_s": 2.0,
+      "note": "raised block limit configuration",
+      "anchors_per_block": 1092.478286994046,
+      "anchors_per_second": 546.239143497023,
+      "anchors_per_day": 47195061.99814279,
+      "headroom_vs_au": 1.4301533938831148,
+      "clears_au": true
+    }
+  ],
+  "au_calls_per_day": 33000000,
+  "au_source_note": "PLACEHOLDER derived from a per-capita estimate. Replace with the ACMA Communications Report figure before submission.",
+  "batching": [
+    {
+      "batch_size": 1,
+      "gas_per_anchor": 91535.0,
+      "saving_fraction": 0.0,
+      "throughput_gain": 1.0
+    },
+    {
+      "batch_size": 2,
+      "gas_per_anchor": 81035.0,
+      "saving_fraction": 0.11471022013437482,
+      "throughput_gain": 1.1295736410193127
+    },
+    {
+      "batch_size": 5,
+      "gas_per_anchor": 74735.0,
+      "saving_fraction": 0.18353635221499975,
+      "throughput_gain": 1.2247942730982806
+    },
+    {
+      "batch_size": 10,
+      "gas_per_anchor": 72635.0,
+      "saving_fraction": 0.2064783962418747,
+      "throughput_gain": 1.260205135265368
+    },
+    {
+      "batch_size": 25,
+      "gas_per_anchor": 71375.0,
+      "saving_fraction": 0.22024362265799968,
+      "throughput_gain": 1.2824518388791595
+    },
+    {
+      "batch_size": 50,
+      "gas_per_anchor": 70955.0,
+      "saving_fraction": 0.22483203146337472,
+      "throughput_gain": 1.2900429849904869
+    },
+    {
+      "batch_size": 100,
+      "gas_per_anchor": 70745.0,
+      "saving_fraction": 0.22712623586606218,
+      "throughput_gain": 1.2938723584705634
+    }
+  ],
+  "batching_floor_gas": 70535,
+  "caveat": "Ceiling assumes a chain carrying only BVI anchors. Contention with other traffic reduces available throughput."
+}

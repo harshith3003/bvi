@@ -1,0 +1,286 @@
+{
+  "meta": {
+    "generatedAt": "2026-09-15T02:52:46.324Z",
+    "network": "hardhat",
+    "chainId": 31337,
+    "solcVersion": "0.8.24",
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "evmVersion": "paris",
+    "reps": 5,
+    "statistic": "median of receipt gasUsed"
+  },
+  "rows": [
+    {
+      "layer": "-",
+      "op": "deploy",
+      "gas": "1288837",
+      "min": "1288837",
+      "max": "1288837",
+      "note": "one-off, per deployment"
+    },
+    {
+      "layer": "L1",
+      "op": "register (1 channel)",
+      "gas": "120818",
+      "min": "120794",
+      "max": "120818",
+      "note": "per organisation, once"
+    },
+    {
+      "layer": "L1",
+      "op": "register (4 channels)",
+      "gas": "194870",
+      "min": "194834",
+      "max": "194870",
+      "note": "shows marginal channel cost"
+    },
+    {
+      "layer": "L1",
+      "op": "rotateKey",
+      "gas": "39456",
+      "min": "39456",
+      "max": "39468",
+      "note": "per rotation"
+    },
+    {
+      "layer": "L1",
+      "op": "addChannel",
+      "gas": "54056",
+      "min": "54056",
+      "max": "54056",
+      "note": "per channel"
+    },
+    {
+      "layer": "L1",
+      "op": "removeChannel",
+      "gas": "32109",
+      "min": "32109",
+      "max": "32109",
+      "note": "refunds a storage slot"
+    },
+    {
+      "layer": "L1",
+      "op": "setStatus (suspend)",
+      "gas": "32040",
+      "min": "32040",
+      "max": "32040",
+      "note": "submitted to L1 instance"
+    },
+    {
+      "layer": "L1",
+      "op": "setStatus (revoke)",
+      "gas": "32040",
+      "min": "32040",
+      "max": "32040",
+      "note": "submitted to L1 instance"
+    },
+    {
+      "layer": "L2",
+      "op": "attest (per hop)",
+      "gas": "116392",
+      "min": "116380",
+      "max": "116392",
+      "note": "paid by carrier, optional"
+    },
+    {
+      "layer": "L3",
+      "op": "anchorSession",
+      "gas": "91547",
+      "min": "91535",
+      "max": "91547",
+      "note": "THE recurring per-session cost"
+    },
+    {
+      "layer": "read",
+      "op": "resolve",
+      "gas": "26963",
+      "min": "26963",
+      "max": "26963",
+      "note": "view call - not charged to the recipient"
+    },
+    {
+      "layer": "read",
+      "op": "isAuthorisedChannel",
+      "gas": "24697",
+      "min": "24697",
+      "max": "24697",
+      "note": "view call - not charged to the recipient"
+    },
+    {
+      "layer": "read",
+      "op": "getAttestations (2 hops)",
+      "gas": "41801",
+      "min": "41801",
+      "max": "41801",
+      "note": "view call - not charged to the recipient"
+    },
+    {
+      "layer": "read",
+      "op": "getAnchor",
+      "gas": "28683",
+      "min": "28683",
+      "max": "28683",
+      "note": "view call - not charged to the recipient"
+    }
+  ],
+  "sweep": [
+    {
+      "seconds": 10,
+      "hops": 1,
+      "gas": "91547"
+    },
+    {
+      "seconds": 10,
+      "hops": 2,
+      "gas": "91535"
+    },
+    {
+      "seconds": 10,
+      "hops": 4,
+      "gas": "91535"
+    },
+    {
+      "seconds": 10,
+      "hops": 8,
+      "gas": "91535"
+    },
+    {
+      "seconds": 10,
+      "hops": 12,
+      "gas": "91547"
+    },
+    {
+      "seconds": 10,
+      "hops": 20,
+      "gas": "91547"
+    },
+    {
+      "seconds": 60,
+      "hops": 1,
+      "gas": "91535"
+    },
+    {
+      "seconds": 60,
+      "hops": 2,
+      "gas": "91547"
+    },
+    {
+      "seconds": 60,
+      "hops": 4,
+      "gas": "91535"
+    },
+    {
+      "seconds": 60,
+      "hops": 8,
+      "gas": "91547"
+    },
+    {
+      "seconds": 60,
+      "hops": 12,
+      "gas": "91547"
+    },
+    {
+      "seconds": 60,
+      "hops": 20,
+      "gas": "91547"
+    },
+    {
+      "seconds": 300,
+      "hops": 1,
+      "gas": "91547"
+    },
+    {
+      "seconds": 300,
+      "hops": 2,
+      "gas": "91547"
+    },
+    {
+      "seconds": 300,
+      "hops": 4,
+      "gas": "91523"
+    },
+    {
+      "seconds": 300,
+      "hops": 8,
+      "gas": "91535"
+    },
+    {
+      "seconds": 300,
+      "hops": 12,
+      "gas": "91547"
+    },
+    {
+      "seconds": 300,
+      "hops": 20,
+      "gas": "91547"
+    },
+    {
+      "seconds": 1800,
+      "hops": 1,
+      "gas": "91547"
+    },
+    {
+      "seconds": 1800,
+      "hops": 2,
+      "gas": "91535"
+    },
+    {
+      "seconds": 1800,
+      "hops": 4,
+      "gas": "91547"
+    },
+    {
+      "seconds": 1800,
+      "hops": 8,
+      "gas": "91547"
+    },
+    {
+      "seconds": 1800,
+      "hops": 12,
+      "gas": "91547"
+    },
+    {
+      "seconds": 1800,
+      "hops": 20,
+      "gas": "91535"
+    },
+    {
+      "seconds": 3000,
+      "hops": 1,
+      "gas": "91535"
+    },
+    {
+      "seconds": 3000,
+      "hops": 2,
+      "gas": "91535"
+    },
+    {
+      "seconds": 3000,
+      "hops": 4,
+      "gas": "91523"
+    },
+    {
+      "seconds": 3000,
+      "hops": 8,
+      "gas": "91547"
+    },
+    {
+      "seconds": 3000,
+      "hops": 12,
+      "gas": "91535"
+    },
+    {
+      "seconds": 3000,
+      "hops": 20,
+      "gas": "91535"
+    }
+  ],
+  "distinctSweepValues": [
+    "91547",
+    "91535",
+    "91523"
+  ]
+}

@@ -1,0 +1,273 @@
+{
+  "meta": {
+    "seed": 20260909,
+    "synthetic": true,
+    "warning": "Signals are SYNTHETIC, not recorded speech. Numbers below validate the pipeline only. Re-run with real speech before reporting Table 2.",
+    "params": {
+      "fs": 8000,
+      "frame_ms": 32.0,
+      "hop_ms": 20.0,
+      "n_bands": 17,
+      "f_lo": 300.0,
+      "f_hi": 3400.0,
+      "pre_emphasis": 0.97,
+      "frame_samples": 256,
+      "hop_samples": 160,
+      "bits_per_frame": 16,
+      "frames_per_second": 50.0,
+      "bit_rate_bps": 800.0,
+      "bytes_per_second": 100.0
+    },
+    "note": "Detection reported at FIXED false positive rates derived from the benign distribution. Quoting detection at a threshold defined as a benign percentile makes the FPR circular; these are not."
+  },
+  "benign": {
+    "n": 180,
+    "mean": 0.07927746370742601,
+    "p95": 0.21078831658291455,
+    "p99": 0.2198492462311558,
+    "max": 0.22581658291457288,
+    "per_condition": {
+      "G.711 mu-law": {
+        "n": 36,
+        "mean": 0.013858354271356784,
+        "max": 0.022141959798994974
+      },
+      "transcode chain x2": {
+        "n": 36,
+        "mean": 0.017243334729201566,
+        "max": 0.02543969849246231
+      },
+      "noise 20 dB SNR": {
+        "n": 36,
+        "mean": 0.12489530988274705,
+        "max": 0.14290201005025124
+      },
+      "noise 15 dB SNR": {
+        "n": 36,
+        "mean": 0.20571608040201003,
+        "max": 0.22581658291457288
+      },
+      "packet loss 3%": {
+        "n": 36,
+        "mean": 0.03467423925181464,
+        "max": 0.05040829145728643
+      }
+    }
+  },
+  "thresholds_by_fpr": {
+    "0.01": 0.2198492462311558,
+    "0.05": 0.21078831658291455,
+    "0.1": 0.2056218592964824
+  },
+  "splice_sweep": [
+    {
+      "splice_fraction": 0.02,
+      "mean_splice_frames": 8.0,
+      "mean_voiced_fraction": 1.0,
+      "smallest_window_fully_covered": "none",
+      "mean_local_ber": 0.4791666666666667,
+      "mean_windowed_ber": 0.349681712962963,
+      "detection": {
+        "fpr_0.01": 1.0,
+        "fpr_0.05": 1.0,
+        "fpr_0.1": 1.0
+      },
+      "n": 36
+    },
+    {
+      "splice_fraction": 0.03,
+      "mean_splice_frames": 12.0,
+      "mean_voiced_fraction": 1.0,
+      "smallest_window_fully_covered": ">=12",
+      "mean_local_ber": 0.49739583333333326,
+      "mean_windowed_ber": 0.4574652777777779,
+      "detection": {
+        "fpr_0.01": 1.0,
+        "fpr_0.05": 1.0,
+        "fpr_0.1": 1.0
+      },
+      "n": 36
+    },
+    {
+      "splice_fraction": 0.05,
+      "mean_splice_frames": 20.0,
+      "mean_voiced_fraction": 1.0,
+      "smallest_window_fully_covered": ">=12",
+      "mean_local_ber": 0.49765624999999997,
+      "mean_windowed_ber": 0.5167824074074074,
+      "detection": {
+        "fpr_0.01": 1.0,
+        "fpr_0.05": 1.0,
+        "fpr_0.1": 1.0
+      },
+      "n": 36
+    },
+    {
+      "splice_fraction": 0.07,
+      "mean_splice_frames": 28.0,
+      "mean_voiced_fraction": 1.0,
+      "smallest_window_fully_covered": ">=25",
+      "mean_local_ber": 0.4949156746031746,
+      "mean_windowed_ber": 0.5270370370370371,
+      "detection": {
+        "fpr_0.01": 1.0,
+        "fpr_0.05": 1.0,
+        "fpr_0.1": 1.0
+      },
+      "n": 36
+    },
+    {
+      "splice_fraction": 0.1,
+      "mean_splice_frames": 40.0,
+      "mean_voiced_fraction": 1.0,
+      "smallest_window_fully_covered": ">=25",
+      "mean_local_ber": 0.49704861111111104,
+      "mean_windowed_ber": 0.5400173611111111,
+      "detection": {
+        "fpr_0.01": 1.0,
+        "fpr_0.05": 1.0,
+        "fpr_0.1": 1.0
+      },
+      "n": 36
+    },
+    {
+      "splice_fraction": 0.15,
+      "mean_splice_frames": 60.0,
+      "mean_voiced_fraction": 1.0,
+      "smallest_window_fully_covered": ">=50",
+      "mean_local_ber": 0.497193287037037,
+      "mean_windowed_ber": 0.559230324074074,
+      "detection": {
+        "fpr_0.01": 1.0,
+        "fpr_0.05": 1.0,
+        "fpr_0.1": 1.0
+      },
+      "n": 36
+    },
+    {
+      "splice_fraction": 0.2,
+      "mean_splice_frames": 80.0,
+      "mean_voiced_fraction": 1.0,
+      "smallest_window_fully_covered": ">=50",
+      "mean_local_ber": 0.5003038194444445,
+      "mean_windowed_ber": 0.5596064814814814,
+      "detection": {
+        "fpr_0.01": 1.0,
+        "fpr_0.05": 1.0,
+        "fpr_0.1": 1.0
+      },
+      "n": 36
+    },
+    {
+      "splice_fraction": 0.25,
+      "mean_splice_frames": 100.0,
+      "mean_voiced_fraction": 1.0,
+      "smallest_window_fully_covered": ">=50",
+      "mean_local_ber": 0.5017534722222221,
+      "mean_windowed_ber": 0.5732060185185186,
+      "detection": {
+        "fpr_0.01": 1.0,
+        "fpr_0.05": 1.0,
+        "fpr_0.1": 1.0
+      },
+      "n": 36
+    },
+    {
+      "splice_fraction": 0.35,
+      "mean_splice_frames": 140.0,
+      "mean_voiced_fraction": 1.0,
+      "smallest_window_fully_covered": ">=50",
+      "mean_local_ber": 0.4988219246031746,
+      "mean_windowed_ber": 0.5807291666666667,
+      "detection": {
+        "fpr_0.01": 1.0,
+        "fpr_0.05": 1.0,
+        "fpr_0.1": 1.0
+      },
+      "n": 36
+    },
+    {
+      "splice_fraction": 0.5,
+      "mean_splice_frames": 200.0,
+      "mean_voiced_fraction": 0.9998611111111112,
+      "smallest_window_fully_covered": ">=50",
+      "mean_local_ber": 0.49927728922389725,
+      "mean_windowed_ber": 0.5892650462962963,
+      "detection": {
+        "fpr_0.01": 1.0,
+        "fpr_0.05": 1.0,
+        "fpr_0.1": 1.0
+      },
+      "n": 36
+    },
+    {
+      "splice_fraction": 0.75,
+      "mean_splice_frames": 300.0,
+      "mean_voiced_fraction": 1.0,
+      "smallest_window_fully_covered": ">=50",
+      "mean_local_ber": 0.5016608796296295,
+      "mean_windowed_ber": 0.6051793981481481,
+      "detection": {
+        "fpr_0.01": 1.0,
+        "fpr_0.05": 1.0,
+        "fpr_0.1": 1.0
+      },
+      "n": 36
+    },
+    {
+      "splice_fraction": 1.0,
+      "mean_splice_frames": 400.0,
+      "mean_voiced_fraction": 0.9949999999999998,
+      "smallest_window_fully_covered": ">=50",
+      "mean_local_ber": 0.49903597850362924,
+      "mean_windowed_ber": 0.5963541666666666,
+      "detection": {
+        "fpr_0.01": 1.0,
+        "fpr_0.05": 1.0,
+        "fpr_0.1": 1.0
+      },
+      "n": 36
+    }
+  ],
+  "window_ablation": [
+    {
+      "scales": [
+        12,
+        25,
+        50
+      ],
+      "benign_p99": 0.3140104166666667,
+      "detection": {
+        "0.05": 1.0,
+        "0.1": 1.0,
+        "0.25": 1.0
+      }
+    },
+    {
+      "scales": [
+        6,
+        12,
+        25
+      ],
+      "benign_p99": 0.3541666666666667,
+      "detection": {
+        "0.05": 1.0,
+        "0.1": 1.0,
+        "0.25": 1.0
+      }
+    },
+    {
+      "scales": [
+        4,
+        8,
+        16
+      ],
+      "benign_p99": 0.390625,
+      "detection": {
+        "0.05": 1.0,
+        "0.1": 1.0,
+        "0.25": 1.0
+      }
+    }
+  ]
+}

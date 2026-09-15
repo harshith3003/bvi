@@ -1,0 +1,4779 @@
+{
+  "manifest": {
+    "seed": 20260909,
+    "n_sessions_per_cell": 20000,
+    "k": 2,
+    "tamper_rate": 0.3,
+    "legit_rewrite_rate": 0.15,
+    "q_sbc_registered": 0.7,
+    "H_values": [
+      3,
+      5,
+      8,
+      12
+    ],
+    "p_grid": [
+      0.0,
+      0.05,
+      0.1,
+      0.15,
+      0.2,
+      0.25,
+      0.3,
+      0.35,
+      0.4,
+      0.45,
+      0.5,
+      0.55,
+      0.6,
+      0.65,
+      0.7,
+      0.75,
+      0.8,
+      0.85,
+      0.9,
+      0.95,
+      1.0
+    ],
+    "closed_forms": {
+      "bvi_average": "mean over r of (1-(1-p)^r)(1-(1-p)^(H-r))",
+      "bvi_worst": "p^2, independent of H",
+      "bbca": "p^H",
+      "path_evidence": "1-(1-p)^H",
+      "no_verdict": "binomial tail below k"
+    },
+    "note": "Every table in the paper derives from this single run. Do not regenerate a subset."
+  },
+  "rows": [
+    {
+      "H": 3,
+      "p": 0.0,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.0,
+        "unknown": 1.0,
+        "failed": 0.0
+      },
+      "bbca_status": {
+        "verified": 0.0,
+        "unknown": 1.0,
+        "failed": 0.0
+      },
+      "path_evidence_rate": 0.0,
+      "path_evidence_closed_form": 0.0,
+      "bvi_detection": 0.0,
+      "bvi_detection_closed_form": 0.0,
+      "bbca_detection": 0.0,
+      "bbca_detection_closed_form": 0.0,
+      "false_demotion_rate": 0.0,
+      "no_verdict_rate": 1.0,
+      "no_verdict_closed_form": 1.0,
+      "n_tamper": 6057,
+      "n_benign": 13943
+    },
+    {
+      "H": 3,
+      "p": 0.05,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.0054,
+        "unknown": 0.9928,
+        "failed": 0.0018
+      },
+      "bbca_status": {
+        "verified": 0.0001,
+        "unknown": 0.9998,
+        "failed": 0.0001
+      },
+      "path_evidence_rate": 0.13665,
+      "path_evidence_closed_form": 0.1426250000000001,
+      "bvi_detection": 0.0053972002023950074,
+      "bvi_detection_closed_form": 0.004875000000000006,
+      "bbca_detection": 0.00033732501264968796,
+      "bbca_detection_closed_form": 0.00012500000000000003,
+      "false_demotion_rate": 0.0002842726174401251,
+      "no_verdict_rate": 0.9928,
+      "no_verdict_closed_form": 0.9927499999999999,
+      "n_tamper": 5929,
+      "n_benign": 14071
+    },
+    {
+      "H": 3,
+      "p": 0.1,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.02245,
+        "unknown": 0.9709,
+        "failed": 0.00665
+      },
+      "bbca_status": {
+        "verified": 0.0007,
+        "unknown": 0.99915,
+        "failed": 0.00015
+      },
+      "path_evidence_rate": 0.28095,
+      "path_evidence_closed_form": 0.2709999999999999,
+      "bvi_detection": 0.019205298013245033,
+      "bvi_detection_closed_form": 0.01899999999999999,
+      "bbca_detection": 0.0004966887417218543,
+      "bbca_detection_closed_form": 0.0010000000000000002,
+      "false_demotion_rate": 0.0012177650429799427,
+      "no_verdict_rate": 0.9709,
+      "no_verdict_closed_form": 0.9720000000000002,
+      "n_tamper": 6040,
+      "n_benign": 13960
+    },
+    {
+      "H": 3,
+      "p": 0.15,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.0473,
+        "unknown": 0.93635,
+        "failed": 0.01635
+      },
+      "bbca_status": {
+        "verified": 0.00255,
+        "unknown": 0.9961,
+        "failed": 0.00135
+      },
+      "path_evidence_rate": 0.3836,
+      "path_evidence_closed_form": 0.3858750000000001,
+      "bvi_detection": 0.04487072560467056,
+      "bvi_detection_closed_form": 0.041625000000000016,
+      "bbca_detection": 0.003669724770642202,
+      "bbca_detection_closed_form": 0.0033749999999999995,
+      "false_demotion_rate": 0.004141378079257408,
+      "no_verdict_rate": 0.93635,
+      "no_verdict_closed_form": 0.9392499999999999,
+      "n_tamper": 5995,
+      "n_benign": 14005
+    },
+    {
+      "H": 3,
+      "p": 0.2,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.07595,
+        "unknown": 0.8998,
+        "failed": 0.02425
+      },
+      "bbca_status": {
+        "verified": 0.0049,
+        "unknown": 0.9928,
+        "failed": 0.0023
+      },
+      "path_evidence_rate": 0.4857,
+      "path_evidence_closed_form": 0.4879999999999999,
+      "bvi_detection": 0.06939799331103678,
+      "bvi_detection_closed_form": 0.07199999999999998,
+      "bbca_detection": 0.006521739130434782,
+      "bbca_detection_closed_form": 0.008000000000000002,
+      "false_demotion_rate": 0.004992867332382311,
+      "no_verdict_rate": 0.8998,
+      "no_verdict_closed_form": 0.8960000000000002,
+      "n_tamper": 5980,
+      "n_benign": 14020
+    },
+    {
+      "H": 3,
+      "p": 0.25,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.11415,
+        "unknown": 0.84955,
+        "failed": 0.0363
+      },
+      "bbca_status": {
+        "verified": 0.0093,
+        "unknown": 0.98585,
+        "failed": 0.00485
+      },
+      "path_evidence_rate": 0.5743,
+      "path_evidence_closed_form": 0.578125,
+      "bvi_detection": 0.10489157841654059,
+      "bvi_detection_closed_form": 0.109375,
+      "bbca_detection": 0.014624306606152295,
+      "bbca_detection_closed_form": 0.015625,
+      "false_demotion_rate": 0.0072592698028610065,
+      "no_verdict_rate": 0.84955,
+      "no_verdict_closed_form": 0.84375,
+      "n_tamper": 5949,
+      "n_benign": 14051
+    },
+    {
+      "H": 3,
+      "p": 0.3,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.1632,
+        "unknown": 0.78365,
+        "failed": 0.05315
+      },
+      "bbca_status": {
+        "verified": 0.0177,
+        "unknown": 0.97275,
+        "failed": 0.00955
+      },
+      "path_evidence_rate": 0.65215,
+      "path_evidence_closed_form": 0.657,
+      "bvi_detection": 0.1516366065464262,
+      "bvi_detection_closed_form": 0.15300000000000002,
+      "bbca_detection": 0.02655310621242485,
+      "bbca_detection_closed_form": 0.026999999999999996,
+      "false_demotion_rate": 0.011061946902654867,
+      "no_verdict_rate": 0.78365,
+      "no_verdict_closed_form": 0.7839999999999998,
+      "n_tamper": 5988,
+      "n_benign": 14012
+    },
+    {
+      "H": 3,
+      "p": 0.35,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.21075,
+        "unknown": 0.7197,
+        "failed": 0.06955
+      },
+      "bbca_status": {
+        "verified": 0.02885,
+        "unknown": 0.9566,
+        "failed": 0.01455
+      },
+      "path_evidence_rate": 0.72085,
+      "path_evidence_closed_form": 0.725375,
+      "bvi_detection": 0.20458015267175572,
+      "bvi_detection_closed_form": 0.20212499999999994,
+      "bbca_detection": 0.042748091603053436,
+      "bbca_detection_closed_form": 0.04287499999999999,
+      "false_demotion_rate": 0.013115916341722794,
+      "no_verdict_rate": 0.7197,
+      "no_verdict_closed_form": 0.71825,
+      "n_tamper": 5895,
+      "n_benign": 14105
+    },
+    {
+      "H": 3,
+      "p": 0.4,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.2675,
+        "unknown": 0.65265,
+        "failed": 0.07985
+      },
+      "bbca_status": {
+        "verified": 0.042,
+        "unknown": 0.9385,
+        "failed": 0.0195
+      },
+      "path_evidence_rate": 0.78555,
+      "path_evidence_closed_form": 0.784,
+      "bvi_detection": 0.23577235772357724,
+      "bvi_detection_closed_form": 0.256,
+      "bbca_detection": 0.05758807588075881,
+      "bbca_detection_closed_form": 0.06400000000000002,
+      "false_demotion_rate": 0.014543132803632236,
+      "no_verdict_rate": 0.65265,
+      "no_verdict_closed_form": 0.648,
+      "n_tamper": 5904,
+      "n_benign": 14096
+    },
+    {
+      "H": 3,
+      "p": 0.45,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.3138,
+        "unknown": 0.57995,
+        "failed": 0.10625
+      },
+      "bbca_status": {
+        "verified": 0.05755,
+        "unknown": 0.91345,
+        "failed": 0.029
+      },
+      "path_evidence_rate": 0.832,
+      "path_evidence_closed_form": 0.833625,
+      "bvi_detection": 0.304404996712689,
+      "bvi_detection_closed_form": 0.31387499999999996,
+      "bbca_detection": 0.08349769888231427,
+      "bbca_detection_closed_form": 0.09112500000000001,
+      "false_demotion_rate": 0.019617706237424547,
+      "no_verdict_rate": 0.57995,
+      "no_verdict_closed_form": 0.5747500000000001,
+      "n_tamper": 6084,
+      "n_benign": 13916
+    },
+    {
+      "H": 3,
+      "p": 0.5,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.37545,
+        "unknown": 0.49875,
+        "failed": 0.1258
+      },
+      "bbca_status": {
+        "verified": 0.0819,
+        "unknown": 0.87605,
+        "failed": 0.04205
+      },
+      "path_evidence_rate": 0.8747,
+      "path_evidence_closed_form": 0.875,
+      "bvi_detection": 0.36940110719677904,
+      "bvi_detection_closed_form": 0.375,
+      "bbca_detection": 0.12430800201308505,
+      "bbca_detection_closed_form": 0.125,
+      "false_demotion_rate": 0.02236626540351877,
+      "no_verdict_rate": 0.49875,
+      "no_verdict_closed_form": 0.5,
+      "n_tamper": 5961,
+      "n_benign": 14039
+    },
+    {
+      "H": 3,
+      "p": 0.55,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.42685,
+        "unknown": 0.4201,
+        "failed": 0.15305
+      },
+      "bbca_status": {
+        "verified": 0.1087,
+        "unknown": 0.836,
+        "failed": 0.0553
+      },
+      "path_evidence_rate": 0.9098,
+      "path_evidence_closed_form": 0.908875,
+      "bvi_detection": 0.4397888485648301,
+      "bvi_detection_closed_form": 0.4386250000000001,
+      "bbca_detection": 0.15737380402507423,
+      "bbca_detection_closed_form": 0.16637500000000005,
+      "false_demotion_rate": 0.02833979050078921,
+      "no_verdict_rate": 0.4201,
+      "no_verdict_closed_form": 0.4252499999999999,
+      "n_tamper": 6062,
+      "n_benign": 13938
+    },
+    {
+      "H": 3,
+      "p": 0.6,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.47115,
+        "unknown": 0.3544,
+        "failed": 0.17445
+      },
+      "bbca_status": {
+        "verified": 0.1398,
+        "unknown": 0.7826,
+        "failed": 0.0776
+      },
+      "path_evidence_rate": 0.9367,
+      "path_evidence_closed_form": 0.9359999999999999,
+      "bvi_detection": 0.5041694462975317,
+      "bvi_detection_closed_form": 0.504,
+      "bbca_detection": 0.22414943295530354,
+      "bbca_detection_closed_form": 0.21599999999999997,
+      "false_demotion_rate": 0.0332762067980577,
+      "no_verdict_rate": 0.3544,
+      "no_verdict_closed_form": 0.35200000000000004,
+      "n_tamper": 5996,
+      "n_benign": 14004
+    },
+    {
+      "H": 3,
+      "p": 0.65,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.5219,
+        "unknown": 0.28285,
+        "failed": 0.19525
+      },
+      "bbca_status": {
+        "verified": 0.18215,
+        "unknown": 0.7249,
+        "failed": 0.09295
+      },
+      "path_evidence_rate": 0.9563,
+      "path_evidence_closed_form": 0.957125,
+      "bvi_detection": 0.5686046511627907,
+      "bvi_detection_closed_form": 0.5703750000000001,
+      "bbca_detection": 0.2714285714285714,
+      "bbca_detection_closed_form": 0.274625,
+      "false_demotion_rate": 0.03447782546494993,
+      "no_verdict_rate": 0.28285,
+      "no_verdict_closed_form": 0.28175,
+      "n_tamper": 6020,
+      "n_benign": 13980
+    },
+    {
+      "H": 3,
+      "p": 0.7,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.56025,
+        "unknown": 0.21505,
+        "failed": 0.2247
+      },
+      "bbca_status": {
+        "verified": 0.21815,
+        "unknown": 0.66185,
+        "failed": 0.12
+      },
+      "path_evidence_rate": 0.9719,
+      "path_evidence_closed_form": 0.973,
+      "bvi_detection": 0.6441605839416058,
+      "bvi_detection_closed_form": 0.6369999999999999,
+      "bbca_detection": 0.3442269409422694,
+      "bbca_detection_closed_form": 0.3429999999999999,
+      "false_demotion_rate": 0.04373031777841397,
+      "no_verdict_rate": 0.21505,
+      "no_verdict_closed_form": 0.21600000000000005,
+      "n_tamper": 6028,
+      "n_benign": 13972
+    },
+    {
+      "H": 3,
+      "p": 0.75,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.5968,
+        "unknown": 0.1557,
+        "failed": 0.2475
+      },
+      "bbca_status": {
+        "verified": 0.27065,
+        "unknown": 0.5799,
+        "failed": 0.14945
+      },
+      "path_evidence_rate": 0.98485,
+      "path_evidence_closed_form": 0.984375,
+      "bvi_detection": 0.7127483443708609,
+      "bvi_detection_closed_form": 0.703125,
+      "bbca_detection": 0.42764900662251654,
+      "bbca_detection_closed_form": 0.421875,
+      "false_demotion_rate": 0.04620343839541547,
+      "no_verdict_rate": 0.1557,
+      "no_verdict_closed_form": 0.15625,
+      "n_tamper": 6040,
+      "n_benign": 13960
+    },
+    {
+      "H": 3,
+      "p": 0.8,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.63125,
+        "unknown": 0.10335,
+        "failed": 0.2654
+      },
+      "bbca_status": {
+        "verified": 0.3367,
+        "unknown": 0.4856,
+        "failed": 0.1777
+      },
+      "path_evidence_rate": 0.99385,
+      "path_evidence_closed_form": 0.992,
+      "bvi_detection": 0.7635313531353135,
+      "bvi_detection_closed_form": 0.768,
+      "bbca_detection": 0.5123762376237624,
+      "bbca_detection_closed_form": 0.5120000000000001,
+      "false_demotion_rate": 0.04885222381635581,
+      "no_verdict_rate": 0.10335,
+      "no_verdict_closed_form": 0.10399999999999995,
+      "n_tamper": 6060,
+      "n_benign": 13940
+    },
+    {
+      "H": 3,
+      "p": 0.85,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.6548,
+        "unknown": 0.06185,
+        "failed": 0.28335
+      },
+      "bbca_status": {
+        "verified": 0.3989,
+        "unknown": 0.3919,
+        "failed": 0.2092
+      },
+      "path_evidence_rate": 0.9974,
+      "path_evidence_closed_form": 0.996625,
+      "bvi_detection": 0.823312677943393,
+      "bvi_detection_closed_form": 0.830875,
+      "bbca_detection": 0.6077708926477977,
+      "bbca_detection_closed_form": 0.6141249999999999,
+      "false_demotion_rate": 0.053531969491767056,
+      "no_verdict_rate": 0.06185,
+      "no_verdict_closed_form": 0.06075000000000001,
+      "n_tamper": 5971,
+      "n_benign": 14029
+    },
+    {
+      "H": 3,
+      "p": 0.9,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.66715,
+        "unknown": 0.0305,
+        "failed": 0.30235
+      },
+      "bbca_status": {
+        "verified": 0.48125,
+        "unknown": 0.2689,
+        "failed": 0.24985
+      },
+      "path_evidence_rate": 0.9987,
+      "path_evidence_closed_form": 0.999,
+      "bvi_detection": 0.8851020752488612,
+      "bvi_detection_closed_form": 0.891,
+      "bbca_detection": 0.7280242955964231,
+      "bbca_detection_closed_form": 0.7290000000000001,
+      "false_demotion_rate": 0.05691750159880622,
+      "no_verdict_rate": 0.0305,
+      "no_verdict_closed_form": 0.02799999999999999,
+      "n_tamper": 5927,
+      "n_benign": 14073
+    },
+    {
+      "H": 3,
+      "p": 0.95,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.66255,
+        "unknown": 0.00685,
+        "failed": 0.3306
+      },
+      "bbca_status": {
+        "verified": 0.55645,
+        "unknown": 0.14605,
+        "failed": 0.2975
+      },
+      "path_evidence_rate": 0.9999,
+      "path_evidence_closed_form": 0.999875,
+      "bvi_detection": 0.9486127072730258,
+      "bvi_detection_closed_form": 0.9476249999999999,
+      "bbca_detection": 0.8525693646363487,
+      "bbca_detection_closed_form": 0.8573749999999999,
+      "false_demotion_rate": 0.05996117621683802,
+      "no_verdict_rate": 0.00685,
+      "no_verdict_closed_form": 0.007250000000000012,
+      "n_tamper": 6091,
+      "n_benign": 13909
+    },
+    {
+      "H": 3,
+      "p": 1.0,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.65445,
+        "unknown": 0.0,
+        "failed": 0.34555
+      },
+      "bbca_status": {
+        "verified": 0.65445,
+        "unknown": 0.0,
+        "failed": 0.34555
+      },
+      "path_evidence_rate": 1.0,
+      "path_evidence_closed_form": 1.0,
+      "bvi_detection": 1.0,
+      "bvi_detection_closed_form": 1.0,
+      "bbca_detection": 1.0,
+      "bbca_detection_closed_form": 1.0,
+      "false_demotion_rate": 0.06306370794559771,
+      "no_verdict_rate": 0.0,
+      "no_verdict_closed_form": 0.0,
+      "n_tamper": 6030,
+      "n_benign": 13970
+    },
+    {
+      "H": 5,
+      "p": 0.0,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.0,
+        "unknown": 1.0,
+        "failed": 0.0
+      },
+      "bbca_status": {
+        "verified": 0.0,
+        "unknown": 1.0,
+        "failed": 0.0
+      },
+      "path_evidence_rate": 0.0,
+      "path_evidence_closed_form": 0.0,
+      "bvi_detection": 0.0,
+      "bvi_detection_closed_form": 0.0,
+      "bbca_detection": 0.0,
+      "bbca_detection_closed_form": 0.0,
+      "false_demotion_rate": 0.0,
+      "no_verdict_rate": 1.0,
+      "no_verdict_closed_form": 1.0,
+      "n_tamper": 5962,
+      "n_benign": 14038
+    },
+    {
+      "H": 5,
+      "p": 0.05,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.01805,
+        "unknown": 0.97705,
+        "failed": 0.0049
+      },
+      "bbca_status": {
+        "verified": 0.0,
+        "unknown": 1.0,
+        "failed": 0.0
+      },
+      "path_evidence_rate": 0.22105,
+      "path_evidence_closed_form": 0.22621906250000023,
+      "bvi_detection": 0.014451827242524917,
+      "bvi_detection_closed_form": 0.011590312500000016,
+      "bbca_detection": 0.0,
+      "bbca_detection_closed_form": 3.125000000000001e-07,
+      "false_demotion_rate": 0.0007868383404864091,
+      "no_verdict_rate": 0.97705,
+      "no_verdict_closed_form": 0.9774074999999998,
+      "n_tamper": 6020,
+      "n_benign": 13980
+    },
+    {
+      "H": 5,
+      "p": 0.1,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.07,
+        "unknown": 0.91565,
+        "failed": 0.01435
+      },
+      "bbca_status": {
+        "verified": 0.0,
+        "unknown": 1.0,
+        "failed": 0.0
+      },
+      "path_evidence_rate": 0.4096,
+      "path_evidence_closed_form": 0.40950999999999993,
+      "bvi_detection": 0.04354456116570654,
+      "bvi_detection_closed_form": 0.04293999999999998,
+      "bbca_detection": 0.0,
+      "bbca_detection_closed_form": 1.0000000000000003e-05,
+      "false_demotion_rate": 0.0021279614129663784,
+      "no_verdict_rate": 0.91565,
+      "no_verdict_closed_form": 0.9185400000000001,
+      "n_tamper": 5902,
+      "n_benign": 14098
+    },
+    {
+      "H": 5,
+      "p": 0.15,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.13015,
+        "unknown": 0.8409,
+        "failed": 0.02895
+      },
+      "bbca_status": {
+        "verified": 5e-05,
+        "unknown": 0.9999,
+        "failed": 5e-05
+      },
+      "path_evidence_rate": 0.55075,
+      "path_evidence_closed_form": 0.5562946875000001,
+      "bvi_detection": 0.08448800270361609,
+      "bvi_detection_closed_form": 0.08938968750000004,
+      "bbca_detection": 0.00016897600540723216,
+      "bbca_detection_closed_form": 7.593749999999998e-05,
+      "false_demotion_rate": 0.005609998579747195,
+      "no_verdict_rate": 0.8409,
+      "no_verdict_closed_form": 0.8352099999999998,
+      "n_tamper": 5918,
+      "n_benign": 14082
+    },
+    {
+      "H": 5,
+      "p": 0.2,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.2155,
+        "unknown": 0.7361,
+        "failed": 0.0484
+      },
+      "bbca_status": {
+        "verified": 5e-05,
+        "unknown": 0.9999,
+        "failed": 5e-05
+      },
+      "path_evidence_rate": 0.6733,
+      "path_evidence_closed_form": 0.6723199999999999,
+      "bvi_detection": 0.14409959072305595,
+      "bvi_detection_closed_form": 0.14687999999999996,
+      "bbca_detection": 0.00017053206002728513,
+      "bbca_detection_closed_form": 0.0003200000000000001,
+      "false_demotion_rate": 0.00870118845500849,
+      "no_verdict_rate": 0.7361,
+      "no_verdict_closed_form": 0.7372800000000002,
+      "n_tamper": 5864,
+      "n_benign": 14136
+    },
+    {
+      "H": 5,
+      "p": 0.25,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.28955,
+        "unknown": 0.63845,
+        "failed": 0.072
+      },
+      "bbca_status": {
+        "verified": 0.00055,
+        "unknown": 0.9992,
+        "failed": 0.00025
+      },
+      "path_evidence_rate": 0.75705,
+      "path_evidence_closed_form": 0.7626953125,
+      "bvi_detection": 0.20567844172994387,
+      "bvi_detection_closed_form": 0.2119140625,
+      "bbca_detection": 0.0006602839220864972,
+      "bbca_detection_closed_form": 0.0009765625,
+      "false_demotion_rate": 0.013914789843637929,
+      "no_verdict_rate": 0.63845,
+      "no_verdict_closed_form": 0.6328125,
+      "n_tamper": 6058,
+      "n_benign": 13942
+    },
+    {
+      "H": 5,
+      "p": 0.3,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.381,
+        "unknown": 0.52145,
+        "failed": 0.09755
+      },
+      "bbca_status": {
+        "verified": 0.0016,
+        "unknown": 0.99775,
+        "failed": 0.00065
+      },
+      "path_evidence_rate": 0.82955,
+      "path_evidence_closed_form": 0.8319300000000001,
+      "bvi_detection": 0.28445349626612354,
+      "bvi_detection_closed_form": 0.28152000000000005,
+      "bbca_detection": 0.002036659877800407,
+      "bbca_detection_closed_form": 0.0024299999999999994,
+      "false_demotion_rate": 0.01949248653246385,
+      "no_verdict_rate": 0.52145,
+      "no_verdict_closed_form": 0.5282199999999999,
+      "n_tamper": 5892,
+      "n_benign": 14108
+    },
+    {
+      "H": 5,
+      "p": 0.35,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.4521,
+        "unknown": 0.4205,
+        "failed": 0.1274
+      },
+      "bbca_status": {
+        "verified": 0.0042,
+        "unknown": 0.99365,
+        "failed": 0.00215
+      },
+      "path_evidence_rate": 0.884,
+      "path_evidence_closed_form": 0.8839709375,
+      "bvi_detection": 0.364478388040299,
+      "bvi_detection_closed_form": 0.35321343749999995,
+      "bbca_detection": 0.006174845628859279,
+      "bbca_detection_closed_form": 0.005252187499999998,
+      "false_demotion_rate": 0.022028022533583706,
+      "no_verdict_rate": 0.4205,
+      "no_verdict_closed_form": 0.42841500000000005,
+      "n_tamper": 6154,
+      "n_benign": 13846
+    },
+    {
+      "H": 5,
+      "p": 0.4,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.5116,
+        "unknown": 0.33715,
+        "failed": 0.15125
+      },
+      "bbca_status": {
+        "verified": 0.00685,
+        "unknown": 0.98935,
+        "failed": 0.0038
+      },
+      "path_evidence_rate": 0.92265,
+      "path_evidence_closed_form": 0.9222400000000001,
+      "bvi_detection": 0.4318675806721284,
+      "bvi_detection_closed_form": 0.42496,
+      "bbca_detection": 0.011034943989299448,
+      "bbca_detection_closed_form": 0.010240000000000003,
+      "false_demotion_rate": 0.031528639703259864,
+      "no_verdict_rate": 0.33715,
+      "no_verdict_closed_form": 0.33696,
+      "n_tamper": 5981,
+      "n_benign": 14019
+    },
+    {
+      "H": 5,
+      "p": 0.45,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.57325,
+        "unknown": 0.2591,
+        "failed": 0.16765
+      },
+      "bbca_status": {
+        "verified": 0.01195,
+        "unknown": 0.98225,
+        "failed": 0.0058
+      },
+      "path_evidence_rate": 0.95015,
+      "path_evidence_closed_form": 0.9496715625,
+      "bvi_detection": 0.4906107257655219,
+      "bvi_detection_closed_form": 0.4951378125,
+      "bbca_detection": 0.017763491794958553,
+      "bbca_detection_closed_form": 0.018452812500000002,
+      "false_demotion_rate": 0.032152743274895305,
+      "no_verdict_rate": 0.2591,
+      "no_verdict_closed_form": 0.2562175000000001,
+      "n_tamper": 5911,
+      "n_benign": 14089
+    },
+    {
+      "H": 5,
+      "p": 0.5,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.62015,
+        "unknown": 0.1855,
+        "failed": 0.19435
+      },
+      "bbca_status": {
+        "verified": 0.02065,
+        "unknown": 0.96865,
+        "failed": 0.0107
+      },
+      "path_evidence_rate": 0.9688,
+      "path_evidence_closed_form": 0.96875,
+      "bvi_detection": 0.5661554019888758,
+      "bvi_detection_closed_form": 0.5625,
+      "bbca_detection": 0.03118152705208158,
+      "bbca_detection_closed_form": 0.03125,
+      "false_demotion_rate": 0.03753465557688206,
+      "no_verdict_rate": 0.1855,
+      "no_verdict_closed_form": 0.1875,
+      "n_tamper": 5933,
+      "n_benign": 14067
+    },
+    {
+      "H": 5,
+      "p": 0.55,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.6537,
+        "unknown": 0.1331,
+        "failed": 0.2132
+      },
+      "bbca_status": {
+        "verified": 0.03425,
+        "unknown": 0.95,
+        "failed": 0.01575
+      },
+      "path_evidence_rate": 0.9828,
+      "path_evidence_closed_form": 0.9815471875,
+      "bvi_detection": 0.6164772727272727,
+      "bvi_detection_closed_form": 0.6261371875,
+      "bbca_detection": 0.046290106951871655,
+      "bbca_detection_closed_form": 0.05032843750000002,
+      "false_demotion_rate": 0.041024543378995436,
+      "no_verdict_rate": 0.1331,
+      "no_verdict_closed_form": 0.13121999999999995,
+      "n_tamper": 5984,
+      "n_benign": 14016
+    },
+    {
+      "H": 5,
+      "p": 0.6,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.6788,
+        "unknown": 0.0847,
+        "failed": 0.2365
+      },
+      "bbca_status": {
+        "verified": 0.0471,
+        "unknown": 0.92635,
+        "failed": 0.02655
+      },
+      "path_evidence_rate": 0.99005,
+      "path_evidence_closed_form": 0.98976,
+      "bvi_detection": 0.6820160750167448,
+      "bvi_detection_closed_form": 0.68544,
+      "bbca_detection": 0.07769591426657736,
+      "bbca_detection_closed_form": 0.07775999999999998,
+      "false_demotion_rate": 0.046834901625320786,
+      "no_verdict_rate": 0.0847,
+      "no_verdict_closed_form": 0.08704,
+      "n_tamper": 5972,
+      "n_benign": 14028
+    },
+    {
+      "H": 5,
+      "p": 0.65,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.6998,
+        "unknown": 0.05215,
+        "failed": 0.24805
+      },
+      "bbca_status": {
+        "verified": 0.07665,
+        "unknown": 0.88385,
+        "failed": 0.0395
+      },
+      "path_evidence_rate": 0.9957,
+      "path_evidence_closed_form": 0.9947478125,
+      "bvi_detection": 0.7309195988441272,
+      "bvi_detection_closed_form": 0.7400615625,
+      "bbca_detection": 0.12017678055413905,
+      "bbca_detection_closed_form": 0.11602906250000002,
+      "false_demotion_rate": 0.04682297938655522,
+      "no_verdict_rate": 0.05215,
+      "no_verdict_closed_form": 0.05402249999999999,
+      "n_tamper": 5883,
+      "n_benign": 14117
+    },
+    {
+      "H": 5,
+      "p": 0.7,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.6909,
+        "unknown": 0.0295,
+        "failed": 0.2796
+      },
+      "bbca_status": {
+        "verified": 0.10995,
+        "unknown": 0.82815,
+        "failed": 0.0619
+      },
+      "path_evidence_rate": 0.9974,
+      "path_evidence_closed_form": 0.99757,
+      "bvi_detection": 0.7981666393845146,
+      "bvi_detection_closed_form": 0.7898799999999999,
+      "bbca_detection": 0.1764609592404649,
+      "bbca_detection_closed_form": 0.16806999999999994,
+      "false_demotion_rate": 0.051544165286876394,
+      "no_verdict_rate": 0.0295,
+      "no_verdict_closed_form": 0.03078000000000002,
+      "n_tamper": 6109,
+      "n_benign": 13891
+    },
+    {
+      "H": 5,
+      "p": 0.75,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.6957,
+        "unknown": 0.01505,
+        "failed": 0.28925
+      },
+      "bbca_status": {
+        "verified": 0.156,
+        "unknown": 0.76055,
+        "failed": 0.08345
+      },
+      "path_evidence_rate": 0.99905,
+      "path_evidence_closed_form": 0.9990234375,
+      "bvi_detection": 0.8265982113282544,
+      "bvi_detection_closed_form": 0.8349609375,
+      "bbca_detection": 0.23484597548857236,
+      "bbca_detection_closed_form": 0.2373046875,
+      "false_demotion_rate": 0.05686864346082223,
+      "no_verdict_rate": 0.01505,
+      "no_verdict_closed_form": 0.015625,
+      "n_tamper": 6038,
+      "n_benign": 13962
+    },
+    {
+      "H": 5,
+      "p": 0.8,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.6936,
+        "unknown": 0.0069,
+        "failed": 0.2995
+      },
+      "bbca_status": {
+        "verified": 0.218,
+        "unknown": 0.67225,
+        "failed": 0.10975
+      },
+      "path_evidence_rate": 0.9995,
+      "path_evidence_closed_form": 0.99968,
+      "bvi_detection": 0.8742951907131011,
+      "bvi_detection_closed_form": 0.87552,
+      "bbca_detection": 0.3220563847429519,
+      "bbca_detection_closed_form": 0.3276800000000001,
+      "false_demotion_rate": 0.051395848246241944,
+      "no_verdict_rate": 0.0069,
+      "no_verdict_closed_form": 0.006719999999999994,
+      "n_tamper": 6030,
+      "n_benign": 13970
+    },
+    {
+      "H": 5,
+      "p": 0.85,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.68165,
+        "unknown": 0.00185,
+        "failed": 0.3165
+      },
+      "bbca_status": {
+        "verified": 0.28825,
+        "unknown": 0.55925,
+        "failed": 0.1525
+      },
+      "path_evidence_rate": 0.99995,
+      "path_evidence_closed_form": 0.9999240625,
+      "bvi_detection": 0.9172608191013099,
+      "bvi_detection_closed_form": 0.9118853124999999,
+      "bbca_detection": 0.43923064168462944,
+      "bbca_detection_closed_form": 0.44370531249999995,
+      "false_demotion_rate": 0.05712649438041378,
+      "no_verdict_rate": 0.00185,
+      "no_verdict_closed_form": 0.002227500000000001,
+      "n_tamper": 6031,
+      "n_benign": 13969
+    },
+    {
+      "H": 5,
+      "p": 0.9,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.6667,
+        "unknown": 0.00045,
+        "failed": 0.33285
+      },
+      "bbca_status": {
+        "verified": 0.3803,
+        "unknown": 0.41135,
+        "failed": 0.20835
+      },
+      "path_evidence_rate": 0.99995,
+      "path_evidence_closed_form": 0.99999,
+      "bvi_detection": 0.9439327839715624,
+      "bvi_detection_closed_form": 0.9444600000000001,
+      "bbca_detection": 0.5891097107771853,
+      "bbca_detection_closed_form": 0.5904900000000001,
+      "false_demotion_rate": 0.05901093331402505,
+      "no_verdict_rate": 0.00045,
+      "no_verdict_closed_form": 0.0004599999999999996,
+      "n_tamper": 6189,
+      "n_benign": 13811
+    },
+    {
+      "H": 5,
+      "p": 0.95,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.6691,
+        "unknown": 0.0,
+        "failed": 0.3309
+      },
+      "bbca_status": {
+        "verified": 0.5119,
+        "unknown": 0.2239,
+        "failed": 0.2642
+      },
+      "path_evidence_rate": 1.0,
+      "path_evidence_closed_form": 0.9999996875,
+      "bvi_detection": 0.971899713949184,
+      "bvi_detection_closed_form": 0.9736846874999999,
+      "bbca_detection": 0.7750294464075382,
+      "bbca_detection_closed_form": 0.7737809374999998,
+      "false_demotion_rate": 0.05989898271323896,
+      "no_verdict_rate": 0.0,
+      "no_verdict_closed_form": 3.0000000000000106e-05,
+      "n_tamper": 5943,
+      "n_benign": 14057
+    },
+    {
+      "H": 5,
+      "p": 1.0,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.6529,
+        "unknown": 0.0,
+        "failed": 0.3471
+      },
+      "bbca_status": {
+        "verified": 0.6529,
+        "unknown": 0.0,
+        "failed": 0.3471
+      },
+      "path_evidence_rate": 1.0,
+      "path_evidence_closed_form": 1.0,
+      "bvi_detection": 1.0,
+      "bvi_detection_closed_form": 1.0,
+      "bbca_detection": 1.0,
+      "bbca_detection_closed_form": 1.0,
+      "false_demotion_rate": 0.06387554663416732,
+      "no_verdict_rate": 0.0,
+      "no_verdict_closed_form": 0.0,
+      "n_tamper": 6051,
+      "n_benign": 13949
+    },
+    {
+      "H": 8,
+      "p": 0.0,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.0,
+        "unknown": 1.0,
+        "failed": 0.0
+      },
+      "bbca_status": {
+        "verified": 0.0,
+        "unknown": 1.0,
+        "failed": 0.0
+      },
+      "path_evidence_rate": 0.0,
+      "path_evidence_closed_form": 0.0,
+      "bvi_detection": 0.0,
+      "bvi_detection_closed_form": 0.0,
+      "bbca_detection": 0.0,
+      "bbca_detection_closed_form": 0.0,
+      "false_demotion_rate": 0.0,
+      "no_verdict_rate": 1.0,
+      "no_verdict_closed_form": 1.0,
+      "n_tamper": 5995,
+      "n_benign": 14005
+    },
+    {
+      "H": 8,
+      "p": 0.05,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.0477,
+        "unknown": 0.9443,
+        "failed": 0.008
+      },
+      "bbca_status": {
+        "verified": 0.0,
+        "unknown": 1.0,
+        "failed": 0.0
+      },
+      "path_evidence_rate": 0.33395,
+      "path_evidence_closed_form": 0.33657956871093775,
+      "bvi_detection": 0.023693496891278778,
+      "bvi_detection_closed_form": 0.025822895797991106,
+      "bbca_detection": 0.0,
+      "bbca_detection_closed_form": 3.906250000000002e-11,
+      "false_demotion_rate": 0.001352409424158303,
+      "no_verdict_rate": 0.9443,
+      "no_verdict_closed_form": 0.9427553497265622,
+      "n_tamper": 5951,
+      "n_benign": 14049
+    },
+    {
+      "H": 8,
+      "p": 0.1,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.1566,
+        "unknown": 0.812,
+        "failed": 0.0314
+      },
+      "bbca_status": {
+        "verified": 0.0,
+        "unknown": 1.0,
+        "failed": 0.0
+      },
+      "path_evidence_rate": 0.568,
+      "path_evidence_closed_form": 0.5695327899999999,
+      "bvi_detection": 0.09298780487804878,
+      "bvi_detection_closed_form": 0.08894495285714281,
+      "bbca_detection": 0.0,
+      "bbca_detection_closed_form": 1.0000000000000005e-08,
+      "false_demotion_rate": 0.005604426787741203,
+      "no_verdict_rate": 0.812,
+      "no_verdict_closed_form": 0.8131047300000002,
+      "n_tamper": 5904,
+      "n_benign": 14096
+    },
+    {
+      "H": 8,
+      "p": 0.15,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.28785,
+        "unknown": 0.65175,
+        "failed": 0.0604
+      },
+      "bbca_status": {
+        "verified": 0.0,
+        "unknown": 1.0,
+        "failed": 0.0
+      },
+      "path_evidence_rate": 0.7281,
+      "path_evidence_closed_form": 0.7275094749609375,
+      "bvi_detection": 0.17986216170785005,
+      "bvi_detection_closed_form": 0.17247247749441968,
+      "bbca_detection": 0.0,
+      "bbca_detection_closed_form": 2.562890624999999e-07,
+      "false_demotion_rate": 0.009821365027400185,
+      "no_verdict_rate": 0.65175,
+      "no_verdict_closed_form": 0.6571830309765623,
+      "n_tamper": 5949,
+      "n_benign": 14051
+    },
+    {
+      "H": 8,
+      "p": 0.2,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.3966,
+        "unknown": 0.5089,
+        "failed": 0.0945
+      },
+      "bbca_status": {
+        "verified": 0.0,
+        "unknown": 1.0,
+        "failed": 0.0
+      },
+      "path_evidence_rate": 0.83515,
+      "path_evidence_closed_form": 0.8322278399999999,
+      "bvi_detection": 0.27292503346720215,
+      "bvi_detection_closed_form": 0.2645895314285713,
+      "bbca_detection": 0.0,
+      "bbca_detection_closed_form": 2.5600000000000013e-06,
+      "false_demotion_rate": 0.018468339988590987,
+      "no_verdict_rate": 0.5089,
+      "no_verdict_closed_form": 0.5033164800000002,
+      "n_tamper": 5976,
+      "n_benign": 14024
+    },
+    {
+      "H": 8,
+      "p": 0.25,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.5079,
+        "unknown": 0.36695,
+        "failed": 0.12515
+      },
+      "bbca_status": {
+        "verified": 0.0,
+        "unknown": 1.0,
+        "failed": 0.0
+      },
+      "path_evidence_rate": 0.903,
+      "path_evidence_closed_form": 0.8998870849609375,
+      "bvi_detection": 0.3621212121212121,
+      "bvi_detection_closed_form": 0.3573848179408482,
+      "bbca_detection": 0.0,
+      "bbca_detection_closed_form": 1.52587890625e-05,
+      "false_demotion_rate": 0.02503556187766714,
+      "no_verdict_rate": 0.36695,
+      "no_verdict_closed_form": 0.3670806884765625,
+      "n_tamper": 5940,
+      "n_benign": 14060
+    },
+    {
+      "H": 8,
+      "p": 0.3,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.5917,
+        "unknown": 0.25655,
+        "failed": 0.15175
+      },
+      "bbca_status": {
+        "verified": 5e-05,
+        "unknown": 0.9999,
+        "failed": 5e-05
+      },
+      "path_evidence_rate": 0.93985,
+      "path_evidence_closed_form": 0.94235199,
+      "bvi_detection": 0.44090150250417365,
+      "bvi_detection_closed_form": 0.44588421000000006,
+      "bbca_detection": 0.0001669449081803005,
+      "bbca_detection_closed_form": 6.560999999999998e-05,
+      "false_demotion_rate": 0.028122769450392576,
+      "no_verdict_rate": 0.25655,
+      "no_verdict_closed_form": 0.2552983299999999,
+      "n_tamper": 5990,
+      "n_benign": 14010
+    },
+    {
+      "H": 8,
+      "p": 0.35,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.654,
+        "unknown": 0.165,
+        "failed": 0.181
+      },
+      "bbca_status": {
+        "verified": 0.00025,
+        "unknown": 0.99975,
+        "failed": 0.0
+      },
+      "path_evidence_rate": 0.97075,
+      "path_evidence_closed_form": 0.9681355187109375,
+      "bvi_detection": 0.517738726790451,
+      "bvi_detection_closed_form": 0.5272640578515625,
+      "bbca_detection": 0.0,
+      "bbca_detection_closed_form": 0.0002251875390624999,
+      "false_demotion_rate": 0.03558132875143184,
+      "no_verdict_rate": 0.165,
+      "no_verdict_closed_form": 0.16912686222656254,
+      "n_tamper": 6032,
+      "n_benign": 13968
+    },
+    {
+      "H": 8,
+      "p": 0.4,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.6928,
+        "unknown": 0.10665,
+        "failed": 0.20055
+      },
+      "bbca_status": {
+        "verified": 0.00035,
+        "unknown": 0.9994,
+        "failed": 0.00025
+      },
+      "path_evidence_rate": 0.9836,
+      "path_evidence_closed_form": 0.98320384,
+      "bvi_detection": 0.5882053889171327,
+      "bvi_detection_closed_form": 0.6002219885714286,
+      "bbca_detection": 0.0006778512116590408,
+      "bbca_detection_closed_form": 0.0006553600000000003,
+      "false_demotion_rate": 0.03830058869423363,
+      "no_verdict_rate": 0.10665,
+      "no_verdict_closed_form": 0.10637567999999997,
+      "n_tamper": 5901,
+      "n_benign": 14099
+    },
+    {
+      "H": 8,
+      "p": 0.45,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.71035,
+        "unknown": 0.06295,
+        "failed": 0.2267
+      },
+      "bbca_status": {
+        "verified": 0.00095,
+        "unknown": 0.9981,
+        "failed": 0.00095
+      },
+      "path_evidence_rate": 0.9916,
+      "path_evidence_closed_form": 0.9916266062109375,
+      "bvi_detection": 0.6615047971721932,
+      "bvi_detection_closed_form": 0.6644834850837054,
+      "bbca_detection": 0.0030297929641474497,
+      "bbca_detection_closed_form": 0.0016815125390625004,
+      "false_demotion_rate": 0.04296180382673021,
+      "no_verdict_rate": 0.06295,
+      "no_verdict_closed_form": 0.06318106222656254,
+      "n_tamper": 5941,
+      "n_benign": 14059
+    },
+    {
+      "H": 8,
+      "p": 0.5,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.71865,
+        "unknown": 0.03455,
+        "failed": 0.2468
+      },
+      "bbca_status": {
+        "verified": 0.00245,
+        "unknown": 0.99635,
+        "failed": 0.0012
+      },
+      "path_evidence_rate": 0.99685,
+      "path_evidence_closed_form": 0.99609375,
+      "bvi_detection": 0.7136659436008677,
+      "bvi_detection_closed_form": 0.7204241071428571,
+      "bbca_detection": 0.003504088102786584,
+      "bbca_detection_closed_form": 0.00390625,
+      "false_demotion_rate": 0.047047904619119015,
+      "no_verdict_rate": 0.03455,
+      "no_verdict_closed_form": 0.03515625,
+      "n_tamper": 5993,
+      "n_benign": 14007
+    },
+    {
+      "H": 8,
+      "p": 0.55,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.71745,
+        "unknown": 0.0164,
+        "failed": 0.26615
+      },
+      "bbca_status": {
+        "verified": 0.00525,
+        "unknown": 0.9924,
+        "failed": 0.00235
+      },
+      "path_evidence_rate": 0.9983,
+      "path_evidence_closed_form": 0.9983184874609375,
+      "bvi_detection": 0.7708790281761431,
+      "bvi_detection_closed_form": 0.7687887917801339,
+      "bbca_detection": 0.007086215623418255,
+      "bbca_detection_closed_form": 0.008373393789062506,
+      "false_demotion_rate": 0.05357777304057415,
+      "no_verdict_rate": 0.0164,
+      "no_verdict_closed_form": 0.01812296847656249,
+      "n_tamper": 5927,
+      "n_benign": 14073
+    },
+    {
+      "H": 8,
+      "p": 0.6,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.71505,
+        "unknown": 0.0079,
+        "failed": 0.27705
+      },
+      "bbca_status": {
+        "verified": 0.01085,
+        "unknown": 0.9839,
+        "failed": 0.00525
+      },
+      "path_evidence_rate": 0.9994,
+      "path_evidence_closed_form": 0.99934464,
+      "bvi_detection": 0.8089963074857335,
+      "bvi_detection_closed_form": 0.8104912457142858,
+      "bbca_detection": 0.01460221550855992,
+      "bbca_detection_closed_form": 0.016796159999999994,
+      "false_demotion_rate": 0.05134596211365902,
+      "no_verdict_rate": 0.0079,
+      "no_verdict_closed_form": 0.008519680000000003,
+      "n_tamper": 5958,
+      "n_benign": 14042
+    },
+    {
+      "H": 8,
+      "p": 0.65,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.70895,
+        "unknown": 0.00365,
+        "failed": 0.2874
+      },
+      "bbca_status": {
+        "verified": 0.02225,
+        "unknown": 0.96645,
+        "failed": 0.0113
+      },
+      "path_evidence_rate": 0.9998,
+      "path_evidence_closed_form": 0.9997748124609375,
+      "bvi_detection": 0.8443579766536965,
+      "bvi_detection_closed_form": 0.8464780172265626,
+      "bbca_detection": 0.034342750803586536,
+      "bbca_detection_closed_form": 0.03186448128906251,
+      "false_demotion_rate": 0.0537298601746043,
+      "no_verdict_rate": 0.00365,
+      "no_verdict_closed_form": 0.0035708309765624985,
+      "n_tamper": 5911,
+      "n_benign": 14089
+    },
+    {
+      "H": 8,
+      "p": 0.7,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.6971,
+        "unknown": 0.00125,
+        "failed": 0.30165
+      },
+      "bbca_status": {
+        "verified": 0.03845,
+        "unknown": 0.94385,
+        "failed": 0.0177
+      },
+      "path_evidence_rate": 0.99985,
+      "path_evidence_closed_form": 0.99993439,
+      "bvi_detection": 0.873959373959374,
+      "bvi_detection_closed_form": 0.87764341,
+      "bbca_detection": 0.05228105228105228,
+      "bbca_detection_closed_form": 0.05764800999999997,
+      "false_demotion_rate": 0.05602401029012434,
+      "no_verdict_rate": 0.00125,
+      "no_verdict_closed_form": 0.0012903300000000012,
+      "n_tamper": 6006,
+      "n_benign": 13994
+    },
+    {
+      "H": 8,
+      "p": 0.75,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.68665,
+        "unknown": 0.00035,
+        "failed": 0.313
+      },
+      "bbca_status": {
+        "verified": 0.068,
+        "unknown": 0.8978,
+        "failed": 0.0342
+      },
+      "path_evidence_rate": 1.0,
+      "path_evidence_closed_form": 0.9999847412109375,
+      "bvi_detection": 0.9047934980925527,
+      "bvi_detection_closed_form": 0.9047829764229911,
+      "bbca_detection": 0.09786034168187095,
+      "bbca_detection_closed_form": 0.1001129150390625,
+      "false_demotion_rate": 0.05761935437692363,
+      "no_verdict_rate": 0.00035,
+      "no_verdict_closed_form": 0.0003814697265625,
+      "n_tamper": 6029,
+      "n_benign": 13971
+    },
+    {
+      "H": 8,
+      "p": 0.8,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.6756,
+        "unknown": 5e-05,
+        "failed": 0.32435
+      },
+      "bbca_status": {
+        "verified": 0.10635,
+        "unknown": 0.83475,
+        "failed": 0.0589
+      },
+      "path_evidence_rate": 1.0,
+      "path_evidence_closed_form": 0.99999744,
+      "bvi_detection": 0.9316677696889477,
+      "bvi_detection_closed_form": 0.9285749028571428,
+      "bbca_detection": 0.16942422236929186,
+      "bbca_detection_closed_form": 0.1677721600000001,
+      "false_demotion_rate": 0.061335626253940956,
+      "no_verdict_rate": 5e-05,
+      "no_verdict_closed_form": 8.447999999999987e-05,
+      "n_tamper": 6044,
+      "n_benign": 13956
+    },
+    {
+      "H": 8,
+      "p": 0.85,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.6717,
+        "unknown": 0.0,
+        "failed": 0.3283
+      },
+      "bbca_status": {
+        "verified": 0.17655,
+        "unknown": 0.72865,
+        "failed": 0.0948
+      },
+      "path_evidence_rate": 1.0,
+      "path_evidence_closed_form": 0.9999997437109375,
+      "bvi_detection": 0.9502495840266223,
+      "bvi_detection_closed_form": 0.9495801743694195,
+      "bbca_detection": 0.27154742096505824,
+      "bbca_detection_closed_form": 0.27249052503906246,
+      "false_demotion_rate": 0.06111508220157255,
+      "no_verdict_rate": 0.0,
+      "no_verdict_closed_form": 1.1874726562500012e-05,
+      "n_tamper": 6010,
+      "n_benign": 13990
+    },
+    {
+      "H": 8,
+      "p": 0.9,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.66205,
+        "unknown": 0.0,
+        "failed": 0.33795
+      },
+      "bbca_status": {
+        "verified": 0.28035,
+        "unknown": 0.5666,
+        "failed": 0.15305
+      },
+      "path_evidence_rate": 1.0,
+      "path_evidence_closed_form": 0.99999999,
+      "bvi_detection": 0.970074812967581,
+      "bvi_detection_closed_form": 0.9682539814285714,
+      "bbca_detection": 0.43956774729842063,
+      "bbca_detection_closed_form": 0.4304672100000001,
+      "false_demotion_rate": 0.06607079013228459,
+      "no_verdict_rate": 0.0,
+      "no_verdict_closed_form": 7.299999999999989e-07,
+      "n_tamper": 6015,
+      "n_benign": 13985
+    },
+    {
+      "H": 8,
+      "p": 0.95,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.65725,
+        "unknown": 0.0,
+        "failed": 0.34275
+      },
+      "bbca_status": {
+        "verified": 0.4319,
+        "unknown": 0.3371,
+        "failed": 0.231
+      },
+      "path_evidence_rate": 1.0,
+      "path_evidence_closed_form": 0.9999999999609375,
+      "bvi_detection": 0.9830313014827018,
+      "bvi_detection_closed_form": 0.9849624060658482,
+      "bbca_detection": 0.6612850082372322,
+      "bbca_detection_closed_form": 0.6634204312890623,
+      "false_demotion_rate": 0.06374730796841349,
+      "no_verdict_rate": 0.0,
+      "no_verdict_closed_form": 5.976562500000037e-09,
+      "n_tamper": 6070,
+      "n_benign": 13930
+    },
+    {
+      "H": 8,
+      "p": 1.0,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.65635,
+        "unknown": 0.0,
+        "failed": 0.34365
+      },
+      "bbca_status": {
+        "verified": 0.65635,
+        "unknown": 0.0,
+        "failed": 0.34365
+      },
+      "path_evidence_rate": 1.0,
+      "path_evidence_closed_form": 1.0,
+      "bvi_detection": 1.0,
+      "bvi_detection_closed_form": 1.0,
+      "bbca_detection": 1.0,
+      "bbca_detection_closed_form": 1.0,
+      "false_demotion_rate": 0.06675671832788284,
+      "no_verdict_rate": 0.0,
+      "no_verdict_closed_form": 0.0,
+      "n_tamper": 5934,
+      "n_benign": 14066
+    },
+    {
+      "H": 12,
+      "p": 0.0,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.0,
+        "unknown": 1.0,
+        "failed": 0.0
+      },
+      "bbca_status": {
+        "verified": 0.0,
+        "unknown": 1.0,
+        "failed": 0.0
+      },
+      "path_evidence_rate": 0.0,
+      "path_evidence_closed_form": 0.0,
+      "bvi_detection": 0.0,
+      "bvi_detection_closed_form": 0.0,
+      "bbca_detection": 0.0,
+      "bbca_detection_closed_form": 0.0,
+      "false_demotion_rate": 0.0,
+      "no_verdict_rate": 1.0,
+      "no_verdict_closed_form": 1.0,
+      "n_tamper": 6096,
+      "n_benign": 13904
+    },
+    {
+      "H": 12,
+      "p": 0.05,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.09795,
+        "unknown": 0.88605,
+        "failed": 0.016
+      },
+      "bbca_status": {
+        "verified": 0.0,
+        "unknown": 1.0,
+        "failed": 0.0
+      },
+      "path_evidence_rate": 0.45225,
+      "path_evidence_closed_form": 0.45963991233736334,
+      "bvi_detection": 0.045042016806722686,
+      "bvi_detection_closed_form": 0.05076040643586237,
+      "bbca_detection": 0.0,
+      "bbca_detection_closed_form": 2.4414062500000014e-16,
+      "false_demotion_rate": 0.003701067615658363,
+      "no_verdict_rate": 0.88605,
+      "no_verdict_closed_form": 0.8816401430285126,
+      "n_tamper": 5950,
+      "n_benign": 14050
+    },
+    {
+      "H": 12,
+      "p": 0.1,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.2858,
+        "unknown": 0.6595,
+        "failed": 0.0547
+      },
+      "bbca_status": {
+        "verified": 0.0,
+        "unknown": 1.0,
+        "failed": 0.0
+      },
+      "path_evidence_rate": 0.7173,
+      "path_evidence_closed_form": 0.7175704635189999,
+      "bvi_detection": 0.16020715001670566,
+      "bvi_detection_closed_form": 0.1595741482646363,
+      "bbca_detection": 0.0,
+      "bbca_detection_closed_form": 1.0000000000000006e-12,
+      "false_demotion_rate": 0.009633223918938205,
+      "no_verdict_rate": 0.6595,
+      "no_verdict_closed_form": 0.6590022517890002,
+      "n_tamper": 5986,
+      "n_benign": 14014
+    },
+    {
+      "H": 12,
+      "p": 0.15,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.45155,
+        "unknown": 0.4476,
+        "failed": 0.10085
+      },
+      "bbca_status": {
+        "verified": 0.0,
+        "unknown": 1.0,
+        "failed": 0.0
+      },
+      "path_evidence_rate": 0.85265,
+      "path_evidence_closed_form": 0.857758242863828,
+      "bvi_detection": 0.28904698874917273,
+      "bvi_detection_closed_form": 0.2843529779072899,
+      "bbca_detection": 0.0,
+      "bbca_detection_closed_form": 1.2974633789062494e-10,
+      "false_demotion_rate": 0.01934651762682717,
+      "no_verdict_rate": 0.4476,
+      "no_verdict_closed_form": 0.4434595957774776,
+      "n_tamper": 6044,
+      "n_benign": 13956
+    },
+    {
+      "H": 12,
+      "p": 0.2,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.58505,
+        "unknown": 0.2789,
+        "failed": 0.13605
+      },
+      "bbca_status": {
+        "verified": 0.0,
+        "unknown": 1.0,
+        "failed": 0.0
+      },
+      "path_evidence_rate": 0.9293,
+      "path_evidence_closed_form": 0.931280523264,
+      "bvi_detection": 0.3950803212851406,
+      "bvi_detection_closed_form": 0.4039190010414545,
+      "bbca_detection": 0.0,
+      "bbca_detection_closed_form": 4.096000000000002e-09,
+      "false_demotion_rate": 0.02567027952082145,
+      "no_verdict_rate": 0.2789,
+      "no_verdict_closed_form": 0.27487790694400016,
+      "n_tamper": 5976,
+      "n_benign": 14024
+    },
+    {
+      "H": 12,
+      "p": 0.25,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.66135,
+        "unknown": 0.15905,
+        "failed": 0.1796
+      },
+      "bbca_status": {
+        "verified": 0.0,
+        "unknown": 1.0,
+        "failed": 0.0
+      },
+      "path_evidence_rate": 0.9678,
+      "path_evidence_closed_form": 0.9683236479759216,
+      "bvi_detection": 0.5172242464392183,
+      "bvi_detection_closed_form": 0.5092591534961354,
+      "bbca_detection": 0.0,
+      "bbca_detection_closed_form": 5.960464477539063e-08,
+      "false_demotion_rate": 0.03359117604927661,
+      "no_verdict_rate": 0.15905,
+      "no_verdict_closed_form": 0.15838176012039185,
+      "n_tamper": 6038,
+      "n_benign": 13962
+    },
+    {
+      "H": 12,
+      "p": 0.3,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.71125,
+        "unknown": 0.08375,
+        "failed": 0.205
+      },
+      "bbca_status": {
+        "verified": 0.0,
+        "unknown": 1.0,
+        "failed": 0.0
+      },
+      "path_evidence_rate": 0.98635,
+      "path_evidence_closed_form": 0.986158712799,
+      "bvi_detection": 0.596408793421715,
+      "bvi_detection_closed_form": 0.5979875218682729,
+      "bbca_detection": 0.0,
+      "bbca_detection_closed_form": 5.314409999999998e-07,
+      "false_demotion_rate": 0.03888611922227762,
+      "no_verdict_rate": 0.08375,
+      "no_verdict_closed_form": 0.08502504994899994,
+      "n_tamper": 5959,
+      "n_benign": 14041
+    },
+    {
+      "H": 12,
+      "p": 0.35,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.73475,
+        "unknown": 0.0423,
+        "failed": 0.22295
+      },
+      "bbca_status": {
+        "verified": 0.0,
+        "unknown": 1.0,
+        "failed": 0.0
+      },
+      "path_evidence_rate": 0.9949,
+      "path_evidence_closed_form": 0.9943119909368943,
+      "bvi_detection": 0.6618521665250637,
+      "bvi_detection_closed_form": 0.6709804813036802,
+      "bbca_detection": 0.0,
+      "bbca_detection_closed_form": 3.379220508056638e-06,
+      "false_demotion_rate": 0.03995749202975558,
+      "no_verdict_rate": 0.0423,
+      "no_verdict_closed_form": 0.04244129839394264,
+      "n_tamper": 5885,
+      "n_benign": 14115
+    },
+    {
+      "H": 12,
+      "p": 0.4,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.7284,
+        "unknown": 0.02135,
+        "failed": 0.25025
+      },
+      "bbca_status": {
+        "verified": 0.0,
+        "unknown": 1.0,
+        "failed": 0.0
+      },
+      "path_evidence_rate": 0.9977,
+      "path_evidence_closed_form": 0.997823217664,
+      "bvi_detection": 0.7201051248357424,
+      "bvi_detection_closed_form": 0.730438956125091,
+      "bbca_detection": 0.0,
+      "bbca_detection_closed_form": 1.677721600000001e-05,
+      "false_demotion_rate": 0.04463772282921219,
+      "no_verdict_rate": 0.02135,
+      "no_verdict_closed_form": 0.019591041023999993,
+      "n_tamper": 6088,
+      "n_benign": 13912
+    },
+    {
+      "H": 12,
+      "p": 0.45,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.7218,
+        "unknown": 0.00765,
+        "failed": 0.27055
+      },
+      "bbca_status": {
+        "verified": 5e-05,
+        "unknown": 0.99995,
+        "failed": 0.0
+      },
+      "path_evidence_rate": 0.9991,
+      "path_evidence_closed_form": 0.9992337821345896,
+      "bvi_detection": 0.7727197483860287,
+      "bvi_detection_closed_form": 0.7788535786191115,
+      "bbca_detection": 0.0,
+      "bbca_detection_closed_form": 6.895252355493167e-05,
+      "false_demotion_rate": 0.053227308546457484,
+      "no_verdict_rate": 0.00765,
+      "no_verdict_closed_form": 0.008289084180348886,
+      "n_tamper": 6041,
+      "n_benign": 13959
+    },
+    {
+      "H": 12,
+      "p": 0.5,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.713,
+        "unknown": 0.0041,
+        "failed": 0.2829
+      },
+      "bbca_status": {
+        "verified": 0.0001,
+        "unknown": 0.9998,
+        "failed": 0.0001
+      },
+      "path_evidence_rate": 0.9998,
+      "path_evidence_closed_form": 0.999755859375,
+      "bvi_detection": 0.827748779255767,
+      "bvi_detection_closed_form": 0.8185147372159091,
+      "bbca_detection": 0.0003367570298029971,
+      "bbca_detection_closed_form": 0.000244140625,
+      "false_demotion_rate": 0.05277007325225802,
+      "no_verdict_rate": 0.0041,
+      "no_verdict_closed_form": 0.003173828125,
+      "n_tamper": 5939,
+      "n_benign": 14061
+    },
+    {
+      "H": 12,
+      "p": 0.55,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.70965,
+        "unknown": 0.00085,
+        "failed": 0.2895
+      },
+      "bbca_status": {
+        "verified": 0.0005,
+        "unknown": 0.9994,
+        "failed": 0.0001
+      },
+      "path_evidence_rate": 1.0,
+      "path_evidence_closed_form": 0.9999310474764451,
+      "bvi_detection": 0.8492183560262229,
+      "bvi_detection_closed_form": 0.8513314161677051,
+      "bbca_detection": 0.00033619095646327115,
+      "bbca_detection_closed_form": 0.0007662178654104011,
+      "false_demotion_rate": 0.05252295210305316,
+      "no_verdict_rate": 0.00085,
+      "no_verdict_closed_form": 0.0010802562023605946,
+      "n_tamper": 5949,
+      "n_benign": 14051
+    },
+    {
+      "H": 12,
+      "p": 0.6,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.69435,
+        "unknown": 0.0003,
+        "failed": 0.30535
+      },
+      "bbca_status": {
+        "verified": 0.0016,
+        "unknown": 0.99795,
+        "failed": 0.00045
+      },
+      "path_evidence_rate": 1.0,
+      "path_evidence_closed_form": 0.999983222784,
+      "bvi_detection": 0.8820495757777408,
+      "bvi_detection_closed_form": 0.8788097400087274,
+      "bbca_detection": 0.0011645316918981866,
+      "bbca_detection_closed_form": 0.002176782335999999,
+      "false_demotion_rate": 0.05754521409679034,
+      "no_verdict_rate": 0.0003,
+      "no_verdict_closed_form": 0.00031876710400000015,
+      "n_tamper": 6011,
+      "n_benign": 13989
+    },
+    {
+      "H": 12,
+      "p": 0.65,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.68335,
+        "unknown": 5e-05,
+        "failed": 0.3166
+      },
+      "bbca_status": {
+        "verified": 0.00315,
+        "unknown": 0.99495,
+        "failed": 0.0019
+      },
+      "path_evidence_rate": 1.0,
+      "path_evidence_closed_form": 0.9999966207794919,
+      "bvi_detection": 0.906930693069307,
+      "bvi_detection_closed_form": 0.902102226554916,
+      "bbca_detection": 0.005445544554455445,
+      "bbca_detection_closed_form": 0.005688009063105715,
+      "false_demotion_rate": 0.0599713055954089,
+      "no_verdict_rate": 5e-05,
+      "no_verdict_closed_form": 7.868756325903315e-05,
+      "n_tamper": 6060,
+      "n_benign": 13940
+    },
+    {
+      "H": 12,
+      "p": 0.7,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.68105,
+        "unknown": 0.0,
+        "failed": 0.31895
+      },
+      "bbca_status": {
+        "verified": 0.0095,
+        "unknown": 0.98545,
+        "failed": 0.00505
+      },
+      "path_evidence_rate": 1.0,
+      "path_evidence_closed_form": 0.999999468559,
+      "bvi_detection": 0.9295374853898815,
+      "bvi_detection_closed_form": 0.9220785915555456,
+      "bbca_detection": 0.01402571380864919,
+      "bbca_detection_closed_form": 0.01384128720099999,
+      "false_demotion_rate": 0.057954464349439724,
+      "no_verdict_rate": 0.0,
+      "no_verdict_closed_form": 1.5411789000000024e-05,
+      "n_tamper": 5989,
+      "n_benign": 14011
+    },
+    {
+      "H": 12,
+      "p": 0.75,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.6728,
+        "unknown": 0.0,
+        "failed": 0.3272
+      },
+      "bbca_status": {
+        "verified": 0.01855,
+        "unknown": 0.9696,
+        "failed": 0.01185
+      },
+      "path_evidence_rate": 1.0,
+      "path_evidence_closed_form": 0.9999999403953552,
+      "bvi_detection": 0.9440119264535365,
+      "bvi_detection_closed_form": 0.9393940134481951,
+      "bbca_detection": 0.03395726354149412,
+      "bbca_detection_closed_form": 0.03167635202407837,
+      "false_demotion_rate": 0.06051708085654945,
+      "no_verdict_rate": 0.0,
+      "no_verdict_closed_form": 2.205371856689453e-06,
+      "n_tamper": 6037,
+      "n_benign": 13963
+    },
+    {
+      "H": 12,
+      "p": 0.8,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.6687,
+        "unknown": 0.0,
+        "failed": 0.3313
+      },
+      "bbca_status": {
+        "verified": 0.04685,
+        "unknown": 0.9264,
+        "failed": 0.02675
+      },
+      "path_evidence_rate": 1.0,
+      "path_evidence_closed_form": 0.999999995904,
+      "bvi_detection": 0.9541254125412542,
+      "bvi_detection_closed_form": 0.9545454595723636,
+      "bbca_detection": 0.07871287128712871,
+      "bbca_detection_closed_form": 0.06871947673600004,
+      "false_demotion_rate": 0.06054519368723099,
+      "no_verdict_rate": 0.0,
+      "no_verdict_closed_form": 2.0070399999999952e-07,
+      "n_tamper": 6060,
+      "n_benign": 13940
+    },
+    {
+      "H": 12,
+      "p": 0.85,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.66865,
+        "unknown": 0.0,
+        "failed": 0.33135
+      },
+      "bbca_status": {
+        "verified": 0.0875,
+        "unknown": 0.8633,
+        "failed": 0.0492
+      },
+      "path_evidence_rate": 1.0,
+      "path_evidence_closed_form": 0.9999999998702537,
+      "bvi_detection": 0.9618436603072767,
+      "bvi_detection_closed_form": 0.9679144386601733,
+      "bbca_detection": 0.1431706905284484,
+      "bbca_detection_closed_form": 0.14224175713617207,
+      "false_demotion_rate": 0.06606521275840023,
+      "no_verdict_rate": 0.0,
+      "no_verdict_closed_form": 8.952497314453138e-09,
+      "n_tamper": 5923,
+      "n_benign": 14077
+    },
+    {
+      "H": 12,
+      "p": 0.9,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.66285,
+        "unknown": 0.0,
+        "failed": 0.33715
+      },
+      "bbca_status": {
+        "verified": 0.1862,
+        "unknown": 0.7166,
+        "failed": 0.0972
+      },
+      "path_evidence_rate": 1.0,
+      "path_evidence_closed_form": 0.999999999999,
+      "bvi_detection": 0.9813695871097684,
+      "bvi_detection_closed_form": 0.9797979797991818,
+      "bbca_detection": 0.28382007385028535,
+      "bbca_detection_closed_form": 0.2824295364810001,
+      "false_demotion_rate": 0.06380857427716849,
+      "no_verdict_rate": 0.0,
+      "no_verdict_closed_form": 1.0899999999999974e-10,
+      "n_tamper": 5958,
+      "n_benign": 14042
+    },
+    {
+      "H": 12,
+      "p": 0.95,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.6546,
+        "unknown": 0.0,
+        "failed": 0.3454
+      },
+      "bbca_status": {
+        "verified": 0.3534,
+        "unknown": 0.4599,
+        "failed": 0.1867
+      },
+      "path_evidence_rate": 1.0,
+      "path_evidence_closed_form": 0.9999999999999998,
+      "bvi_detection": 0.9884240119067306,
+      "bvi_detection_closed_form": 0.9904306220095698,
+      "bbca_detection": 0.532495452290392,
+      "bbca_detection_closed_form": 0.5403600876626367,
+      "false_demotion_rate": 0.06672400200673691,
+      "no_verdict_rate": 0.0,
+      "no_verdict_closed_form": 5.5908203125000545e-14,
+      "n_tamper": 6047,
+      "n_benign": 13953
+    },
+    {
+      "H": 12,
+      "p": 1.0,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "average",
+      "bvi_status": {
+        "verified": 0.6553,
+        "unknown": 0.0,
+        "failed": 0.3447
+      },
+      "bbca_status": {
+        "verified": 0.6553,
+        "unknown": 0.0,
+        "failed": 0.3447
+      },
+      "path_evidence_rate": 1.0,
+      "path_evidence_closed_form": 1.0,
+      "bvi_detection": 1.0,
+      "bvi_detection_closed_form": 1.0,
+      "bbca_detection": 1.0,
+      "bbca_detection_closed_form": 1.0,
+      "false_demotion_rate": 0.0625178826895565,
+      "no_verdict_rate": 0.0,
+      "no_verdict_closed_form": 0.0,
+      "n_tamper": 6020,
+      "n_benign": 13980
+    },
+    {
+      "H": 3,
+      "p": 0.0,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.0,
+        "unknown": 1.0,
+        "failed": 0.0
+      },
+      "bbca_status": {
+        "verified": 0.0,
+        "unknown": 1.0,
+        "failed": 0.0
+      },
+      "path_evidence_rate": 0.0,
+      "path_evidence_closed_form": 0.0,
+      "bvi_detection": 0.0,
+      "bvi_detection_closed_form": 0.0,
+      "bbca_detection": 0.0,
+      "bbca_detection_closed_form": 0.0,
+      "false_demotion_rate": 0.0,
+      "no_verdict_rate": 1.0,
+      "no_verdict_closed_form": 1.0,
+      "n_tamper": 5984,
+      "n_benign": 14016
+    },
+    {
+      "H": 3,
+      "p": 0.05,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.0065,
+        "unknown": 0.9927,
+        "failed": 0.0008
+      },
+      "bbca_status": {
+        "verified": 5e-05,
+        "unknown": 0.9999,
+        "failed": 5e-05
+      },
+      "path_evidence_rate": 0.14085,
+      "path_evidence_closed_form": 0.1426250000000001,
+      "bvi_detection": 0.0021852412170112624,
+      "bvi_detection_closed_form": 0.0025000000000000005,
+      "bbca_detection": 0.00016809547823163558,
+      "bbca_detection_closed_form": 0.00012500000000000003,
+      "false_demotion_rate": 0.0002135079353782649,
+      "no_verdict_rate": 0.9927,
+      "no_verdict_closed_form": 0.9927499999999999,
+      "n_tamper": 5949,
+      "n_benign": 14051
+    },
+    {
+      "H": 3,
+      "p": 0.1,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.02385,
+        "unknown": 0.97205,
+        "failed": 0.0041
+      },
+      "bbca_status": {
+        "verified": 0.00065,
+        "unknown": 0.99895,
+        "failed": 0.0004
+      },
+      "path_evidence_rate": 0.2751,
+      "path_evidence_closed_form": 0.2709999999999999,
+      "bvi_detection": 0.011898859692612791,
+      "bvi_detection_closed_form": 0.010000000000000002,
+      "bbca_detection": 0.0009915716410510659,
+      "bbca_detection_closed_form": 0.0010000000000000002,
+      "false_demotion_rate": 0.0007168972686214066,
+      "no_verdict_rate": 0.97205,
+      "no_verdict_closed_form": 0.9720000000000002,
+      "n_tamper": 6051,
+      "n_benign": 13949
+    },
+    {
+      "H": 3,
+      "p": 0.15,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.05625,
+        "unknown": 0.9355,
+        "failed": 0.00825
+      },
+      "bbca_status": {
+        "verified": 0.00265,
+        "unknown": 0.9967,
+        "failed": 0.00065
+      },
+      "path_evidence_rate": 0.3856,
+      "path_evidence_closed_form": 0.3858750000000001,
+      "bvi_detection": 0.02369826435246996,
+      "bvi_detection_closed_form": 0.0225,
+      "bbca_detection": 0.0021695594125500667,
+      "bbca_detection_closed_form": 0.0033749999999999995,
+      "false_demotion_rate": 0.0016419189034837236,
+      "no_verdict_rate": 0.9355,
+      "no_verdict_closed_form": 0.9392499999999999,
+      "n_tamper": 5992,
+      "n_benign": 14008
+    },
+    {
+      "H": 3,
+      "p": 0.2,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.0896,
+        "unknown": 0.89705,
+        "failed": 0.01335
+      },
+      "bbca_status": {
+        "verified": 0.00515,
+        "unknown": 0.99195,
+        "failed": 0.0029
+      },
+      "path_evidence_rate": 0.4873,
+      "path_evidence_closed_form": 0.4879999999999999,
+      "bvi_detection": 0.04078249336870027,
+      "bvi_detection_closed_form": 0.04000000000000001,
+      "bbca_detection": 0.009118037135278515,
+      "bbca_detection_closed_form": 0.008000000000000002,
+      "false_demotion_rate": 0.0015034364261168386,
+      "no_verdict_rate": 0.89705,
+      "no_verdict_closed_form": 0.8960000000000002,
+      "n_tamper": 6032,
+      "n_benign": 13968
+    },
+    {
+      "H": 3,
+      "p": 0.25,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.13525,
+        "unknown": 0.8417,
+        "failed": 0.02305
+      },
+      "bbca_status": {
+        "verified": 0.0093,
+        "unknown": 0.98545,
+        "failed": 0.00525
+      },
+      "path_evidence_rate": 0.587,
+      "path_evidence_closed_form": 0.578125,
+      "bvi_detection": 0.06445763270689087,
+      "bvi_detection_closed_form": 0.0625,
+      "bbca_detection": 0.01483679525222552,
+      "bbca_detection_closed_form": 0.015625,
+      "false_demotion_rate": 0.00502368307736472,
+      "no_verdict_rate": 0.8417,
+      "no_verdict_closed_form": 0.84375,
+      "n_tamper": 6066,
+      "n_benign": 13934
+    },
+    {
+      "H": 3,
+      "p": 0.3,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.1879,
+        "unknown": 0.77855,
+        "failed": 0.03355
+      },
+      "bbca_status": {
+        "verified": 0.0174,
+        "unknown": 0.9731,
+        "failed": 0.0095
+      },
+      "path_evidence_rate": 0.65795,
+      "path_evidence_closed_form": 0.657,
+      "bvi_detection": 0.09452237808951236,
+      "bvi_detection_closed_form": 0.09,
+      "bbca_detection": 0.026887107548430194,
+      "bbca_detection_closed_form": 0.026999999999999996,
+      "false_demotion_rate": 0.007493576934056523,
+      "no_verdict_rate": 0.77855,
+      "no_verdict_closed_form": 0.7839999999999998,
+      "n_tamper": 5988,
+      "n_benign": 14012
+    },
+    {
+      "H": 3,
+      "p": 0.35,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.23815,
+        "unknown": 0.7206,
+        "failed": 0.04125
+      },
+      "bbca_status": {
+        "verified": 0.0283,
+        "unknown": 0.9563,
+        "failed": 0.0154
+      },
+      "path_evidence_rate": 0.72505,
+      "path_evidence_closed_form": 0.725375,
+      "bvi_detection": 0.11852838355252206,
+      "bvi_detection_closed_form": 0.12249999999999998,
+      "bbca_detection": 0.04378225403695688,
+      "bbca_detection_closed_form": 0.04287499999999999,
+      "false_demotion_rate": 0.008075466304580862,
+      "no_verdict_rate": 0.7206,
+      "no_verdict_closed_form": 0.71825,
+      "n_tamper": 6007,
+      "n_benign": 13993
+    },
+    {
+      "H": 3,
+      "p": 0.4,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.29805,
+        "unknown": 0.6466,
+        "failed": 0.05535
+      },
+      "bbca_status": {
+        "verified": 0.04145,
+        "unknown": 0.9383,
+        "failed": 0.02025
+      },
+      "path_evidence_rate": 0.78785,
+      "path_evidence_closed_form": 0.784,
+      "bvi_detection": 0.1583005249343832,
+      "bvi_detection_closed_form": 0.16000000000000003,
+      "bbca_detection": 0.0583989501312336,
+      "bbca_detection_closed_form": 0.06400000000000002,
+      "false_demotion_rate": 0.010212888377445339,
+      "no_verdict_rate": 0.6466,
+      "no_verdict_closed_form": 0.648,
+      "n_tamper": 6096,
+      "n_benign": 13904
+    },
+    {
+      "H": 3,
+      "p": 0.45,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.35945,
+        "unknown": 0.5694,
+        "failed": 0.07115
+      },
+      "bbca_status": {
+        "verified": 0.06135,
+        "unknown": 0.9068,
+        "failed": 0.03185
+      },
+      "path_evidence_rate": 0.8344,
+      "path_evidence_closed_form": 0.833625,
+      "bvi_detection": 0.20881514999162057,
+      "bvi_detection_closed_form": 0.2025,
+      "bbca_detection": 0.09334674040556394,
+      "bbca_detection_closed_form": 0.09112500000000001,
+      "false_demotion_rate": 0.012613126202522626,
+      "no_verdict_rate": 0.5694,
+      "no_verdict_closed_form": 0.5747500000000001,
+      "n_tamper": 5967,
+      "n_benign": 14033
+    },
+    {
+      "H": 3,
+      "p": 0.5,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.4146,
+        "unknown": 0.50025,
+        "failed": 0.08515
+      },
+      "bbca_status": {
+        "verified": 0.0813,
+        "unknown": 0.87745,
+        "failed": 0.04125
+      },
+      "path_evidence_rate": 0.8747,
+      "path_evidence_closed_form": 0.875,
+      "bvi_detection": 0.24912222036448756,
+      "bvi_detection_closed_form": 0.25,
+      "bbca_detection": 0.12071559939809397,
+      "bbca_detection_closed_form": 0.125,
+      "false_demotion_rate": 0.015193665739353735,
+      "no_verdict_rate": 0.50025,
+      "no_verdict_closed_form": 0.5,
+      "n_tamper": 5981,
+      "n_benign": 14019
+    },
+    {
+      "H": 3,
+      "p": 0.55,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.4748,
+        "unknown": 0.41825,
+        "failed": 0.10695
+      },
+      "bbca_status": {
+        "verified": 0.1109,
+        "unknown": 0.83035,
+        "failed": 0.05875
+      },
+      "path_evidence_rate": 0.9132,
+      "path_evidence_closed_form": 0.908875,
+      "bvi_detection": 0.30543246348268505,
+      "bvi_detection_closed_form": 0.30250000000000005,
+      "bbca_detection": 0.16789758739537175,
+      "bbca_detection_closed_form": 0.16637500000000005,
+      "false_demotion_rate": 0.01998993312720213,
+      "no_verdict_rate": 0.41825,
+      "no_verdict_closed_form": 0.4252499999999999,
+      "n_tamper": 6093,
+      "n_benign": 13907
+    },
+    {
+      "H": 3,
+      "p": 0.6,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.52855,
+        "unknown": 0.34605,
+        "failed": 0.1254
+      },
+      "bbca_status": {
+        "verified": 0.14745,
+        "unknown": 0.77685,
+        "failed": 0.0757
+      },
+      "path_evidence_rate": 0.9377,
+      "path_evidence_closed_form": 0.9359999999999999,
+      "bvi_detection": 0.3658981588986565,
+      "bvi_detection_closed_form": 0.36,
+      "bbca_detection": 0.22142975617847072,
+      "bbca_detection_closed_form": 0.21599999999999997,
+      "false_demotion_rate": 0.021616204996063274,
+      "no_verdict_rate": 0.34605,
+      "no_verdict_closed_form": 0.35200000000000004,
+      "n_tamper": 6029,
+      "n_benign": 13971
+    },
+    {
+      "H": 3,
+      "p": 0.65,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.57445,
+        "unknown": 0.2832,
+        "failed": 0.14235
+      },
+      "bbca_status": {
+        "verified": 0.18255,
+        "unknown": 0.726,
+        "failed": 0.09145
+      },
+      "path_evidence_rate": 0.95515,
+      "path_evidence_closed_form": 0.957125,
+      "bvi_detection": 0.4202825428859738,
+      "bvi_detection_closed_form": 0.42250000000000004,
+      "bbca_detection": 0.267238479650185,
+      "bbca_detection_closed_form": 0.274625,
+      "false_demotion_rate": 0.02476163369859115,
+      "no_verdict_rate": 0.2832,
+      "no_verdict_closed_form": 0.28175,
+      "n_tamper": 5946,
+      "n_benign": 14054
+    },
+    {
+      "H": 3,
+      "p": 0.7,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.6134,
+        "unknown": 0.21655,
+        "failed": 0.17005
+      },
+      "bbca_status": {
+        "verified": 0.22385,
+        "unknown": 0.658,
+        "failed": 0.11815
+      },
+      "path_evidence_rate": 0.9713,
+      "path_evidence_closed_form": 0.973,
+      "bvi_detection": 0.48933310935662694,
+      "bvi_detection_closed_form": 0.48999999999999994,
+      "bbca_detection": 0.33898874517050226,
+      "bbca_detection_closed_form": 0.3429999999999999,
+      "false_demotion_rate": 0.034740513988752046,
+      "no_verdict_rate": 0.21655,
+      "no_verdict_closed_form": 0.21600000000000005,
+      "n_tamper": 5953,
+      "n_benign": 14047
+    },
+    {
+      "H": 3,
+      "p": 0.75,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.64755,
+        "unknown": 0.1559,
+        "failed": 0.19655
+      },
+      "bbca_status": {
+        "verified": 0.2757,
+        "unknown": 0.576,
+        "failed": 0.1483
+      },
+      "path_evidence_rate": 0.98425,
+      "path_evidence_closed_form": 0.984375,
+      "bvi_detection": 0.5677440964662536,
+      "bvi_detection_closed_form": 0.5625,
+      "bbca_detection": 0.42857142857142855,
+      "bbca_detection_closed_form": 0.421875,
+      "false_demotion_rate": 0.03856297669113978,
+      "no_verdict_rate": 0.1559,
+      "no_verdict_closed_form": 0.15625,
+      "n_tamper": 5971,
+      "n_benign": 14029
+    },
+    {
+      "H": 3,
+      "p": 0.8,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.67815,
+        "unknown": 0.10035,
+        "failed": 0.2215
+      },
+      "bbca_status": {
+        "verified": 0.33605,
+        "unknown": 0.486,
+        "failed": 0.17795
+      },
+      "path_evidence_rate": 0.993,
+      "path_evidence_closed_form": 0.992,
+      "bvi_detection": 0.6406611570247934,
+      "bvi_detection_closed_form": 0.6400000000000001,
+      "bbca_detection": 0.5163636363636364,
+      "bbca_detection_closed_form": 0.5120000000000001,
+      "false_demotion_rate": 0.03971326164874552,
+      "no_verdict_rate": 0.10035,
+      "no_verdict_closed_form": 0.10399999999999995,
+      "n_tamper": 6050,
+      "n_benign": 13950
+    },
+    {
+      "H": 3,
+      "p": 0.85,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.68685,
+        "unknown": 0.06035,
+        "failed": 0.2528
+      },
+      "bbca_status": {
+        "verified": 0.39845,
+        "unknown": 0.3858,
+        "failed": 0.21575
+      },
+      "path_evidence_rate": 0.997,
+      "path_evidence_closed_form": 0.996625,
+      "bvi_detection": 0.7317032876259706,
+      "bvi_detection_closed_form": 0.7224999999999999,
+      "bbca_detection": 0.6246489344126879,
+      "bbca_detection_closed_form": 0.6141249999999999,
+      "false_demotion_rate": 0.04495590449559045,
+      "no_verdict_rate": 0.06035,
+      "no_verdict_closed_form": 0.06075000000000001,
+      "n_tamper": 6053,
+      "n_benign": 13947
+    },
+    {
+      "H": 3,
+      "p": 0.9,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.69925,
+        "unknown": 0.02915,
+        "failed": 0.2716
+      },
+      "bbca_status": {
+        "verified": 0.4838,
+        "unknown": 0.27045,
+        "failed": 0.24575
+      },
+      "path_evidence_rate": 0.9989,
+      "path_evidence_closed_form": 0.999,
+      "bvi_detection": 0.8055364511691885,
+      "bvi_detection_closed_form": 0.81,
+      "bbca_detection": 0.7273039889958735,
+      "bbca_detection_closed_form": 0.7290000000000001,
+      "false_demotion_rate": 0.05266497461928934,
+      "no_verdict_rate": 0.02915,
+      "no_verdict_closed_form": 0.02799999999999999,
+      "n_tamper": 5816,
+      "n_benign": 14184
+    },
+    {
+      "H": 3,
+      "p": 0.95,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.6811,
+        "unknown": 0.0077,
+        "failed": 0.3112
+      },
+      "bbca_status": {
+        "verified": 0.56625,
+        "unknown": 0.13765,
+        "failed": 0.2961
+      },
+      "path_evidence_rate": 0.9999,
+      "path_evidence_closed_form": 0.999875,
+      "bvi_detection": 0.9048731642189586,
+      "bvi_detection_closed_form": 0.9025,
+      "bbca_detection": 0.861648865153538,
+      "bbca_detection_closed_form": 0.8573749999999999,
+      "false_demotion_rate": 0.05725299828669332,
+      "no_verdict_rate": 0.0077,
+      "no_verdict_closed_form": 0.007250000000000012,
+      "n_tamper": 5992,
+      "n_benign": 14008
+    },
+    {
+      "H": 3,
+      "p": 1.0,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.6581,
+        "unknown": 0.0,
+        "failed": 0.3419
+      },
+      "bbca_status": {
+        "verified": 0.6581,
+        "unknown": 0.0,
+        "failed": 0.3419
+      },
+      "path_evidence_rate": 1.0,
+      "path_evidence_closed_form": 1.0,
+      "bvi_detection": 1.0,
+      "bvi_detection_closed_form": 1.0,
+      "bbca_detection": 1.0,
+      "bbca_detection_closed_form": 1.0,
+      "false_demotion_rate": 0.06506606051996022,
+      "no_verdict_rate": 0.0,
+      "no_verdict_closed_form": 0.0,
+      "n_tamper": 5922,
+      "n_benign": 14078
+    },
+    {
+      "H": 5,
+      "p": 0.0,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.0,
+        "unknown": 1.0,
+        "failed": 0.0
+      },
+      "bbca_status": {
+        "verified": 0.0,
+        "unknown": 1.0,
+        "failed": 0.0
+      },
+      "path_evidence_rate": 0.0,
+      "path_evidence_closed_form": 0.0,
+      "bvi_detection": 0.0,
+      "bvi_detection_closed_form": 0.0,
+      "bbca_detection": 0.0,
+      "bbca_detection_closed_form": 0.0,
+      "false_demotion_rate": 0.0,
+      "no_verdict_rate": 1.0,
+      "no_verdict_closed_form": 1.0,
+      "n_tamper": 5966,
+      "n_benign": 14034
+    },
+    {
+      "H": 5,
+      "p": 0.05,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.0213,
+        "unknown": 0.9777,
+        "failed": 0.001
+      },
+      "bbca_status": {
+        "verified": 0.0,
+        "unknown": 1.0,
+        "failed": 0.0
+      },
+      "path_evidence_rate": 0.2235,
+      "path_evidence_closed_form": 0.22621906250000023,
+      "bvi_detection": 0.0030015007503751876,
+      "bvi_detection_closed_form": 0.0025000000000000005,
+      "bbca_detection": 0.0,
+      "bbca_detection_closed_form": 3.125000000000001e-07,
+      "false_demotion_rate": 0.00014282653717060629,
+      "no_verdict_rate": 0.9777,
+      "no_verdict_closed_form": 0.9774074999999998,
+      "n_tamper": 5997,
+      "n_benign": 14003
+    },
+    {
+      "H": 5,
+      "p": 0.1,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.0774,
+        "unknown": 0.91845,
+        "failed": 0.00415
+      },
+      "bbca_status": {
+        "verified": 0.0,
+        "unknown": 1.0,
+        "failed": 0.0
+      },
+      "path_evidence_rate": 0.4087,
+      "path_evidence_closed_form": 0.40950999999999993,
+      "bvi_detection": 0.011308830866456012,
+      "bvi_detection_closed_form": 0.010000000000000002,
+      "bbca_detection": 0.0,
+      "bbca_detection_closed_form": 1.0000000000000003e-05,
+      "false_demotion_rate": 0.0010724243940802175,
+      "no_verdict_rate": 0.91845,
+      "no_verdict_closed_form": 0.9185400000000001,
+      "n_tamper": 6013,
+      "n_benign": 13987
+    },
+    {
+      "H": 5,
+      "p": 0.15,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.15395,
+        "unknown": 0.8385,
+        "failed": 0.00755
+      },
+      "bbca_status": {
+        "verified": 0.0001,
+        "unknown": 0.99985,
+        "failed": 5e-05
+      },
+      "path_evidence_rate": 0.5523,
+      "path_evidence_closed_form": 0.5562946875000001,
+      "bvi_detection": 0.021787234042553193,
+      "bvi_detection_closed_form": 0.0225,
+      "bbca_detection": 0.00017021276595744682,
+      "bbca_detection_closed_form": 7.593749999999998e-05,
+      "false_demotion_rate": 0.0016283185840707964,
+      "no_verdict_rate": 0.8385,
+      "no_verdict_closed_form": 0.8352099999999998,
+      "n_tamper": 5875,
+      "n_benign": 14125
+    },
+    {
+      "H": 5,
+      "p": 0.2,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.2431,
+        "unknown": 0.7446,
+        "failed": 0.0123
+      },
+      "bbca_status": {
+        "verified": 5e-05,
+        "unknown": 0.99995,
+        "failed": 0.0
+      },
+      "path_evidence_rate": 0.66885,
+      "path_evidence_closed_form": 0.6723199999999999,
+      "bvi_detection": 0.034990791896869246,
+      "bvi_detection_closed_form": 0.04000000000000001,
+      "bbca_detection": 0.0,
+      "bbca_detection_closed_form": 0.0003200000000000001,
+      "false_demotion_rate": 0.002637770014971127,
+      "no_verdict_rate": 0.7446,
+      "no_verdict_closed_form": 0.7372800000000002,
+      "n_tamper": 5973,
+      "n_benign": 14027
+    },
+    {
+      "H": 5,
+      "p": 0.25,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.3447,
+        "unknown": 0.6354,
+        "failed": 0.0199
+      },
+      "bbca_status": {
+        "verified": 0.0004,
+        "unknown": 0.999,
+        "failed": 0.0006
+      },
+      "path_evidence_rate": 0.75775,
+      "path_evidence_closed_form": 0.7626953125,
+      "bvi_detection": 0.05850885991307255,
+      "bvi_detection_closed_form": 0.0625,
+      "bbca_detection": 0.0018388498829822802,
+      "bbca_detection_closed_form": 0.0009765625,
+      "false_demotion_rate": 0.0034241689256669997,
+      "no_verdict_rate": 0.6354,
+      "no_verdict_closed_form": 0.6328125,
+      "n_tamper": 5982,
+      "n_benign": 14018
+    },
+    {
+      "H": 5,
+      "p": 0.3,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.4353,
+        "unknown": 0.5314,
+        "failed": 0.0333
+      },
+      "bbca_status": {
+        "verified": 0.0016,
+        "unknown": 0.99775,
+        "failed": 0.00065
+      },
+      "path_evidence_rate": 0.8356,
+      "path_evidence_closed_form": 0.8319300000000001,
+      "bvi_detection": 0.0967741935483871,
+      "bvi_detection_closed_form": 0.09,
+      "bbca_detection": 0.0021841397849462364,
+      "bbca_detection_closed_form": 0.0024299999999999994,
+      "false_demotion_rate": 0.0064066059225512525,
+      "no_verdict_rate": 0.5314,
+      "no_verdict_closed_form": 0.5282199999999999,
+      "n_tamper": 5952,
+      "n_benign": 14048
+    },
+    {
+      "H": 5,
+      "p": 0.35,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.5304,
+        "unknown": 0.42815,
+        "failed": 0.04145
+      },
+      "bbca_status": {
+        "verified": 0.0041,
+        "unknown": 0.9941,
+        "failed": 0.0018
+      },
+      "path_evidence_rate": 0.8855,
+      "path_evidence_closed_form": 0.8839709375,
+      "bvi_detection": 0.1232340425531915,
+      "bvi_detection_closed_form": 0.12249999999999998,
+      "bbca_detection": 0.005446808510638298,
+      "bbca_detection_closed_form": 0.005252187499999998,
+      "false_demotion_rate": 0.007433628318584071,
+      "no_verdict_rate": 0.42815,
+      "no_verdict_closed_form": 0.42841500000000005,
+      "n_tamper": 5875,
+      "n_benign": 14125
+    },
+    {
+      "H": 5,
+      "p": 0.4,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.6158,
+        "unknown": 0.3278,
+        "failed": 0.0564
+      },
+      "bbca_status": {
+        "verified": 0.0069,
+        "unknown": 0.9893,
+        "failed": 0.0038
+      },
+      "path_evidence_rate": 0.9246,
+      "path_evidence_closed_form": 0.9222400000000001,
+      "bvi_detection": 0.1619660234207488,
+      "bvi_detection_closed_form": 0.16000000000000003,
+      "bbca_detection": 0.010885700148441365,
+      "bbca_detection_closed_form": 0.010240000000000003,
+      "false_demotion_rate": 0.010475712133170697,
+      "no_verdict_rate": 0.3278,
+      "no_verdict_closed_form": 0.33696,
+      "n_tamper": 6063,
+      "n_benign": 13937
+    },
+    {
+      "H": 5,
+      "p": 0.45,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.6756,
+        "unknown": 0.25455,
+        "failed": 0.06985
+      },
+      "bbca_status": {
+        "verified": 0.012,
+        "unknown": 0.98035,
+        "failed": 0.00765
+      },
+      "path_evidence_rate": 0.94905,
+      "path_evidence_closed_form": 0.9496715625,
+      "bvi_detection": 0.20266889074228525,
+      "bvi_detection_closed_form": 0.2025,
+      "bbca_detection": 0.021017514595496247,
+      "bbca_detection_closed_form": 0.018452812500000002,
+      "false_demotion_rate": 0.012995358800428418,
+      "no_verdict_rate": 0.25455,
+      "no_verdict_closed_form": 0.2562175000000001,
+      "n_tamper": 5995,
+      "n_benign": 14005
+    },
+    {
+      "H": 5,
+      "p": 0.5,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.72845,
+        "unknown": 0.18625,
+        "failed": 0.0853
+      },
+      "bbca_status": {
+        "verified": 0.02035,
+        "unknown": 0.9695,
+        "failed": 0.01015
+      },
+      "path_evidence_rate": 0.9695,
+      "path_evidence_closed_form": 0.96875,
+      "bvi_detection": 0.2479825151311365,
+      "bvi_detection_closed_form": 0.25,
+      "bbca_detection": 0.029085406859448555,
+      "bbca_detection_closed_form": 0.03125,
+      "false_demotion_rate": 0.016438941076003417,
+      "no_verdict_rate": 0.18625,
+      "no_verdict_closed_form": 0.1875,
+      "n_tamper": 5948,
+      "n_benign": 14052
+    },
+    {
+      "H": 5,
+      "p": 0.55,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.76265,
+        "unknown": 0.1311,
+        "failed": 0.10625
+      },
+      "bbca_status": {
+        "verified": 0.03175,
+        "unknown": 0.9514,
+        "failed": 0.01685
+      },
+      "path_evidence_rate": 0.9807,
+      "path_evidence_closed_form": 0.9815471875,
+      "bvi_detection": 0.3056010481493613,
+      "bvi_detection_closed_form": 0.30250000000000005,
+      "bbca_detection": 0.04716672125777923,
+      "bbca_detection_closed_form": 0.05032843750000002,
+      "false_demotion_rate": 0.01864114006045775,
+      "no_verdict_rate": 0.1311,
+      "no_verdict_closed_form": 0.13121999999999995,
+      "n_tamper": 6106,
+      "n_benign": 13894
+    },
+    {
+      "H": 5,
+      "p": 0.6,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.7898,
+        "unknown": 0.08955,
+        "failed": 0.12065
+      },
+      "bbca_status": {
+        "verified": 0.05155,
+        "unknown": 0.92285,
+        "failed": 0.0256
+      },
+      "path_evidence_rate": 0.9901,
+      "path_evidence_closed_form": 0.98976,
+      "bvi_detection": 0.3525264394829612,
+      "bvi_detection_closed_form": 0.36,
+      "bbca_detection": 0.07520564042303172,
+      "bbca_detection_closed_form": 0.07775999999999998,
+      "false_demotion_rate": 0.02228868475396995,
+      "no_verdict_rate": 0.08955,
+      "no_verdict_closed_form": 0.08704,
+      "n_tamper": 5957,
+      "n_benign": 14043
+    },
+    {
+      "H": 5,
+      "p": 0.65,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.8031,
+        "unknown": 0.0532,
+        "failed": 0.1437
+      },
+      "bbca_status": {
+        "verified": 0.0794,
+        "unknown": 0.8812,
+        "failed": 0.0394
+      },
+      "path_evidence_rate": 0.99375,
+      "path_evidence_closed_form": 0.9947478125,
+      "bvi_detection": 0.42393543956043955,
+      "bvi_detection_closed_form": 0.42250000000000004,
+      "bbca_detection": 0.11521291208791208,
+      "bbca_detection_closed_form": 0.11602906250000002,
+      "false_demotion_rate": 0.028569413092550792,
+      "no_verdict_rate": 0.0532,
+      "no_verdict_closed_form": 0.05402249999999999,
+      "n_tamper": 5824,
+      "n_benign": 14176
+    },
+    {
+      "H": 5,
+      "p": 0.7,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.79935,
+        "unknown": 0.03085,
+        "failed": 0.1698
+      },
+      "bbca_status": {
+        "verified": 0.11185,
+        "unknown": 0.83055,
+        "failed": 0.0576
+      },
+      "path_evidence_rate": 0.9977,
+      "path_evidence_closed_form": 0.99757,
+      "bvi_detection": 0.4930798732699683,
+      "bvi_detection_closed_form": 0.48999999999999994,
+      "bbca_detection": 0.16725029181257295,
+      "bbca_detection_closed_form": 0.16806999999999994,
+      "false_demotion_rate": 0.031350424908948085,
+      "no_verdict_rate": 0.03085,
+      "no_verdict_closed_form": 0.03078000000000002,
+      "n_tamper": 5997,
+      "n_benign": 14003
+    },
+    {
+      "H": 5,
+      "p": 0.75,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.7918,
+        "unknown": 0.0156,
+        "failed": 0.1926
+      },
+      "bbca_status": {
+        "verified": 0.1518,
+        "unknown": 0.7656,
+        "failed": 0.0826
+      },
+      "path_evidence_rate": 0.99875,
+      "path_evidence_closed_form": 0.9990234375,
+      "bvi_detection": 0.5574154670237697,
+      "bvi_detection_closed_form": 0.5625,
+      "bbca_detection": 0.23886842986273854,
+      "bbca_detection_closed_form": 0.2373046875,
+      "false_demotion_rate": 0.03721659774704121,
+      "no_verdict_rate": 0.0156,
+      "no_verdict_closed_form": 0.015625,
+      "n_tamper": 5974,
+      "n_benign": 14026
+    },
+    {
+      "H": 5,
+      "p": 0.8,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.7731,
+        "unknown": 0.00665,
+        "failed": 0.22025
+      },
+      "bbca_status": {
+        "verified": 0.2102,
+        "unknown": 0.67495,
+        "failed": 0.11485
+      },
+      "path_evidence_rate": 0.9999,
+      "path_evidence_closed_form": 0.99968,
+      "bvi_detection": 0.6366799204771372,
+      "bvi_detection_closed_form": 0.6400000000000001,
+      "bbca_detection": 0.3348243870112657,
+      "bbca_detection_closed_form": 0.3276800000000001,
+      "false_demotion_rate": 0.04024634775136064,
+      "no_verdict_rate": 0.00665,
+      "no_verdict_closed_form": 0.006719999999999994,
+      "n_tamper": 6036,
+      "n_benign": 13964
+    },
+    {
+      "H": 5,
+      "p": 0.85,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.7475,
+        "unknown": 0.0022,
+        "failed": 0.2503
+      },
+      "bbca_status": {
+        "verified": 0.29275,
+        "unknown": 0.55265,
+        "failed": 0.1546
+      },
+      "path_evidence_rate": 0.9999,
+      "path_evidence_closed_form": 0.9999240625,
+      "bvi_detection": 0.729449188012724,
+      "bvi_detection_closed_form": 0.7224999999999999,
+      "bbca_detection": 0.4522015737485351,
+      "bbca_detection_closed_form": 0.44370531249999995,
+      "false_demotion_rate": 0.04626791188422329,
+      "no_verdict_rate": 0.0022,
+      "no_verdict_closed_form": 0.002227500000000001,
+      "n_tamper": 5973,
+      "n_benign": 14027
+    },
+    {
+      "H": 5,
+      "p": 0.9,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.71825,
+        "unknown": 0.00045,
+        "failed": 0.2813
+      },
+      "bbca_status": {
+        "verified": 0.3846,
+        "unknown": 0.40755,
+        "failed": 0.20785
+      },
+      "path_evidence_rate": 1.0,
+      "path_evidence_closed_form": 0.99999,
+      "bvi_detection": 0.8068783068783069,
+      "bvi_detection_closed_form": 0.81,
+      "bbca_detection": 0.595734126984127,
+      "bbca_detection_closed_form": 0.5904900000000001,
+      "false_demotion_rate": 0.05346903669724771,
+      "no_verdict_rate": 0.00045,
+      "no_verdict_closed_form": 0.0004599999999999996,
+      "n_tamper": 6048,
+      "n_benign": 13952
+    },
+    {
+      "H": 5,
+      "p": 0.95,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.69145,
+        "unknown": 5e-05,
+        "failed": 0.3085
+      },
+      "bbca_status": {
+        "verified": 0.50955,
+        "unknown": 0.22365,
+        "failed": 0.2668
+      },
+      "path_evidence_rate": 1.0,
+      "path_evidence_closed_form": 0.9999996875,
+      "bvi_detection": 0.8966962938118397,
+      "bvi_detection_closed_form": 0.9025,
+      "bbca_detection": 0.7744423947677344,
+      "bbca_detection_closed_form": 0.7737809374999998,
+      "false_demotion_rate": 0.05863076155873762,
+      "no_verdict_rate": 5e-05,
+      "no_verdict_closed_form": 3.0000000000000106e-05,
+      "n_tamper": 5963,
+      "n_benign": 14037
+    },
+    {
+      "H": 5,
+      "p": 1.0,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.6585,
+        "unknown": 0.0,
+        "failed": 0.3415
+      },
+      "bbca_status": {
+        "verified": 0.6585,
+        "unknown": 0.0,
+        "failed": 0.3415
+      },
+      "path_evidence_rate": 1.0,
+      "path_evidence_closed_form": 1.0,
+      "bvi_detection": 1.0,
+      "bvi_detection_closed_form": 1.0,
+      "bbca_detection": 1.0,
+      "bbca_detection_closed_form": 1.0,
+      "false_demotion_rate": 0.06283355867074646,
+      "no_verdict_rate": 0.0,
+      "no_verdict_closed_form": 0.0,
+      "n_tamper": 5947,
+      "n_benign": 14053
+    },
+    {
+      "H": 8,
+      "p": 0.0,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.0,
+        "unknown": 1.0,
+        "failed": 0.0
+      },
+      "bbca_status": {
+        "verified": 0.0,
+        "unknown": 1.0,
+        "failed": 0.0
+      },
+      "path_evidence_rate": 0.0,
+      "path_evidence_closed_form": 0.0,
+      "bvi_detection": 0.0,
+      "bvi_detection_closed_form": 0.0,
+      "bbca_detection": 0.0,
+      "bbca_detection_closed_form": 0.0,
+      "false_demotion_rate": 0.0,
+      "no_verdict_rate": 1.0,
+      "no_verdict_closed_form": 1.0,
+      "n_tamper": 5933,
+      "n_benign": 14067
+    },
+    {
+      "H": 8,
+      "p": 0.05,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.0586,
+        "unknown": 0.9406,
+        "failed": 0.0008
+      },
+      "bbca_status": {
+        "verified": 0.0,
+        "unknown": 1.0,
+        "failed": 0.0
+      },
+      "path_evidence_rate": 0.3415,
+      "path_evidence_closed_form": 0.33657956871093775,
+      "bvi_detection": 0.0026415717351824337,
+      "bvi_detection_closed_form": 0.0025000000000000005,
+      "bbca_detection": 0.0,
+      "bbca_detection_closed_form": 3.906250000000002e-11,
+      "false_demotion_rate": 0.0,
+      "no_verdict_rate": 0.9406,
+      "no_verdict_closed_form": 0.9427553497265622,
+      "n_tamper": 6057,
+      "n_benign": 13943
+    },
+    {
+      "H": 8,
+      "p": 0.1,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.17675,
+        "unknown": 0.81945,
+        "failed": 0.0038
+      },
+      "bbca_status": {
+        "verified": 0.0,
+        "unknown": 1.0,
+        "failed": 0.0
+      },
+      "path_evidence_rate": 0.56665,
+      "path_evidence_closed_form": 0.5695327899999999,
+      "bvi_detection": 0.01176668347621449,
+      "bvi_detection_closed_form": 0.010000000000000002,
+      "bbca_detection": 0.0,
+      "bbca_detection_closed_form": 1.0000000000000005e-08,
+      "false_demotion_rate": 0.0004270158707565298,
+      "no_verdict_rate": 0.81945,
+      "no_verdict_closed_form": 0.8131047300000002,
+      "n_tamper": 5949,
+      "n_benign": 14051
+    },
+    {
+      "H": 8,
+      "p": 0.15,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.33365,
+        "unknown": 0.65715,
+        "failed": 0.0092
+      },
+      "bbca_status": {
+        "verified": 0.0,
+        "unknown": 1.0,
+        "failed": 0.0
+      },
+      "path_evidence_rate": 0.73065,
+      "path_evidence_closed_form": 0.7275094749609375,
+      "bvi_detection": 0.02657204159102162,
+      "bvi_detection_closed_form": 0.0225,
+      "bbca_detection": 0.0,
+      "bbca_detection_closed_form": 2.562890624999999e-07,
+      "false_demotion_rate": 0.0016498099132056523,
+      "no_verdict_rate": 0.65715,
+      "no_verdict_closed_form": 0.6571830309765623,
+      "n_tamper": 6059,
+      "n_benign": 13941
+    },
+    {
+      "H": 8,
+      "p": 0.2,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.47985,
+        "unknown": 0.50665,
+        "failed": 0.0135
+      },
+      "bbca_status": {
+        "verified": 0.0,
+        "unknown": 1.0,
+        "failed": 0.0
+      },
+      "path_evidence_rate": 0.82935,
+      "path_evidence_closed_form": 0.8322278399999999,
+      "bvi_detection": 0.03934644881627209,
+      "bvi_detection_closed_form": 0.04000000000000001,
+      "bbca_detection": 0.0,
+      "bbca_detection_closed_form": 2.5600000000000013e-06,
+      "false_demotion_rate": 0.002428224539351521,
+      "no_verdict_rate": 0.50665,
+      "no_verdict_closed_form": 0.5033164800000002,
+      "n_tamper": 5998,
+      "n_benign": 14002
+    },
+    {
+      "H": 8,
+      "p": 0.25,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.61085,
+        "unknown": 0.36705,
+        "failed": 0.0221
+      },
+      "bbca_status": {
+        "verified": 0.0,
+        "unknown": 1.0,
+        "failed": 0.0
+      },
+      "path_evidence_rate": 0.89915,
+      "path_evidence_closed_form": 0.8998870849609375,
+      "bvi_detection": 0.061807965625516444,
+      "bvi_detection_closed_form": 0.0625,
+      "bbca_detection": 0.0,
+      "bbca_detection_closed_form": 1.52587890625e-05,
+      "false_demotion_rate": 0.004874901426625565,
+      "no_verdict_rate": 0.36705,
+      "no_verdict_closed_form": 0.3670806884765625,
+      "n_tamper": 6051,
+      "n_benign": 13949
+    },
+    {
+      "H": 8,
+      "p": 0.3,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.7174,
+        "unknown": 0.2522,
+        "failed": 0.0304
+      },
+      "bbca_status": {
+        "verified": 5e-05,
+        "unknown": 0.9999,
+        "failed": 5e-05
+      },
+      "path_evidence_rate": 0.94175,
+      "path_evidence_closed_form": 0.94235199,
+      "bvi_detection": 0.08594771241830065,
+      "bvi_detection_closed_form": 0.09,
+      "bbca_detection": 0.0001633986928104575,
+      "bbca_detection_closed_form": 6.560999999999998e-05,
+      "false_demotion_rate": 0.00590778097982709,
+      "no_verdict_rate": 0.2522,
+      "no_verdict_closed_form": 0.2552983299999999,
+      "n_tamper": 6120,
+      "n_benign": 13880
+    },
+    {
+      "H": 8,
+      "p": 0.35,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.78575,
+        "unknown": 0.17285,
+        "failed": 0.0414
+      },
+      "bbca_status": {
+        "verified": 0.0001,
+        "unknown": 0.99985,
+        "failed": 5e-05
+      },
+      "path_evidence_rate": 0.9662,
+      "path_evidence_closed_form": 0.9681355187109375,
+      "bvi_detection": 0.11917098445595854,
+      "bvi_detection_closed_form": 0.12249999999999998,
+      "bbca_detection": 0.00016714023065351831,
+      "bbca_detection_closed_form": 0.0002251875390624999,
+      "false_demotion_rate": 0.008204323321680817,
+      "no_verdict_rate": 0.17285,
+      "no_verdict_closed_form": 0.16912686222656254,
+      "n_tamper": 5983,
+      "n_benign": 14017
+    },
+    {
+      "H": 8,
+      "p": 0.4,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.83875,
+        "unknown": 0.10595,
+        "failed": 0.0553
+      },
+      "bbca_status": {
+        "verified": 0.00025,
+        "unknown": 0.99945,
+        "failed": 0.0003
+      },
+      "path_evidence_rate": 0.98375,
+      "path_evidence_closed_form": 0.98320384,
+      "bvi_detection": 0.16509274873524452,
+      "bvi_detection_closed_form": 0.16000000000000003,
+      "bbca_detection": 0.001011804384485666,
+      "bbca_detection_closed_form": 0.0006553600000000003,
+      "false_demotion_rate": 0.009026297085998579,
+      "no_verdict_rate": 0.10595,
+      "no_verdict_closed_form": 0.10637567999999997,
+      "n_tamper": 5930,
+      "n_benign": 14070
+    },
+    {
+      "H": 8,
+      "p": 0.45,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.8674,
+        "unknown": 0.0606,
+        "failed": 0.072
+      },
+      "bbca_status": {
+        "verified": 0.001,
+        "unknown": 0.99845,
+        "failed": 0.00055
+      },
+      "path_evidence_rate": 0.9912,
+      "path_evidence_closed_form": 0.9916266062109375,
+      "bvi_detection": 0.20819563780568406,
+      "bvi_detection_closed_form": 0.2025,
+      "bbca_detection": 0.0018175809649702578,
+      "bbca_detection_closed_form": 0.0016815125390625004,
+      "false_demotion_rate": 0.012905075996558647,
+      "no_verdict_rate": 0.0606,
+      "no_verdict_closed_form": 0.06318106222656254,
+      "n_tamper": 6052,
+      "n_benign": 13948
+    },
+    {
+      "H": 8,
+      "p": 0.5,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.8767,
+        "unknown": 0.0362,
+        "failed": 0.0871
+      },
+      "bbca_status": {
+        "verified": 0.0023,
+        "unknown": 0.99605,
+        "failed": 0.00165
+      },
+      "path_evidence_rate": 0.99605,
+      "path_evidence_closed_form": 0.99609375,
+      "bvi_detection": 0.2541148807524353,
+      "bvi_detection_closed_form": 0.25,
+      "bbca_detection": 0.0047027208599261005,
+      "bbca_detection_closed_form": 0.00390625,
+      "false_demotion_rate": 0.016303573971237363,
+      "no_verdict_rate": 0.0362,
+      "no_verdict_closed_form": 0.03515625,
+      "n_tamper": 5954,
+      "n_benign": 14046
+    },
+    {
+      "H": 8,
+      "p": 0.55,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.87765,
+        "unknown": 0.0183,
+        "failed": 0.10405
+      },
+      "bbca_status": {
+        "verified": 0.0049,
+        "unknown": 0.9924,
+        "failed": 0.0027
+      },
+      "path_evidence_rate": 0.9986,
+      "path_evidence_closed_form": 0.9983184874609375,
+      "bvi_detection": 0.2966743496871913,
+      "bvi_detection_closed_form": 0.30250000000000005,
+      "bbca_detection": 0.007737899242673691,
+      "bbca_detection_closed_form": 0.008373393789062506,
+      "false_demotion_rate": 0.02003446790176648,
+      "no_verdict_rate": 0.0183,
+      "no_verdict_closed_form": 0.01812296847656249,
+      "n_tamper": 6074,
+      "n_benign": 13926
+    },
+    {
+      "H": 8,
+      "p": 0.6,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.8668,
+        "unknown": 0.00885,
+        "failed": 0.12435
+      },
+      "bbca_status": {
+        "verified": 0.01235,
+        "unknown": 0.9818,
+        "failed": 0.00585
+      },
+      "path_evidence_rate": 0.9993,
+      "path_evidence_closed_form": 0.99934464,
+      "bvi_detection": 0.36538137733625187,
+      "bvi_detection_closed_form": 0.36,
+      "bbca_detection": 0.01650109446034686,
+      "bbca_detection_closed_form": 0.016796159999999994,
+      "false_demotion_rate": 0.02254462698243368,
+      "no_verdict_rate": 0.00885,
+      "no_verdict_closed_form": 0.008519680000000003,
+      "n_tamper": 5939,
+      "n_benign": 14061
+    },
+    {
+      "H": 8,
+      "p": 0.65,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.8524,
+        "unknown": 0.0039,
+        "failed": 0.1437
+      },
+      "bbca_status": {
+        "verified": 0.0182,
+        "unknown": 0.97075,
+        "failed": 0.01105
+      },
+      "path_evidence_rate": 0.9999,
+      "path_evidence_closed_form": 0.9997748124609375,
+      "bvi_detection": 0.41129700182209705,
+      "bvi_detection_closed_form": 0.42250000000000004,
+      "bbca_detection": 0.030147424217326486,
+      "bbca_detection_closed_form": 0.03186448128906251,
+      "false_demotion_rate": 0.02800257824249803,
+      "no_verdict_rate": 0.0039,
+      "no_verdict_closed_form": 0.0035708309765624985,
+      "n_tamper": 6037,
+      "n_benign": 13963
+    },
+    {
+      "H": 8,
+      "p": 0.7,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.8288,
+        "unknown": 0.00125,
+        "failed": 0.16995
+      },
+      "bbca_status": {
+        "verified": 0.0377,
+        "unknown": 0.94155,
+        "failed": 0.02075
+      },
+      "path_evidence_rate": 1.0,
+      "path_evidence_closed_form": 0.99993439,
+      "bvi_detection": 0.4989186491432374,
+      "bvi_detection_closed_form": 0.48999999999999994,
+      "bbca_detection": 0.062385626351688574,
+      "bbca_detection_closed_form": 0.05764800999999997,
+      "false_demotion_rate": 0.02859389520337408,
+      "no_verdict_rate": 0.00125,
+      "no_verdict_closed_form": 0.0012903300000000012,
+      "n_tamper": 6011,
+      "n_benign": 13989
+    },
+    {
+      "H": 8,
+      "p": 0.75,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.80535,
+        "unknown": 0.00035,
+        "failed": 0.1943
+      },
+      "bbca_status": {
+        "verified": 0.064,
+        "unknown": 0.90085,
+        "failed": 0.03515
+      },
+      "path_evidence_rate": 0.99995,
+      "path_evidence_closed_form": 0.9999847412109375,
+      "bvi_detection": 0.5618634162631491,
+      "bvi_detection_closed_form": 0.5625,
+      "bbca_detection": 0.10352312573050593,
+      "bbca_detection_closed_form": 0.1001129150390625,
+      "false_demotion_rate": 0.03718506887445579,
+      "no_verdict_rate": 0.00035,
+      "no_verdict_closed_form": 0.0003814697265625,
+      "n_tamper": 5989,
+      "n_benign": 14011
+    },
+    {
+      "H": 8,
+      "p": 0.8,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.7806,
+        "unknown": 5e-05,
+        "failed": 0.21935
+      },
+      "bbca_status": {
+        "verified": 0.10705,
+        "unknown": 0.8376,
+        "failed": 0.05535
+      },
+      "path_evidence_rate": 1.0,
+      "path_evidence_closed_form": 0.99999744,
+      "bvi_detection": 0.645466847090663,
+      "bvi_detection_closed_form": 0.6400000000000001,
+      "bbca_detection": 0.16474966170500677,
+      "bbca_detection_closed_form": 0.1677721600000001,
+      "false_demotion_rate": 0.04053094832481544,
+      "no_verdict_rate": 5e-05,
+      "no_verdict_closed_form": 8.447999999999987e-05,
+      "n_tamper": 5912,
+      "n_benign": 14088
+    },
+    {
+      "H": 8,
+      "p": 0.85,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.74665,
+        "unknown": 0.0,
+        "failed": 0.25335
+      },
+      "bbca_status": {
+        "verified": 0.1806,
+        "unknown": 0.7236,
+        "failed": 0.0958
+      },
+      "path_evidence_rate": 1.0,
+      "path_evidence_closed_form": 0.9999997437109375,
+      "bvi_detection": 0.7249544626593807,
+      "bvi_detection_closed_form": 0.7224999999999999,
+      "bbca_detection": 0.2750455373406193,
+      "bbca_detection_closed_form": 0.27249052503906246,
+      "false_demotion_rate": 0.049351765632834325,
+      "no_verdict_rate": 0.0,
+      "no_verdict_closed_form": 1.1874726562500012e-05,
+      "n_tamper": 6039,
+      "n_benign": 13961
+    },
+    {
+      "H": 8,
+      "p": 0.9,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.71965,
+        "unknown": 0.0,
+        "failed": 0.28035
+      },
+      "bbca_status": {
+        "verified": 0.27845,
+        "unknown": 0.57335,
+        "failed": 0.1482
+      },
+      "path_evidence_rate": 1.0,
+      "path_evidence_closed_form": 0.99999999,
+      "bvi_detection": 0.8084507042253521,
+      "bvi_detection_closed_form": 0.81,
+      "bbca_detection": 0.4266777133388567,
+      "bbca_detection_closed_form": 0.4304672100000001,
+      "false_demotion_rate": 0.05213032581453634,
+      "no_verdict_rate": 0.0,
+      "no_verdict_closed_form": 7.299999999999989e-07,
+      "n_tamper": 6035,
+      "n_benign": 13965
+    },
+    {
+      "H": 8,
+      "p": 0.95,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.68915,
+        "unknown": 0.0,
+        "failed": 0.31085
+      },
+      "bbca_status": {
+        "verified": 0.4374,
+        "unknown": 0.33185,
+        "failed": 0.23075
+      },
+      "path_evidence_rate": 1.0,
+      "path_evidence_closed_form": 0.9999999999609375,
+      "bvi_detection": 0.9066174000671817,
+      "bvi_detection_closed_form": 0.9025,
+      "bbca_detection": 0.6721531743365805,
+      "bbca_detection_closed_form": 0.6634204312890623,
+      "false_demotion_rate": 0.05830841520717642,
+      "no_verdict_rate": 0.0,
+      "no_verdict_closed_form": 5.976562500000037e-09,
+      "n_tamper": 5954,
+      "n_benign": 14046
+    },
+    {
+      "H": 8,
+      "p": 1.0,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.65585,
+        "unknown": 0.0,
+        "failed": 0.34415
+      },
+      "bbca_status": {
+        "verified": 0.65585,
+        "unknown": 0.0,
+        "failed": 0.34415
+      },
+      "path_evidence_rate": 1.0,
+      "path_evidence_closed_form": 1.0,
+      "bvi_detection": 1.0,
+      "bvi_detection_closed_form": 1.0,
+      "bbca_detection": 1.0,
+      "bbca_detection_closed_form": 1.0,
+      "false_demotion_rate": 0.06152965586320384,
+      "no_verdict_rate": 0.0,
+      "no_verdict_closed_form": 0.0,
+      "n_tamper": 6023,
+      "n_benign": 13977
+    },
+    {
+      "H": 12,
+      "p": 0.0,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.0,
+        "unknown": 1.0,
+        "failed": 0.0
+      },
+      "bbca_status": {
+        "verified": 0.0,
+        "unknown": 1.0,
+        "failed": 0.0
+      },
+      "path_evidence_rate": 0.0,
+      "path_evidence_closed_form": 0.0,
+      "bvi_detection": 0.0,
+      "bvi_detection_closed_form": 0.0,
+      "bbca_detection": 0.0,
+      "bbca_detection_closed_form": 0.0,
+      "false_demotion_rate": 0.0,
+      "no_verdict_rate": 1.0,
+      "no_verdict_closed_form": 1.0,
+      "n_tamper": 6058,
+      "n_benign": 13942
+    },
+    {
+      "H": 12,
+      "p": 0.05,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.1165,
+        "unknown": 0.8826,
+        "failed": 0.0009
+      },
+      "bbca_status": {
+        "verified": 0.0,
+        "unknown": 1.0,
+        "failed": 0.0
+      },
+      "path_evidence_rate": 0.46015,
+      "path_evidence_closed_form": 0.45963991233736334,
+      "bvi_detection": 0.0028701671450278576,
+      "bvi_detection_closed_form": 0.0025000000000000005,
+      "bbca_detection": 0.0,
+      "bbca_detection_closed_form": 2.4414062500000014e-16,
+      "false_demotion_rate": 7.103786318107552e-05,
+      "no_verdict_rate": 0.8826,
+      "no_verdict_closed_form": 0.8816401430285126,
+      "n_tamper": 5923,
+      "n_benign": 14077
+    },
+    {
+      "H": 12,
+      "p": 0.1,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.34255,
+        "unknown": 0.65385,
+        "failed": 0.0036
+      },
+      "bbca_status": {
+        "verified": 0.0,
+        "unknown": 1.0,
+        "failed": 0.0
+      },
+      "path_evidence_rate": 0.7188,
+      "path_evidence_closed_form": 0.7175704635189999,
+      "bvi_detection": 0.010758027143330023,
+      "bvi_detection_closed_form": 0.010000000000000002,
+      "bbca_detection": 0.0,
+      "bbca_detection_closed_form": 1.0000000000000006e-12,
+      "false_demotion_rate": 0.0005015045135406219,
+      "no_verdict_rate": 0.65385,
+      "no_verdict_closed_form": 0.6590022517890002,
+      "n_tamper": 6042,
+      "n_benign": 13958
+    },
+    {
+      "H": 12,
+      "p": 0.15,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.5499,
+        "unknown": 0.44125,
+        "failed": 0.00885
+      },
+      "bbca_status": {
+        "verified": 0.0,
+        "unknown": 1.0,
+        "failed": 0.0
+      },
+      "path_evidence_rate": 0.8585,
+      "path_evidence_closed_form": 0.857758242863828,
+      "bvi_detection": 0.026302478502781994,
+      "bvi_detection_closed_form": 0.0225,
+      "bbca_detection": 0.0,
+      "bbca_detection_closed_form": 1.2974633789062494e-10,
+      "false_demotion_rate": 0.0014926434003838225,
+      "no_verdict_rate": 0.44125,
+      "no_verdict_closed_form": 0.4434595957774776,
+      "n_tamper": 5931,
+      "n_benign": 14069
+    },
+    {
+      "H": 12,
+      "p": 0.2,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.70665,
+        "unknown": 0.27925,
+        "failed": 0.0141
+      },
+      "bbca_status": {
+        "verified": 0.0,
+        "unknown": 1.0,
+        "failed": 0.0
+      },
+      "path_evidence_rate": 0.93,
+      "path_evidence_closed_form": 0.931280523264,
+      "bvi_detection": 0.04226752859273993,
+      "bvi_detection_closed_form": 0.04000000000000001,
+      "bbca_detection": 0.0,
+      "bbca_detection_closed_form": 4.096000000000002e-09,
+      "false_demotion_rate": 0.00193312808763514,
+      "no_verdict_rate": 0.27925,
+      "no_verdict_closed_form": 0.27487790694400016,
+      "n_tamper": 6033,
+      "n_benign": 13967
+    },
+    {
+      "H": 12,
+      "p": 0.25,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.8187,
+        "unknown": 0.15825,
+        "failed": 0.02305
+      },
+      "bbca_status": {
+        "verified": 0.0,
+        "unknown": 1.0,
+        "failed": 0.0
+      },
+      "path_evidence_rate": 0.9702,
+      "path_evidence_closed_form": 0.9683236479759216,
+      "bvi_detection": 0.06822351959966638,
+      "bvi_detection_closed_form": 0.0625,
+      "bbca_detection": 0.0,
+      "bbca_detection_closed_form": 5.960464477539063e-08,
+      "false_demotion_rate": 0.0037129596572652622,
+      "no_verdict_rate": 0.15825,
+      "no_verdict_closed_form": 0.15838176012039185,
+      "n_tamper": 5995,
+      "n_benign": 14005
+    },
+    {
+      "H": 12,
+      "p": 0.3,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.88245,
+        "unknown": 0.08635,
+        "failed": 0.0312
+      },
+      "bbca_status": {
+        "verified": 0.0,
+        "unknown": 1.0,
+        "failed": 0.0
+      },
+      "path_evidence_rate": 0.9859,
+      "path_evidence_closed_form": 0.986158712799,
+      "bvi_detection": 0.08973520758417784,
+      "bvi_detection_closed_form": 0.09,
+      "bbca_detection": 0.0,
+      "bbca_detection_closed_form": 5.314409999999998e-07,
+      "false_demotion_rate": 0.005402679729145656,
+      "no_verdict_rate": 0.08635,
+      "no_verdict_closed_form": 0.08502504994899994,
+      "n_tamper": 6118,
+      "n_benign": 13882
+    },
+    {
+      "H": 12,
+      "p": 0.35,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.9192,
+        "unknown": 0.04175,
+        "failed": 0.03905
+      },
+      "bbca_status": {
+        "verified": 0.0,
+        "unknown": 1.0,
+        "failed": 0.0
+      },
+      "path_evidence_rate": 0.995,
+      "path_evidence_closed_form": 0.9943119909368943,
+      "bvi_detection": 0.11650485436893204,
+      "bvi_detection_closed_form": 0.12249999999999998,
+      "bbca_detection": 0.0,
+      "bbca_detection_closed_form": 3.379220508056638e-06,
+      "false_demotion_rate": 0.00606017396264081,
+      "no_verdict_rate": 0.04175,
+      "no_verdict_closed_form": 0.04244129839394264,
+      "n_tamper": 5974,
+      "n_benign": 14026
+    },
+    {
+      "H": 12,
+      "p": 0.4,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.9241,
+        "unknown": 0.02005,
+        "failed": 0.05585
+      },
+      "bbca_status": {
+        "verified": 5e-05,
+        "unknown": 0.99995,
+        "failed": 0.0
+      },
+      "path_evidence_rate": 0.99735,
+      "path_evidence_closed_form": 0.997823217664,
+      "bvi_detection": 0.16205145010650499,
+      "bvi_detection_closed_form": 0.16000000000000003,
+      "bbca_detection": 0.0,
+      "bbca_detection_closed_form": 1.677721600000001e-05,
+      "false_demotion_rate": 0.009210620997337556,
+      "no_verdict_rate": 0.02005,
+      "no_verdict_closed_form": 0.019591041023999993,
+      "n_tamper": 6103,
+      "n_benign": 13897
+    },
+    {
+      "H": 12,
+      "p": 0.45,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.92145,
+        "unknown": 0.00795,
+        "failed": 0.0706
+      },
+      "bbca_status": {
+        "verified": 0.0001,
+        "unknown": 0.9999,
+        "failed": 0.0
+      },
+      "path_evidence_rate": 0.99925,
+      "path_evidence_closed_form": 0.9992337821345896,
+      "bvi_detection": 0.20312759940109798,
+      "bvi_detection_closed_form": 0.2025,
+      "bbca_detection": 0.0,
+      "bbca_detection_closed_form": 6.895252355493167e-05,
+      "false_demotion_rate": 0.013653584959611123,
+      "no_verdict_rate": 0.00795,
+      "no_verdict_closed_form": 0.008289084180348886,
+      "n_tamper": 6011,
+      "n_benign": 13989
+    },
+    {
+      "H": 12,
+      "p": 0.5,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.91065,
+        "unknown": 0.0031,
+        "failed": 0.08625
+      },
+      "bbca_status": {
+        "verified": 0.00015,
+        "unknown": 0.99975,
+        "failed": 0.0001
+      },
+      "path_evidence_rate": 0.99995,
+      "path_evidence_closed_form": 0.999755859375,
+      "bvi_detection": 0.2461033634126333,
+      "bvi_detection_closed_form": 0.25,
+      "bbca_detection": 0.00032813781788351107,
+      "bbca_detection_closed_form": 0.000244140625,
+      "false_demotion_rate": 0.016181229773462782,
+      "no_verdict_rate": 0.0031,
+      "no_verdict_closed_form": 0.003173828125,
+      "n_tamper": 6095,
+      "n_benign": 13905
+    },
+    {
+      "H": 12,
+      "p": 0.55,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.8983,
+        "unknown": 0.0014,
+        "failed": 0.1003
+      },
+      "bbca_status": {
+        "verified": 0.00055,
+        "unknown": 0.9991,
+        "failed": 0.00035
+      },
+      "path_evidence_rate": 0.99995,
+      "path_evidence_closed_form": 0.9999310474764451,
+      "bvi_detection": 0.2986548612293547,
+      "bvi_detection_closed_form": 0.30250000000000005,
+      "bbca_detection": 0.0008513536523071684,
+      "bbca_detection_closed_form": 0.0007662178654104011,
+      "false_demotion_rate": 0.01783818220428966,
+      "no_verdict_rate": 0.0014,
+      "no_verdict_closed_form": 0.0010802562023605946,
+      "n_tamper": 5873,
+      "n_benign": 14127
+    },
+    {
+      "H": 12,
+      "p": 0.6,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.87405,
+        "unknown": 0.00035,
+        "failed": 0.1256
+      },
+      "bbca_status": {
+        "verified": 0.00125,
+        "unknown": 0.9982,
+        "failed": 0.00055
+      },
+      "path_evidence_rate": 1.0,
+      "path_evidence_closed_form": 0.999983222784,
+      "bvi_detection": 0.3608884435537742,
+      "bvi_detection_closed_form": 0.36,
+      "bbca_detection": 0.0016700066800267202,
+      "bbca_detection_closed_form": 0.002176782335999999,
+      "false_demotion_rate": 0.025049957179560378,
+      "no_verdict_rate": 0.00035,
+      "no_verdict_closed_form": 0.00031876710400000015,
+      "n_tamper": 5988,
+      "n_benign": 14012
+    },
+    {
+      "H": 12,
+      "p": 0.65,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.85155,
+        "unknown": 0.00025,
+        "failed": 0.1482
+      },
+      "bbca_status": {
+        "verified": 0.00345,
+        "unknown": 0.9952,
+        "failed": 0.00135
+      },
+      "path_evidence_rate": 1.0,
+      "path_evidence_closed_form": 0.9999966207794919,
+      "bvi_detection": 0.41919109218929096,
+      "bvi_detection_closed_form": 0.42250000000000004,
+      "bbca_detection": 0.003929916489274603,
+      "bbca_detection_closed_form": 0.005688009063105715,
+      "false_demotion_rate": 0.029079392499820052,
+      "no_verdict_rate": 0.00025,
+      "no_verdict_closed_form": 7.868756325903315e-05,
+      "n_tamper": 6107,
+      "n_benign": 13893
+    },
+    {
+      "H": 12,
+      "p": 0.7,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.83385,
+        "unknown": 5e-05,
+        "failed": 0.1661
+      },
+      "bbca_status": {
+        "verified": 0.00955,
+        "unknown": 0.9864,
+        "failed": 0.00405
+      },
+      "path_evidence_rate": 1.0,
+      "path_evidence_closed_form": 0.999999468559,
+      "bvi_detection": 0.4802212537713711,
+      "bvi_detection_closed_form": 0.48999999999999994,
+      "bbca_detection": 0.010727455581629233,
+      "bbca_detection_closed_form": 0.01384128720099999,
+      "false_demotion_rate": 0.03256377369246117,
+      "no_verdict_rate": 5e-05,
+      "no_verdict_closed_form": 1.5411789000000024e-05,
+      "n_tamper": 5966,
+      "n_benign": 14034
+    },
+    {
+      "H": 12,
+      "p": 0.75,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.80445,
+        "unknown": 0.0,
+        "failed": 0.19555
+      },
+      "bbca_status": {
+        "verified": 0.02115,
+        "unknown": 0.96705,
+        "failed": 0.0118
+      },
+      "path_evidence_rate": 1.0,
+      "path_evidence_closed_form": 0.9999999403953552,
+      "bvi_detection": 0.5688494994255703,
+      "bvi_detection_closed_form": 0.5625,
+      "bbca_detection": 0.034465780403742,
+      "bbca_detection_closed_form": 0.03167635202407837,
+      "false_demotion_rate": 0.03199827425037751,
+      "no_verdict_rate": 0.0,
+      "no_verdict_closed_form": 2.205371856689453e-06,
+      "n_tamper": 6093,
+      "n_benign": 13907
+    },
+    {
+      "H": 12,
+      "p": 0.8,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.77765,
+        "unknown": 0.0,
+        "failed": 0.22235
+      },
+      "bbca_status": {
+        "verified": 0.0452,
+        "unknown": 0.93055,
+        "failed": 0.02425
+      },
+      "path_evidence_rate": 1.0,
+      "path_evidence_closed_form": 0.999999995904,
+      "bvi_detection": 0.6343344821926801,
+      "bvi_detection_closed_form": 0.6400000000000001,
+      "bbca_detection": 0.06794682422451995,
+      "bbca_detection_closed_form": 0.06871947673600004,
+      "false_demotion_rate": 0.04184942834543755,
+      "no_verdict_rate": 0.0,
+      "no_verdict_closed_form": 2.0070399999999952e-07,
+      "n_tamper": 6093,
+      "n_benign": 13907
+    },
+    {
+      "H": 12,
+      "p": 0.85,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.7507,
+        "unknown": 0.0,
+        "failed": 0.2493
+      },
+      "bbca_status": {
+        "verified": 0.09395,
+        "unknown": 0.85635,
+        "failed": 0.0497
+      },
+      "path_evidence_rate": 1.0,
+      "path_evidence_closed_form": 0.9999999998702537,
+      "bvi_detection": 0.7193682460515378,
+      "bvi_detection_closed_form": 0.7224999999999999,
+      "bbca_detection": 0.14630091438071488,
+      "bbca_detection_closed_form": 0.14224175713617207,
+      "false_demotion_rate": 0.047121916338934575,
+      "no_verdict_rate": 0.0,
+      "no_verdict_closed_form": 8.952497314453138e-09,
+      "n_tamper": 6015,
+      "n_benign": 13985
+    },
+    {
+      "H": 12,
+      "p": 0.9,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.7235,
+        "unknown": 0.0,
+        "failed": 0.2765
+      },
+      "bbca_status": {
+        "verified": 0.1889,
+        "unknown": 0.7128,
+        "failed": 0.0983
+      },
+      "path_evidence_rate": 1.0,
+      "path_evidence_closed_form": 0.999999999999,
+      "bvi_detection": 0.8146399055489965,
+      "bvi_detection_closed_form": 0.81,
+      "bbca_detection": 0.28858154832180805,
+      "bbca_detection_closed_form": 0.2824295364810001,
+      "false_demotion_rate": 0.04974770805202189,
+      "no_verdict_rate": 0.0,
+      "no_verdict_closed_form": 1.0899999999999974e-10,
+      "n_tamper": 5929,
+      "n_benign": 14071
+    },
+    {
+      "H": 12,
+      "p": 0.95,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.6886,
+        "unknown": 0.0,
+        "failed": 0.3114
+      },
+      "bbca_status": {
+        "verified": 0.355,
+        "unknown": 0.4597,
+        "failed": 0.1853
+      },
+      "path_evidence_rate": 1.0,
+      "path_evidence_closed_form": 0.9999999999999998,
+      "bvi_detection": 0.9017101112402457,
+      "bvi_detection_closed_form": 0.9025,
+      "bbca_detection": 0.5369417233936576,
+      "bbca_detection_closed_form": 0.5403600876626367,
+      "false_demotion_rate": 0.05702225084066681,
+      "no_verdict_rate": 0.0,
+      "no_verdict_closed_form": 5.5908203125000545e-14,
+      "n_tamper": 6023,
+      "n_benign": 13977
+    },
+    {
+      "H": 12,
+      "p": 1.0,
+      "k": 2,
+      "n_sessions": 20000,
+      "attacker": "worst",
+      "bvi_status": {
+        "verified": 0.6576,
+        "unknown": 0.0,
+        "failed": 0.3424
+      },
+      "bbca_status": {
+        "verified": 0.6576,
+        "unknown": 0.0,
+        "failed": 0.3424
+      },
+      "path_evidence_rate": 1.0,
+      "path_evidence_closed_form": 1.0,
+      "bvi_detection": 1.0,
+      "bvi_detection_closed_form": 1.0,
+      "bbca_detection": 1.0,
+      "bbca_detection_closed_form": 1.0,
+      "false_demotion_rate": 0.06451383455437798,
+      "no_verdict_rate": 0.0,
+      "no_verdict_closed_form": 0.0,
+      "n_tamper": 5941,
+      "n_benign": 14059
+    }
+  ],
+  "inversion": [
+    {
+      "H": 3,
+      "bvi_avg_p50": 0.6,
+      "bvi_worst_p50": 0.75,
+      "bbca_p50": 0.8
+    },
+    {
+      "H": 5,
+      "bvi_avg_p50": 0.5,
+      "bvi_worst_p50": 0.75,
+      "bbca_p50": 0.9
+    },
+    {
+      "H": 8,
+      "bvi_avg_p50": 0.35,
+      "bvi_worst_p50": 0.75,
+      "bbca_p50": 0.95
+    },
+    {
+      "H": 12,
+      "bvi_avg_p50": 0.25,
+      "bvi_worst_p50": 0.75,
+      "bbca_p50": 0.95
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+% =====================================================================
+% B5 - COVERAGE TABLE
+% Ready to \input. Requires \usepackage{booktabs} and \usepackage{amssymb}.
+%
+% Cite key assumed to be \cite{bbca} for Tas & Baktir, IEEE Access 2024.
+% Adjust to match your .bib.
+%
+% NOTATION
+%   \cmark  blocked / detected
+%   \pmark  partially addressed, with a stated gap
+%   \xmark  not addressed by this mechanism
+%
+% Add these to your preamble if not already present:
+%   \newcommand{\cmark}{\ding{51}}
+%   \newcommand{\xmark}{\ding{55}}
+%   \newcommand{\pmark}{$\circ$}
+%   \usepackage{pifont}
+% =====================================================================
+
+\begin{table*}[t]
+\centering
+\caption{Attack coverage by mechanism. Columns are the mechanisms in
+isolation; the final column is BVI with all four layers composed under the
+gating rule of Proposition~1. BBCA addresses caller-ID and ANI integrity only,
+and permits writes solely from registered ISPs (Sec.~III.A,~\cite{bbca}), so a
+path containing an unregistered hop yields no record at all. The digest and the
+detector answer different questions and neither subsumes the other: the
+detector asks whether speech was synthesised, the digest asks whether this is
+the audio the counterparty sent. Rows~8 and~9 are the two attacks that motivate
+composing the layers, since each defeats every mechanism except one.}
+\label{tab:coverage}
+\begin{tabular}{clcccc}
+\toprule
+& Attack & BBCA & Digest (L3) & Detector (L4) & BVI \\
+\midrule
+
+\multicolumn{6}{l}{\emph{Credential attacks --- Layer 1}} \\[2pt]
+
+A1 & No credential presented
+   & \xmark & \xmark & \xmark & \cmark \\
+A2 & Self-signed credential
+   & \xmark & \xmark & \xmark & \cmark \\
+A3 & Stolen credential, valid signature
+   & \pmark & \xmark & \xmark & \cmark \\
+A4 & Tampered credential claim
+   & \pmark & \xmark & \xmark & \cmark \\
+A5 & Revoked credential
+   & \xmark & \xmark & \xmark & \cmark \\
+A6 & Expired credential / stale key epoch
+   & \xmark & \xmark & \xmark & \cmark \\
+A7 & Replayed session assertion
+   & \xmark & \cmark & \xmark & \cmark \\
+
+\addlinespace
+\multicolumn{6}{l}{\emph{Path attack --- Layer 2}} \\[2pt]
+
+A8 & In-path identifier rewrite, audio untouched
+   & \pmark & \xmark & \xmark & \cmark \\
+
+\addlinespace
+\multicolumn{6}{l}{\emph{Content attacks --- Layers 3 and 4}} \\[2pt]
+
+A9 & Media substitution in transit, route untouched
+   & \xmark & \cmark & \xmark & \cmark \\
+A10 & Synthesised (deepfake) speech
+   & \xmark & \xmark & \cmark & \cmark \\
+
+\bottomrule
+\end{tabular}
+
+\vspace{4pt}
+\begin{minipage}{0.94\textwidth}
+\footnotesize
+\textbf{Notes on the partial marks.}
+\emph{A3}: BBCA re-registers an ISP on every caller-ID change, which surfaces a
+change but does not distinguish a legitimate rotation from a compromise, and
+provides no revocation mechanism to terminate the credential once compromise is
+known.
+\emph{A4}: BBCA detects an ANI value that disagrees with its registration
+table, but the table is the only referent; a claim consistent with a
+compromised registration passes.
+\emph{A8}: BBCA verifies at each hop against the Call Flow Control Table, so a
+rewrite between two \emph{registered} hops is visible. A rewrite at or adjacent
+to an unregistered hop is not, and the design defines no behaviour for that
+case. BVI treats an unattested hop as $\bot$ rather than as failure, so
+detection degrades gracefully rather than disappearing (Table~\ref{tab:participation}).
+\end{minipage}
+\end{table*}

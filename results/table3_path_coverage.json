@@ -1,0 +1,356 @@
+{
+  "rows": [
+    {
+      "H": 3,
+      "p": 0.0,
+      "bvi_detection": 0.0,
+      "bvi_closed_form": 0.0,
+      "bbca_detection": 0.0,
+      "bbca_closed_form": 0.0
+    },
+    {
+      "H": 3,
+      "p": 0.1,
+      "bvi_detection": 0.01835,
+      "bvi_closed_form": 0.01899999999999999,
+      "bbca_detection": 0.00095,
+      "bbca_closed_form": 0.0010000000000000002
+    },
+    {
+      "H": 3,
+      "p": 0.2,
+      "bvi_detection": 0.07105,
+      "bvi_closed_form": 0.07199999999999995,
+      "bbca_detection": 0.0087,
+      "bbca_closed_form": 0.008000000000000002
+    },
+    {
+      "H": 3,
+      "p": 0.3,
+      "bvi_detection": 0.15085,
+      "bvi_closed_form": 0.15300000000000002,
+      "bbca_detection": 0.026,
+      "bbca_closed_form": 0.026999999999999996
+    },
+    {
+      "H": 3,
+      "p": 0.4,
+      "bvi_detection": 0.2564,
+      "bvi_closed_form": 0.256,
+      "bbca_detection": 0.06165,
+      "bbca_closed_form": 0.06400000000000002
+    },
+    {
+      "H": 3,
+      "p": 0.5,
+      "bvi_detection": 0.3706,
+      "bvi_closed_form": 0.375,
+      "bbca_detection": 0.12495,
+      "bbca_closed_form": 0.125
+    },
+    {
+      "H": 3,
+      "p": 0.6,
+      "bvi_detection": 0.50575,
+      "bvi_closed_form": 0.504,
+      "bbca_detection": 0.21695,
+      "bbca_closed_form": 0.21599999999999997
+    },
+    {
+      "H": 3,
+      "p": 0.7,
+      "bvi_detection": 0.641,
+      "bvi_closed_form": 0.6369999999999999,
+      "bbca_detection": 0.34465,
+      "bbca_closed_form": 0.3429999999999999
+    },
+    {
+      "H": 3,
+      "p": 0.8,
+      "bvi_detection": 0.7696,
+      "bvi_closed_form": 0.768,
+      "bbca_detection": 0.5113,
+      "bbca_closed_form": 0.5120000000000001
+    },
+    {
+      "H": 3,
+      "p": 0.9,
+      "bvi_detection": 0.89185,
+      "bvi_closed_form": 0.891,
+      "bbca_detection": 0.73375,
+      "bbca_closed_form": 0.7290000000000001
+    },
+    {
+      "H": 3,
+      "p": 1.0,
+      "bvi_detection": 1.0,
+      "bvi_closed_form": 1.0,
+      "bbca_detection": 1.0,
+      "bbca_closed_form": 1.0
+    },
+    {
+      "H": 5,
+      "p": 0.0,
+      "bvi_detection": 0.0,
+      "bvi_closed_form": 0.0,
+      "bbca_detection": 0.0,
+      "bbca_closed_form": 0.0
+    },
+    {
+      "H": 5,
+      "p": 0.1,
+      "bvi_detection": 0.04145,
+      "bvi_closed_form": 0.04293999999999998,
+      "bbca_detection": 0.0,
+      "bbca_closed_form": 1.0000000000000003e-05
+    },
+    {
+      "H": 5,
+      "p": 0.2,
+      "bvi_detection": 0.1467,
+      "bvi_closed_form": 0.14687999999999993,
+      "bbca_detection": 0.00045,
+      "bbca_closed_form": 0.0003200000000000001
+    },
+    {
+      "H": 5,
+      "p": 0.3,
+      "bvi_detection": 0.28365,
+      "bvi_closed_form": 0.28152000000000005,
+      "bbca_detection": 0.0023,
+      "bbca_closed_form": 0.0024299999999999994
+    },
+    {
+      "H": 5,
+      "p": 0.4,
+      "bvi_detection": 0.42795,
+      "bvi_closed_form": 0.42496,
+      "bbca_detection": 0.01155,
+      "bbca_closed_form": 0.010240000000000003
+    },
+    {
+      "H": 5,
+      "p": 0.5,
+      "bvi_detection": 0.5595,
+      "bvi_closed_form": 0.5625,
+      "bbca_detection": 0.03075,
+      "bbca_closed_form": 0.03125
+    },
+    {
+      "H": 5,
+      "p": 0.6,
+      "bvi_detection": 0.6884,
+      "bvi_closed_form": 0.68544,
+      "bbca_detection": 0.08105,
+      "bbca_closed_form": 0.07775999999999998
+    },
+    {
+      "H": 5,
+      "p": 0.7,
+      "bvi_detection": 0.78715,
+      "bvi_closed_form": 0.7898799999999999,
+      "bbca_detection": 0.1665,
+      "bbca_closed_form": 0.16806999999999994
+    },
+    {
+      "H": 5,
+      "p": 0.8,
+      "bvi_detection": 0.8763,
+      "bvi_closed_form": 0.87552,
+      "bbca_detection": 0.32445,
+      "bbca_closed_form": 0.3276800000000001
+    },
+    {
+      "H": 5,
+      "p": 0.9,
+      "bvi_detection": 0.9413,
+      "bvi_closed_form": 0.9444600000000001,
+      "bbca_detection": 0.5868,
+      "bbca_closed_form": 0.5904900000000001
+    },
+    {
+      "H": 5,
+      "p": 1.0,
+      "bvi_detection": 1.0,
+      "bvi_closed_form": 1.0,
+      "bbca_detection": 1.0,
+      "bbca_closed_form": 1.0
+    },
+    {
+      "H": 8,
+      "p": 0.0,
+      "bvi_detection": 0.0,
+      "bvi_closed_form": 0.0,
+      "bbca_detection": 0.0,
+      "bbca_closed_form": 0.0
+    },
+    {
+      "H": 8,
+      "p": 0.1,
+      "bvi_detection": 0.09075,
+      "bvi_closed_form": 0.08894495285714281,
+      "bbca_detection": 0.0,
+      "bbca_closed_form": 1.0000000000000005e-08
+    },
+    {
+      "H": 8,
+      "p": 0.2,
+      "bvi_detection": 0.26135,
+      "bvi_closed_form": 0.2645895314285713,
+      "bbca_detection": 0.0,
+      "bbca_closed_form": 2.5600000000000013e-06
+    },
+    {
+      "H": 8,
+      "p": 0.3,
+      "bvi_detection": 0.44885,
+      "bvi_closed_form": 0.44588421000000006,
+      "bbca_detection": 5e-05,
+      "bbca_closed_form": 6.560999999999998e-05
+    },
+    {
+      "H": 8,
+      "p": 0.4,
+      "bvi_detection": 0.5965,
+      "bvi_closed_form": 0.6002219885714286,
+      "bbca_detection": 0.0005,
+      "bbca_closed_form": 0.0006553600000000003
+    },
+    {
+      "H": 8,
+      "p": 0.5,
+      "bvi_detection": 0.7193,
+      "bvi_closed_form": 0.7204241071428571,
+      "bbca_detection": 0.0043,
+      "bbca_closed_form": 0.00390625
+    },
+    {
+      "H": 8,
+      "p": 0.6,
+      "bvi_detection": 0.80605,
+      "bvi_closed_form": 0.8104912457142858,
+      "bbca_detection": 0.01825,
+      "bbca_closed_form": 0.016796159999999994
+    },
+    {
+      "H": 8,
+      "p": 0.7,
+      "bvi_detection": 0.8764,
+      "bvi_closed_form": 0.87764341,
+      "bbca_detection": 0.05875,
+      "bbca_closed_form": 0.05764800999999997
+    },
+    {
+      "H": 8,
+      "p": 0.8,
+      "bvi_detection": 0.93105,
+      "bvi_closed_form": 0.9285749028571428,
+      "bbca_detection": 0.1736,
+      "bbca_closed_form": 0.1677721600000001
+    },
+    {
+      "H": 8,
+      "p": 0.9,
+      "bvi_detection": 0.96725,
+      "bvi_closed_form": 0.9682539814285714,
+      "bbca_detection": 0.43645,
+      "bbca_closed_form": 0.4304672100000001
+    },
+    {
+      "H": 8,
+      "p": 1.0,
+      "bvi_detection": 1.0,
+      "bvi_closed_form": 1.0,
+      "bbca_detection": 1.0,
+      "bbca_closed_form": 1.0
+    },
+    {
+      "H": 12,
+      "p": 0.0,
+      "bvi_detection": 0.0,
+      "bvi_closed_form": 0.0,
+      "bbca_detection": 0.0,
+      "bbca_closed_form": 0.0
+    },
+    {
+      "H": 12,
+      "p": 0.1,
+      "bvi_detection": 0.15625,
+      "bvi_closed_form": 0.1595741482646363,
+      "bbca_detection": 0.0,
+      "bbca_closed_form": 1.0000000000000006e-12
+    },
+    {
+      "H": 12,
+      "p": 0.2,
+      "bvi_detection": 0.4065,
+      "bvi_closed_form": 0.4039190010414545,
+      "bbca_detection": 0.0,
+      "bbca_closed_form": 4.096000000000002e-09
+    },
+    {
+      "H": 12,
+      "p": 0.3,
+      "bvi_detection": 0.5975,
+      "bvi_closed_form": 0.5979875218682729,
+      "bbca_detection": 0.0,
+      "bbca_closed_form": 5.314409999999998e-07
+    },
+    {
+      "H": 12,
+      "p": 0.4,
+      "bvi_detection": 0.72895,
+      "bvi_closed_form": 0.730438956125091,
+      "bbca_detection": 5e-05,
+      "bbca_closed_form": 1.677721600000001e-05
+    },
+    {
+      "H": 12,
+      "p": 0.5,
+      "bvi_detection": 0.81905,
+      "bvi_closed_form": 0.8185147372159091,
+      "bbca_detection": 5e-05,
+      "bbca_closed_form": 0.000244140625
+    },
+    {
+      "H": 12,
+      "p": 0.6,
+      "bvi_detection": 0.88065,
+      "bvi_closed_form": 0.8788097400087274,
+      "bbca_detection": 0.0019,
+      "bbca_closed_form": 0.002176782335999999
+    },
+    {
+      "H": 12,
+      "p": 0.7,
+      "bvi_detection": 0.9195,
+      "bvi_closed_form": 0.9220785915555456,
+      "bbca_detection": 0.0139,
+      "bbca_closed_form": 0.01384128720099999
+    },
+    {
+      "H": 12,
+      "p": 0.8,
+      "bvi_detection": 0.95675,
+      "bvi_closed_form": 0.9545454595723636,
+      "bbca_detection": 0.07035,
+      "bbca_closed_form": 0.06871947673600004
+    },
+    {
+      "H": 12,
+      "p": 0.9,
+      "bvi_detection": 0.97965,
+      "bvi_closed_form": 0.9797979797991818,
+      "bbca_detection": 0.27915,
+      "bbca_closed_form": 0.2824295364810001
+    },
+    {
+      "H": 12,
+      "p": 1.0,
+      "bvi_detection": 1.0,
+      "bvi_closed_form": 1.0,
+      "bbca_detection": 1.0,
+      "bbca_closed_form": 1.0
+    }
+  ]
+}

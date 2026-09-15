@@ -1,0 +1,186 @@
+% =====================================================================
+% SECTION 6 - EVALUATION (DRAFT)
+%
+% Every number below is measured or derived, with its source noted in a
+% comment. Two placeholders are marked PENDING and must be filled before
+% submission. Nothing else is a placeholder.
+% =====================================================================
+
+\section{Evaluation}
+\label{sec:evaluation}
+
+We evaluate BVI against five questions: the on-chain cost of the anchor
+(RQ1), the separability of the content digest (RQ2), the behaviour of path
+attestation under partial carrier participation (RQ3), attack coverage (RQ4),
+and verification latency (RQ5). Contract measurements were taken on a local
+Hardhat chain with \texttt{solc}~0.8.24, the optimiser enabled at 200~runs, and
+EVM version \texttt{paris}; each gas figure is the median of five runs of
+\texttt{gasUsed} taken from the transaction receipt.
+
+\subsection{On-chain cost (RQ1)}
+
+Table~\ref{tab:gas} reports the cost of every registry operation. The figure
+that matters is \texttt{anchorSession} at $91{,}535$~gas, since it is the only
+per-session cost; Layer~1 operations are administrative and amortised over an
+organisation's call volume, and Layer~2 attestation is optional and paid by the
+participating carrier.
+
+The anchor's cost is invariant in both call duration and hop count. Across a
+grid of thirty duration and hop-count combinations spanning $30$~seconds to
+$50$~minutes and one to twenty hops, measured cost varied by at most $36$~gas,
+or $0.04$~percent --- consistent with block-state variation on a local chain
+rather than with any dependence on the varied parameters. The mechanism is that
+both arguments are fixed-width: a Merkle root over the digest sequence is
+thirty-two bytes whatever the sequence length, and a hash over the attestation
+set is thirty-two bytes whatever the set size.
+
+% Source: results/table1_gas.json, results/b1_anchor_vs_bbca.json
+Table~\ref{tab:anchorcost} sets this against BBCA. Counting writes from their
+published Call Flow Control Table structure and charging each at BVI's own
+per-write cost, BBCA's per-session overhead is $5\times$ at two hops and
+$23\times$ at eight. The assumption favours BBCA, so these are lower bounds.
+
+\subsection{Content digest separability (RQ2)}
+
+% PENDING: regenerate on a real narrowband corpus before submission.
+% Current figures are from synthetic source-filter signals and validate the
+% pipeline only. See docs/FINDINGS.md.
+Table~\ref{tab:digest} reports bit error rate between the digest computed at
+the caller and the digest recomputed by the recipient, under benign channel
+conditions and under media substitution. At the operating threshold --- set at
+the $99$th percentile of benign scores, which is all a deployed verifier can
+observe without seeing an attack --- wholesale substitution, replay at offset,
+and time-reversal are detected without error.
+
+Detection of partial splicing degrades with the substituted fraction: a splice
+covering half a call is detected in $86$~percent of trials, a quarter in
+$61$~percent, and five percent of a call in only $8$~percent. This is a real
+limitation and we state it plainly. A short splice leaves most of the digest
+matching, and the detection floor is set by the worst benign channel condition
+the verifier must tolerate: admitting calls at $10$~dB~SNR raises the threshold
+to $0.283$ and costs splice sensitivity, while requiring $20$~dB lowers it to
+$0.220$ and recovers some.
+
+The parameterisation is $17$~Bark-spaced bands over $300$--$3400$~Hz with a
+$32$~ms frame and $20$~ms hop, giving $16$~bits per frame and a rate of
+$800$~bps. That fits every side channel we considered, including a four-byte
+RFC~8285 header extension at $1{,}600$~bps. Capacity is therefore not the
+binding constraint; survivability is, since header extensions are stripped by
+transcoding gateways. We treat this as a deployment question for the testbed
+rather than a design question.
+
+One finding from this experiment changed the design. Frames carrying no speech
+produce a digest determined by rounding rather than by content, so any
+perturbation randomises them; including them in the comparison drove benign
+G.711 to a bit error rate of $0.31$, close to chance. Restricting comparison to
+frames carrying speech reduces this to $0.012$. The consequence is that when a
+window holds too little speech, the correct output is not a pass or a failure
+but no verdict --- making Layer~3 ternary in precisely the sense Layer~2
+already is, and for the same reason. Silence is not evidence of substitution.
+
+\subsection{Path attestation under partial participation (RQ3)}
+
+% Source: results/b2_participation_sweep.json, results/table3_path_coverage.json
+Table~\ref{tab:participation} reports the distribution of path status over
+$1{,}000$~simulated sessions at each participation level, with a path length of
+five hops and thirty percent of sessions carrying an in-path identifier
+rewrite.
+
+Two results stand out. First, BVI yields usable evidence for every session at
+every participation level, including zero, because the anchor commits Layers~1
+and~3 irrespective of whether any carrier attested. BBCA yields a complete
+record only when every hop is registered and participating: $4.9$~percent of
+sessions at fifty percent participation, and none at zero.
+
+Second, and contrary to the intuition that long international routes are the
+hard case, BVI's detection \emph{improves} with path length while BBCA's
+degrades. Reaching fifty percent detection of an in-path rewrite requires sixty
+percent carrier participation on a three-hop path but only thirty percent on a
+twelve-hop path; the corresponding BBCA figures are eighty percent and, at
+twelve hops, unreachable. The mechanism is straightforward once stated: BVI
+requires one participating hop on either side of the rewrite, and a longer path
+offers more opportunities for that, whereas BBCA requires an unbroken chain and
+a longer path offers more opportunities to break it.
+
+The cost of this is a false demotion rate that plateaus near nine percent of
+benign sessions, arising entirely from legitimate identifier rewrites performed
+by unregistered session border controllers. This rate is flat in carrier
+participation --- recruiting more carriers does not reduce it. The only lever
+is SBC registration coverage, which is an operational finding rather than a
+protocol one.
+
+\subsection{Attack coverage (RQ4)}
+
+% Source: test/scenarios.test.js, all rows asserted against the deployed contract
+Table~\ref{tab:coverage} states coverage across ten attack classes for BBCA,
+the digest alone, the detector alone, and BVI composed. Every row BVI claims to
+block is asserted against the deployed contract in the accompanying test suite.
+
+Two rows motivate the composition. An in-path identifier rewrite that leaves
+the audio untouched defeats the digest and the detector completely, and is
+caught only by path attestation. A media substitution in transit that leaves
+the route untouched defeats path attestation, and --- if the substituted audio
+is genuine human speech rather than synthesis --- defeats the detector as well;
+it is caught only by the digest. Neither layer subsumes the other, which is why
+the paper composes them rather than selecting one.
+
+The honest gap is A3. BVI terminates a compromised credential and the
+termination is immediate, terminal, and suppressible by neither the controller
+nor the registrar acting alone. It does not retroactively invalidate sessions
+anchored before compromise was detected. What it provides instead is an
+immutable, consensus-timestamped record of exactly which sessions fell in that
+window, which is what a dispute requires even though it is not prevention.
+
+\subsection{Latency (RQ5)}
+
+% PENDING: run scripts/measure-latency.js against Optimism Sepolia and insert
+% p50/p95/p99 for the composite verification read and for anchor confirmation.
+Verification latency and anchor confirmation latency are distinct quantities
+and conflating them obscures the argument. The former is what must fit inside
+the call-setup budget of requirement~R9: two \texttt{view} reads,
+\texttt{resolve} and \texttt{isAuthorisedChannel}, performed by the recipient
+over a public RPC with no account and no transaction. The latter is the time
+from call teardown to inclusion of the anchor, and it sits off the call path
+entirely --- which is precisely where BBCA's per-hop consensus does not.
+
+\subsection{Throughput}
+
+% Source: results/b4_throughput.json
+At $91{,}535$~gas per anchor, an OP~Stack rollup at a $60$~million gas block
+limit with two-second blocks sustains approximately $328$~anchors per second,
+or $28.3$~million per day, for a chain carrying only BVI traffic. This is of
+the same order as Australian daily call volume, so a single rollup at present
+parameters does not clear national volume with comfortable margin. Batching
+provides limited relief: amortising the $21{,}000$~gas intrinsic cost across a
+batch reaches an asymptotic floor of $70{,}535$~gas per anchor, since the three
+cold storage writes cannot be avoided, bounding the gain at $1.30\times$. A
+raised block limit or partitioning across rollups by originating carrier are
+the available levers. We record this as a deployment constraint.
+
+\subsection{Threats to validity}
+
+The digest figures are generated from synthetic speech and validate the
+processing pipeline rather than establishing operational separability; they
+require regeneration on a recorded narrowband corpus, and we expect the
+separation to narrow, since synthesis produces cleaner spectro-temporal
+gradients than speech does.
+% PENDING: delete the sentence above once the real-corpus run is in.
+
+The participation sweep is a simulation in which carriers attest independently
+with equal probability. Real participation will be correlated by carrier size
+and jurisdiction, which the model does not capture; we validated the simulator
+against the closed-form expression and the two agree within $1.1$~percent, so
+the discrepancy that matters is in the model's assumptions rather than in its
+implementation.
+
+Gas figures come from a local chain. They are reproducible and the toolchain is
+pinned, but they are gas units rather than settled costs, and the fiat figures
+quoted elsewhere depend on a gas price and an exchange rate that both move.
+
+Finally, the revocation argument establishes that a revocation, once executed,
+is immediate, terminal, observable, and suppressible by neither principal. It
+does not establish prompt \emph{inclusion} on a rollup, which is a property of
+the sequencer rather than of the contract, and is the reason status changes are
+submitted to L1.
+% PENDING: insert the measured forced-inclusion delay from the rollup's
+% documentation. See docs/forced-inclusion.md.
